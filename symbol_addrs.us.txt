@@ -1,0 +1,5 @@
+osInitialize        = 0x80033850;
+osCreateThread      = 0x80033AE0;
+osStartThread       = 0x80033C30;
+osCreatePiManager   = 0x80033D80;
+osCreateMesgQueue   = 0x80033F10;

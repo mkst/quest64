@@ -1,0 +1,13 @@
+# folders
+asm/
+assets/
+build/
+expected/
+junk/
+__pycache__/
+
+# files
+*.ld
+*.ok
+*auto.txt
+*.z64
