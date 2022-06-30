@@ -12,7 +12,7 @@ TOOLS_DIR := tools
 
 S_FILES   = $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 C_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
-# H_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))
+H_FILES   = $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))
 BIN_FILES = $(foreach dir,$(BIN_DIRS),$(wildcard $(dir)/*.bin))
 
 O_FILES := $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file).o) \
@@ -68,7 +68,6 @@ LDFLAGS = -T $(LD_SCRIPT) -Map $(TARGET).map -T undefined_syms_auto.txt -T undef
 ASM_PROCESSOR_DIR := $(TOOLS_DIR)/asm-processor
 
 ### Optimisation Overrides
-
 ### Targets
 
 default: all
