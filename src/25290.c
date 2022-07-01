@@ -4,8 +4,8 @@
 void func_80024690(s32 arg0, s32 arg1, s32 arg2) {
     OSIoMesg sp28;
 
-    func_80036460(arg1, arg2);
-    func_80036510(&sp28, 0, 0, arg0, arg1, arg2, &D_8008F288);
+    osInvalDCache(arg1, arg2);
+    osPiStartDma(&sp28, 0, 0, arg0, arg1, arg2, &D_8008F288);
     osRecvMesg(&D_8008F288, 0, 1);
 }
 
@@ -41,7 +41,7 @@ void func_8002513C(s32 arg0, s32 arg1, u8* arg2, s32 arg3, u8* arg4) {
     D_8008F978.unk14 = 0;
     D_8008F978.unk18 = 0;
     D_8008F978.unk9 = 0;
-    func_80038190(&D_8008F994,(ALSeqpConfig *) &D_8008F978);
+    alCSPNew(&D_8008F994,(ALSeqpConfig *) &D_8008F978);
     D_8008F978.unk19C = 0x40;
     D_8008F978.unk1A0 = 0x40;
     D_8008F978.unk1A4 = 0x10;
@@ -50,15 +50,15 @@ void func_8002513C(s32 arg0, s32 arg1, u8* arg2, s32 arg3, u8* arg4) {
     D_8008F978.unk1B0 = 0;
     D_8008F978.unk1B4 = 0;
     D_8008F978.unk1A5 = 0;
-    func_80038190((ALCSPlayer *)&D_8008FB30, &D_8008FB14);
+    alCSPNew((ALCSPlayer *)&D_8008FB30, &D_8008FB14);
     func_80025040(arg2);
-    func_80038508(D_800538F0, arg2);
+    alSeqFileNew(D_800538F0, arg2);
     D_800538E8 = alHeapDBAlloc(0, 0, &D_8008F240, 1, arg1 - arg0);
     func_80024690(arg0, D_800538E8, arg1 - arg0);
     alBnkfNew((ALBankFile *)D_800538E8, arg4);
     temp_s0_2 = D_800538E8->unk4;
-    func_80038550((ALSeqPlayer *)&D_8008F994, temp_s0_2);
-    func_80038550(&D_8008FB30, temp_s0_2);
+    alSeqpSetBank((ALSeqPlayer *)&D_8008F994, temp_s0_2);
+    alSeqpSetBank(&D_8008FB30, temp_s0_2);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/25290/func_800252D8.s")

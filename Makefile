@@ -68,6 +68,7 @@ LDFLAGS = -T $(LD_SCRIPT) -Map $(TARGET).map -T undefined_syms_auto.txt -T undef
 ASM_PROCESSOR_DIR := $(TOOLS_DIR)/asm-processor
 
 ### Optimisation Overrides
+build/src/seqpgetstate.c.o: OPT_FLAGS := -O2 
 ### Targets
 
 default: all

@@ -84,3 +84,17 @@ typedef struct unk_22260_s3{
     u16 unkA;
 }unk22260s3;
 
+typedef struct unk_3f5c_s{
+    char unk0[0x18];
+    f32 unk18;
+    f32 unk1C;
+    f32 unk20;
+    char unk24[0x3C];
+    u16 unk60;
+}unk3f5cs;
+
+typedef struct unk_3f5c_s2{
+    s16 unk0;
+    s16 unk2;
+    u16 unk4;
+}unk3f5cs2;
