@@ -53,3 +53,19 @@ extern unk2513cs2* D_800538E8;
 extern u16 D_80084EE0;
 extern unk222b4s* D_80084F1C;
 extern u8 D_8008CF78[150];
+
+//screen dim/fade variables
+extern s16 D_8008D020;
+extern s32 D_8008D024;
+extern s32 D_8008D028;
+
+
+extern void* D_803232A0;
+extern void* D_80331A30;
+extern u8 D_D3E240[];
+extern u8 D_D3E2C0[];
+
+extern s32 D_8007D0C4;
+
+extern s32 D_80088428;
+extern s32 D_80088420;

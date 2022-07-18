@@ -1,5 +1,9 @@
 osScAddClient             = 0x800007d4;
 
+loadData				  = 0x80024260;
+
+loadTitleScreenData       = 0x80031c40;
+
 osInitialize         	  = 0x80033850;
 osCreateThread       	  = 0x80033AE0;
 osStartThread        	  = 0x80033C30;

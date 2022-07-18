@@ -5,6 +5,7 @@ build/
 expected/
 junk/
 __pycache__/
+tools/
 
 # files
 *.ld

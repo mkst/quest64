@@ -98,3 +98,24 @@ typedef struct unk_3f5c_s2{
     s16 unk2;
     u16 unk4;
 }unk3f5cs2;
+
+typedef struct unk_16ffc_s{
+    char unk0[0x24];
+    s32 unk24;
+    s32 unk28;
+}unk16ffcs;
+
+typedef struct unk_164e4_s{
+    char unk0[0xA];
+    u16 unkA;
+}unk164e4s;
+
+typedef struct unk_173e0_s{
+    char unk0[0x68];
+    s32 unk68;
+}unk173e0s;
+
+typedef struct unk_1b0d0_s{
+    s16 unk0;
+    char unk2[0x3E];
+}unk1b0d0;
