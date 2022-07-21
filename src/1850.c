@@ -5,7 +5,7 @@
 //#pragma GLOBAL_ASM("asm/nonmatchings/1850/func_80000EEC.s")
 void func_80000EEC(void) {
     D_8007B2E4 = 0x160;
-    D_8007B2E0 = 4;
+    gameMode = 4;
     D_80084EE4 = -1;
     D_80084EF8 = -1;
     D_80084F04 = -1;

@@ -1,8 +1,6 @@
 osScAddClient             = 0x800007d4;
 
-loadData				  = 0x80024260;
 
-loadTitleScreenData       = 0x80031c40;
 
 osInitialize         	  = 0x80033850;
 osCreateThread       	  = 0x80033AE0;
@@ -318,3 +316,8 @@ alSeqNew                  = 0x80049c78;
 alSynSetPriority          = 0x80049d50;
 ldiv                      = 0x80049e60;
 
+gameMode                  = 0x8007b2e0;
+
+currentTime               = 0x800859d0;
+dayLength				  = 0x800859d4;
+currentDay				  = 0x800859e0;

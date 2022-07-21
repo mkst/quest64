@@ -1,4 +1,11 @@
-extern u8 D_8008D00E;
+extern void* func_80024BEC;
+
+extern s8 D_80053CA4;
+extern s8 D_8005F010;
+extern s32 D_800539E4;
+extern u32 D_8005398C;
+extern s32 D_80053990;
+
 extern f32 D_80070F04;
 extern s16 D_8007B2E0;
 extern s32 D_8007B2E4;
@@ -14,6 +21,8 @@ extern s16 D_8007BA60;
 extern u16 D_8007BA62;
 extern s16 D_8007BA64;
 extern s16 D_8007BABE;
+
+extern u8 D_8008D00E;
 extern s32 D_80084EE4;
 extern u32 D_80084EEC;
 extern s32 D_80084EF0;
@@ -23,8 +32,6 @@ extern u16 D_80084F14;
 extern s32 D_80085370;
 extern s16 D_800859E2;
 extern f32 D_80086E44;
-extern s8 D_80053CA4;
-extern s8 D_8005F010;
 extern s8 D_8008FCC1;
 extern u16 D_8008FCC2;
 extern s16 D_8008FCC4;
@@ -32,13 +39,26 @@ extern u8 D_8008D00D;
 extern u16 D_8008C592;
 extern unkShadows D_80085BD0[];
 extern s32 D_800862D0;
-extern s32 D_800539E4;
 extern s32 D_8008F92C;
-extern u32 D_8005398C;
-extern s32 D_80053990;
 extern s32 D_8008D090;
-extern void* func_80024BEC;
 extern OSMesgQueue D_8008F288;
+extern u16 D_8008FD20;
+extern s8 D_8008FD29;
+extern s16 gameMode;
+extern u16 D_8008FD0C;
+extern s8 D_8008FD22;
+extern u8 D_8008FD28;
+extern s8 D_8008FD29;
+extern s8 D_8008FD2A;
+extern s8 D_8008FD2B;
+extern s8 D_8008FD2C;
+
+
+extern s32 currentTime;
+extern s32 dayLength;
+extern s32 D_800859D8;
+extern u16 currentDay;
+
 
 //These types may be incorrect. Defined in func_8002513C
 extern s32 D_800538F0;
@@ -69,3 +89,6 @@ extern s32 D_8007D0C4;
 
 extern s32 D_80088428;
 extern s32 D_80088420;
+
+extern unk11170s D_800859E8[];
+

@@ -119,3 +119,25 @@ typedef struct unk_1b0d0_s{
     s16 unk0;
     char unk2[0x3E];
 }unk1b0d0;
+
+typedef struct unk_110d0_s{
+    s32 unk0;
+    char unk4[0x2C];
+}unk110d0s;
+
+typedef struct unk_11170_s {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    s32 unk2C; 
+}unk11170s;
+
+
