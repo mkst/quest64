@@ -39,7 +39,7 @@ void func_8002D614(void) {
     s32 temp_v1;
     
 
-    temp_v0 = func_8003195C(D_80092870, D_8008FD30[D_8008FD2A]);
+    temp_v0 = func_8003195C(D_80092870, D_8008FD30[D_8008FD2A].unk_01);
     if (temp_v0 != 0) {
         D_8008FD24 = temp_v0;
         temp_v1 = -func_80031BB0(temp_v0);
@@ -68,7 +68,7 @@ void func_8002D614(void) {
     D_8008FD20 &= ~0x2000;
     D_8008FD22 = 0x16;
     D_8008FD29 = 0xA;
-    *((s8*)&(D_8008FD30[D_8008FD2A]) + 1) = -1;
+    D_8008FD30[D_8008FD2A].unk_01 = -1;
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/2C110/func_8002D748.s")
