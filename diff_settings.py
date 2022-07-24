@@ -9,7 +9,7 @@ def apply(config, args):
     else:
         version = 'us'
 
-    config['baseimg'] = f'baserom.{version}.bin'
-    config['myimg'] = f'build/{basename}.{version}.bin'
+    config['baseimg'] = f'baserom.us.z64'
+    config['myimg'] = f'build/{basename}.{version}.z64'
     config['mapfile'] = f'build/{basename}.{version}.map'
     config['source_directories'] = ['src', 'include']

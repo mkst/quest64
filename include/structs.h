@@ -1,3 +1,6 @@
+#ifndef _STRUCTS_H_
+#define _STRUCTS_H_
+
 typedef struct unk_7d4_s{
     s32 unk0;
     s32 unk4;
@@ -152,4 +155,9 @@ typedef struct unk_20888_s{
     char unk4[0x1A];
 }unk20888s;
 
+typedef struct temp {
+    s8 unk_00;
+    s8 unk_01;
+} temp;
 
+#endif

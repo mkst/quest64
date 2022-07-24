@@ -1,3 +1,8 @@
+#ifndef _VARIABLES_H_
+#define _VARIABLES_H_
+
+#include "structs.h"
+
 extern void* func_80024BEC;
 
 extern s8 D_80053CA4;
@@ -39,7 +44,7 @@ extern s16 D_8008FCC4;
 extern u16 D_8008FD20;
 extern s8 D_8008FD22;
 extern s32 D_8008FD24;
-extern s16 D_8008FD30[];
+extern temp D_8008FD30[];
 extern u8 D_8008D00D;
 extern u16 D_8008C592;
 extern unkShadows D_80085BD0[];
@@ -96,3 +101,4 @@ extern s32 D_80088420;
 
 extern unk11170s D_800859E8[];
 
+#endif
