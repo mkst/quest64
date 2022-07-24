@@ -97,6 +97,9 @@ void func_8002233C(s32 arg0, s32 arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/inventory/func_80022490.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/inventory/func_8002260C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/inventory/func_8002260C.s")
+void func_8002260C(s32 arg0, unk2260cs* arg1) {
+    func_80014A98(arg0, arg1->unk4, 0, 4);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/inventory/func_8002263C.s")

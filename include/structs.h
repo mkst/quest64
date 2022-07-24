@@ -140,4 +140,16 @@ typedef struct unk_11170_s {
     s32 unk2C; 
 }unk11170s;
 
+//inventory
+typedef struct unk_2260c_s{
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+}unk2260cs;
+
+typedef struct unk_20888_s{
+    s16 unk0;
+    char unk4[0x1A];
+}unk20888s;
+
 

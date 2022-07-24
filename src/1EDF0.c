@@ -47,15 +47,44 @@ void func_800203C8(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800203D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020888.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020888.s")
+void func_80020888(void) {
+    unk20888s* var_v0;
+    s32 var_v1;
 
+    var_v0 = &D_8008C668;
+    var_v1 = 8;
+    while (var_v1 > 0){
+        
+        var_v0->unk0 = 0;
+        var_v0++;
+        var_v1--;
+    }
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800208B8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020988.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020B4C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D18.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D18.s")
+s32 func_80020D18(u8* arg0) {
+    s32 var_v1;
+    u8 temp_v0;
+    u8 val;
+
+    var_v1 = 0;
+    val = *arg0;
+    arg0 += 1;
+    if (val != 0) {
+        do {
+            temp_v0 = *arg0;
+            var_v1 += 1;
+            arg0 += 1;
+        } while (temp_v0 != 0);
+    }
+    return var_v1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D4C.s")
 
@@ -66,4 +95,8 @@ void func_80020E24(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020F8C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800210FC.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800210FC.s")
+void func_800210FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
+    func_80020E2C(arg0, arg5, arg6, arg3, arg4);
+    func_80020F8C(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+}

@@ -32,9 +32,14 @@ extern u16 D_80084F14;
 extern s32 D_80085370;
 extern s16 D_800859E2;
 extern f32 D_80086E44;
+extern unk20888s D_8008C668;
 extern s8 D_8008FCC1;
 extern u16 D_8008FCC2;
 extern s16 D_8008FCC4;
+extern u16 D_8008FD20;
+extern s8 D_8008FD22;
+extern s32 D_8008FD24;
+extern s16 D_8008FD30[];
 extern u8 D_8008D00D;
 extern u16 D_8008C592;
 extern unkShadows D_80085BD0[];
@@ -42,16 +47,15 @@ extern s32 D_800862D0;
 extern s32 D_8008F92C;
 extern s32 D_8008D090;
 extern OSMesgQueue D_8008F288;
-extern u16 D_8008FD20;
-extern s8 D_8008FD29;
 extern s16 gameMode;
 extern u16 D_8008FD0C;
-extern s8 D_8008FD22;
 extern u8 D_8008FD28;
 extern s8 D_8008FD29;
 extern s8 D_8008FD2A;
 extern s8 D_8008FD2B;
 extern s8 D_8008FD2C;
+
+extern s8 D_80092870;
 
 
 extern s32 currentTime;

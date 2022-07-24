@@ -69,6 +69,7 @@ ASM_PROCESSOR_DIR := $(TOOLS_DIR)/asm-processor
 
 ### Optimisation Overrides
 build/src/seqpgetstate.c.o: OPT_FLAGS := -O2 
+build/src/aigetlen.c.o: OPT_FLAGS := -O1
 ### Targets
 
 default: all

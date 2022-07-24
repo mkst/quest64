@@ -20,14 +20,15 @@ s32 func_80000704(s32 arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/1130/func_80000710.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1130/func_800007D4.s")
-void osScAddClient(unk7d4s2* arg0, unk7d4s* arg1, s32 arg2) {
-    s32 temp_a0;
+void osScAddClient(unk7d4s2* sc, unk7d4s* c, s32* msgQ) {
+    s32 mask;
 
-    temp_a0 = osSetIntMask(1);
-    arg1->unk4 = arg2;
-    arg1->unk0 = (void* ) arg0->unk668;
-    arg0->unk668 = arg1;
-    osSetIntMask(temp_a0);
+    mask = osSetIntMask(1);
+    c->unk4 = msgQ;
+    c->unk0 = sc->unk668;
+    sc->unk668 = c;
+	
+    osSetIntMask(mask);
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1130/func_80000824.s")
