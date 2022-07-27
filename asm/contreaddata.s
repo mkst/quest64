@@ -13,15 +13,15 @@ glabel osContStartReadData
 /* 3B818 8003AC18 AFA40020 */  sw         $a0, 0x20($sp)
 /* 3B81C 8003AC1C 0C011210 */  jal        __osSiGetAccess
 /* 3B820 8003AC20 AFA0001C */   sw        $zero, 0x1C($sp)
-/* 3B824 8003AC24 3C0E8009 */  lui        $t6, %hi(D_80095490)
-/* 3B828 8003AC28 91CE5490 */  lbu        $t6, %lo(D_80095490)($t6)
+/* 3B824 8003AC24 3C0E8009 */  lui        $t6, %hi(__osContLastCmd)
+/* 3B828 8003AC28 91CE5490 */  lbu        $t6, %lo(__osContLastCmd)($t6)
 /* 3B82C 8003AC2C 24010001 */  addiu      $at, $zero, 0x1
 /* 3B830 8003AC30 11C1000C */  beq        $t6, $at, .L8003AC64
 /* 3B834 8003AC34 00000000 */   nop
 /* 3B838 8003AC38 0C00EB51 */  jal        __osPackReadData
 /* 3B83C 8003AC3C 00000000 */   nop
-/* 3B840 8003AC40 3C058009 */  lui        $a1, %hi(D_80095450)
-/* 3B844 8003AC44 24A55450 */  addiu      $a1, $a1, %lo(D_80095450)
+/* 3B840 8003AC40 3C058009 */  lui        $a1, %hi(__osContPifRam)
+/* 3B844 8003AC44 24A55450 */  addiu      $a1, $a1, %lo(__osContPifRam)
 /* 3B848 8003AC48 0C011A54 */  jal        __osSiRawStartDma
 /* 3B84C 8003AC4C 24040001 */   addiu     $a0, $zero, 0x1
 /* 3B850 8003AC50 AFA2001C */  sw         $v0, 0x1C($sp)
@@ -30,15 +30,15 @@ glabel osContStartReadData
 /* 3B85C 8003AC5C 0C00D008 */  jal        osRecvMesg
 /* 3B860 8003AC60 24060001 */   addiu     $a2, $zero, 0x1
 .L8003AC64:
-/* 3B864 8003AC64 3C058009 */  lui        $a1, %hi(D_80095450)
-/* 3B868 8003AC68 24A55450 */  addiu      $a1, $a1, %lo(D_80095450)
+/* 3B864 8003AC64 3C058009 */  lui        $a1, %hi(__osContPifRam)
+/* 3B868 8003AC68 24A55450 */  addiu      $a1, $a1, %lo(__osContPifRam)
 /* 3B86C 8003AC6C 0C011A54 */  jal        __osSiRawStartDma
 /* 3B870 8003AC70 00002025 */   or        $a0, $zero, $zero
 /* 3B874 8003AC74 240F0001 */  addiu      $t7, $zero, 0x1
-/* 3B878 8003AC78 3C018009 */  lui        $at, %hi(D_80095490)
+/* 3B878 8003AC78 3C018009 */  lui        $at, %hi(__osContLastCmd)
 /* 3B87C 8003AC7C AFA2001C */  sw         $v0, 0x1C($sp)
 /* 3B880 8003AC80 0C011221 */  jal        __osSiRelAccess
-/* 3B884 8003AC84 A02F5490 */   sb        $t7, %lo(D_80095490)($at)
+/* 3B884 8003AC84 A02F5490 */   sb        $t7, %lo(__osContLastCmd)($at)
 /* 3B888 8003AC88 8FBF0014 */  lw         $ra, 0x14($sp)
 /* 3B88C 8003AC8C 8FA2001C */  lw         $v0, 0x1C($sp)
 /* 3B890 8003AC90 27BD0020 */  addiu      $sp, $sp, 0x20
@@ -46,11 +46,11 @@ glabel osContStartReadData
 /* 3B898 8003AC98 00000000 */   nop
 
 glabel osContGetReadData
-/* 3B89C 8003AC9C 3C0F8009 */  lui        $t7, %hi(D_80095491)
-/* 3B8A0 8003ACA0 91EF5491 */  lbu        $t7, %lo(D_80095491)($t7)
-/* 3B8A4 8003ACA4 3C0E8009 */  lui        $t6, %hi(D_80095450)
+/* 3B89C 8003AC9C 3C0F8009 */  lui        $t7, %hi(__osMaxControllers)
+/* 3B8A0 8003ACA0 91EF5491 */  lbu        $t7, %lo(__osMaxControllers)($t7)
+/* 3B8A4 8003ACA4 3C0E8009 */  lui        $t6, %hi(__osContPifRam)
 /* 3B8A8 8003ACA8 27BDFFF0 */  addiu      $sp, $sp, -0x10
-/* 3B8AC 8003ACAC 25CE5450 */  addiu      $t6, $t6, %lo(D_80095450)
+/* 3B8AC 8003ACAC 25CE5450 */  addiu      $t6, $t6, %lo(__osContPifRam)
 /* 3B8B0 8003ACB0 AFAE000C */  sw         $t6, 0xC($sp)
 /* 3B8B4 8003ACB4 19E00021 */  blez       $t7, .L8003AD3C
 /* 3B8B8 8003ACB8 AFA00000 */   sw        $zero, 0x0($sp)
@@ -78,8 +78,8 @@ glabel osContGetReadData
 /* 3B90C 8003AD0C A0880003 */  sb         $t0, 0x3($a0)
 .L8003AD10:
 /* 3B910 8003AD10 8FB80000 */  lw         $t8, 0x0($sp)
-/* 3B914 8003AD14 3C0B8009 */  lui        $t3, %hi(D_80095491)
-/* 3B918 8003AD18 916B5491 */  lbu        $t3, %lo(D_80095491)($t3)
+/* 3B914 8003AD14 3C0B8009 */  lui        $t3, %hi(__osMaxControllers)
+/* 3B918 8003AD18 916B5491 */  lbu        $t3, %lo(__osMaxControllers)($t3)
 /* 3B91C 8003AD1C 8FA9000C */  lw         $t1, 0xC($sp)
 /* 3B920 8003AD20 27190001 */  addiu      $t9, $t8, 0x1
 /* 3B924 8003AD24 032B082A */  slt        $at, $t9, $t3
@@ -94,23 +94,23 @@ glabel osContGetReadData
 
 glabel __osPackReadData
 /* 3B944 8003AD44 27BDFFF0 */  addiu      $sp, $sp, -0x10
-/* 3B948 8003AD48 3C0E8009 */  lui        $t6, %hi(D_80095450)
-/* 3B94C 8003AD4C 25CE5450 */  addiu      $t6, $t6, %lo(D_80095450)
+/* 3B948 8003AD48 3C0E8009 */  lui        $t6, %hi(__osContPifRam)
+/* 3B94C 8003AD4C 25CE5450 */  addiu      $t6, $t6, %lo(__osContPifRam)
 /* 3B950 8003AD50 AFAE000C */  sw         $t6, 0xC($sp)
 /* 3B954 8003AD54 AFA00000 */  sw         $zero, 0x0($sp)
 .L8003AD58:
 /* 3B958 8003AD58 8FAF0000 */  lw         $t7, 0x0($sp)
 /* 3B95C 8003AD5C 8FB90000 */  lw         $t9, 0x0($sp)
-/* 3B960 8003AD60 3C018009 */  lui        $at, %hi(D_80095450)
+/* 3B960 8003AD60 3C018009 */  lui        $at, %hi(__osContPifRam)
 /* 3B964 8003AD64 000FC080 */  sll        $t8, $t7, 2
 /* 3B968 8003AD68 00380821 */  addu       $at, $at, $t8
-/* 3B96C 8003AD6C AC205450 */  sw         $zero, %lo(D_80095450)($at)
+/* 3B96C 8003AD6C AC205450 */  sw         $zero, %lo(__osContPifRam)($at)
 /* 3B970 8003AD70 27280001 */  addiu      $t0, $t9, 0x1
 /* 3B974 8003AD74 2901000F */  slti       $at, $t0, 0xF
 /* 3B978 8003AD78 1420FFF7 */  bnez       $at, .L8003AD58
 /* 3B97C 8003AD7C AFA80000 */   sw        $t0, 0x0($sp)
-/* 3B980 8003AD80 3C198009 */  lui        $t9, %hi(D_80095491)
-/* 3B984 8003AD84 93395491 */  lbu        $t9, %lo(D_80095491)($t9)
+/* 3B980 8003AD80 3C198009 */  lui        $t9, %hi(__osMaxControllers)
+/* 3B984 8003AD84 93395491 */  lbu        $t9, %lo(__osMaxControllers)($t9)
 /* 3B988 8003AD88 24090001 */  addiu      $t1, $zero, 0x1
 /* 3B98C 8003AD8C 3C018009 */  lui        $at, %hi(D_8009548C)
 /* 3B990 8003AD90 240A00FF */  addiu      $t2, $zero, 0xFF
@@ -134,14 +134,14 @@ glabel __osPackReadData
 /* 3B9D4 8003ADD4 27A90004 */  addiu      $t1, $sp, 0x4
 /* 3B9D8 8003ADD8 8D210000 */  lw         $at, 0x0($t1)
 /* 3B9DC 8003ADDC 8FA8000C */  lw         $t0, 0xC($sp)
-/* 3B9E0 8003ADE0 3C188009 */  lui        $t8, %hi(D_80095491)
+/* 3B9E0 8003ADE0 3C188009 */  lui        $t8, %hi(__osMaxControllers)
 /* 3B9E4 8003ADE4 A9010000 */  swl        $at, 0x0($t0)
 /* 3B9E8 8003ADE8 B9010003 */  swr        $at, 0x3($t0)
 /* 3B9EC 8003ADEC 8D2B0004 */  lw         $t3, 0x4($t1)
 /* 3B9F0 8003ADF0 A90B0004 */  swl        $t3, 0x4($t0)
 /* 3B9F4 8003ADF4 B90B0007 */  swr        $t3, 0x7($t0)
 /* 3B9F8 8003ADF8 8FAE0000 */  lw         $t6, 0x0($sp)
-/* 3B9FC 8003ADFC 93185491 */  lbu        $t8, %lo(D_80095491)($t8)
+/* 3B9FC 8003ADFC 93185491 */  lbu        $t8, %lo(__osMaxControllers)($t8)
 /* 3BA00 8003AE00 8FAC000C */  lw         $t4, 0xC($sp)
 /* 3BA04 8003AE04 25CF0001 */  addiu      $t7, $t6, 0x1
 /* 3BA08 8003AE08 01F8082A */  slt        $at, $t7, $t8

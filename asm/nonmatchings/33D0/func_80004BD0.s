@@ -80,11 +80,11 @@ glabel func_80004BD0
 /* 58F4 80004CF4 A6180004 */   sh        $t8, 0x4($s0)
 /* 58F8 80004CF8 A6000000 */  sh         $zero, 0x0($s0)
 /* 58FC 80004CFC 94E80060 */  lhu        $t0, 0x60($a3)
-/* 5900 80004D00 3C058008 */  lui        $a1, %hi(D_80084EE8)
+/* 5900 80004D00 3C058008 */  lui        $a1, %hi(gNextSubmap)
 /* 5904 80004D04 2406001E */  addiu      $a2, $zero, 0x1E
 /* 5908 80004D08 3109FFFC */  andi       $t1, $t0, 0xFFFC
 /* 590C 80004D0C A4E90060 */  sh         $t1, 0x60($a3)
-/* 5910 80004D10 8CA54EE8 */  lw         $a1, %lo(D_80084EE8)($a1)
+/* 5910 80004D10 8CA54EE8 */  lw         $a1, %lo(gNextSubmap)($a1)
 /* 5914 80004D14 0C009A13 */  jal        func_8002684C
 /* 5918 80004D18 8C844EE4 */   lw        $a0, %lo(D_80084EE4)($a0)
 .L80004D1C:

@@ -463,10 +463,10 @@ glabel func_80002918
 
 glabel func_80002EA0
 /* 3AA0 80002EA0 3C068008 */  lui        $a2, %hi(D_80084EE4)
-/* 3AA4 80002EA4 3C078008 */  lui        $a3, %hi(D_80084EE8)
+/* 3AA4 80002EA4 3C078008 */  lui        $a3, %hi(gNextSubmap)
 /* 3AA8 80002EA8 3C088008 */  lui        $t0, %hi(D_80085368)
 /* 3AAC 80002EAC 25085368 */  addiu      $t0, $t0, %lo(D_80085368)
-/* 3AB0 80002EB0 24E74EE8 */  addiu      $a3, $a3, %lo(D_80084EE8)
+/* 3AB0 80002EB0 24E74EE8 */  addiu      $a3, $a3, %lo(gNextSubmap)
 /* 3AB4 80002EB4 24C64EE4 */  addiu      $a2, $a2, %lo(D_80084EE4)
 /* 3AB8 80002EB8 3C014248 */  lui        $at, (0x42480000 >> 16)
 /* 3ABC 80002EBC 3C0E8008 */  lui        $t6, %hi(D_8007BAC8)
@@ -1860,8 +1860,8 @@ glabel func_80004260
 /* 4F44 80004344 3C018008 */  lui        $at, %hi(D_8007B2F2)
 /* 4F48 80004348 2409001E */  addiu      $t1, $zero, 0x1E
 /* 4F4C 8000434C A429B2F2 */  sh         $t1, %lo(D_8007B2F2)($at)
-/* 4F50 80004350 3C0B8008 */  lui        $t3, %hi(D_80084EE8)
-/* 4F54 80004354 8D6B4EE8 */  lw         $t3, %lo(D_80084EE8)($t3)
+/* 4F50 80004350 3C0B8008 */  lui        $t3, %hi(gNextSubmap)
+/* 4F54 80004354 8D6B4EE8 */  lw         $t3, %lo(gNextSubmap)($t3)
 /* 4F58 80004358 3C018008 */  lui        $at, %hi(D_8007BA60)
 /* 4F5C 8000435C A42ABA60 */  sh         $t2, %lo(D_8007BA60)($at)
 /* 4F60 80004360 3C018008 */  lui        $at, %hi(D_8007BA62)
@@ -2533,11 +2533,11 @@ glabel func_80004BD0
 /* 58F4 80004CF4 A6180004 */   sh        $t8, 0x4($s0)
 /* 58F8 80004CF8 A6000000 */  sh         $zero, 0x0($s0)
 /* 58FC 80004CFC 94E80060 */  lhu        $t0, 0x60($a3)
-/* 5900 80004D00 3C058008 */  lui        $a1, %hi(D_80084EE8)
+/* 5900 80004D00 3C058008 */  lui        $a1, %hi(gNextSubmap)
 /* 5904 80004D04 2406001E */  addiu      $a2, $zero, 0x1E
 /* 5908 80004D08 3109FFFC */  andi       $t1, $t0, 0xFFFC
 /* 590C 80004D0C A4E90060 */  sh         $t1, 0x60($a3)
-/* 5910 80004D10 8CA54EE8 */  lw         $a1, %lo(D_80084EE8)($a1)
+/* 5910 80004D10 8CA54EE8 */  lw         $a1, %lo(gNextSubmap)($a1)
 /* 5914 80004D14 0C009A13 */  jal        func_8002684C
 /* 5918 80004D18 8C844EE4 */   lw        $a0, %lo(D_80084EE4)($a0)
 .L80004D1C:

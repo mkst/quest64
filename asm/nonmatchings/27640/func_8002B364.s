@@ -69,7 +69,7 @@ glabel func_8002B364
 /* 2C05C 8002B45C 8FA50074 */  lw         $a1, 0x74($sp)
 /* 2C060 8002B460 8FA40070 */  lw         $a0, 0x70($sp)
 /* 2C064 8002B464 24060000 */  addiu      $a2, $zero, 0x0
-/* 2C068 8002B468 0C00E6CE */  jal        func_80039B38
+/* 2C068 8002B468 0C00E6CE */  jal        __ull_div
 /* 2C06C 8002B46C 2407000A */   addiu     $a3, $zero, 0xA
 /* 2C070 8002B470 26310001 */  addiu      $s1, $s1, 0x1
 /* 2C074 8002B474 2A210009 */  slti       $at, $s1, 0x9

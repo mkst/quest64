@@ -38,7 +38,7 @@ glabel func_80039AFC
 /* 3A730 80039B30 03E00008 */  jr         $ra
 /* 3A734 80039B34 0002103F */   dsra32    $v0, $v0, 0
 
-glabel func_80039B38
+glabel __ull_div
 /* 3A738 80039B38 AFA40000 */  sw         $a0, 0x0($sp)
 /* 3A73C 80039B3C AFA50004 */  sw         $a1, 0x4($sp)
 /* 3A740 80039B40 AFA60008 */  sw         $a2, 0x8($sp)
@@ -114,7 +114,7 @@ glabel func_80039BDC
 /* 3A830 80039C30 03E00008 */  jr         $ra
 /* 3A834 80039C34 0002103F */   dsra32    $v0, $v0, 0
 
-glabel func_80039C38
+glabel __ll_mul
 /* 3A838 80039C38 AFA40000 */  sw         $a0, 0x0($sp)
 /* 3A83C 80039C3C AFA50004 */  sw         $a1, 0x4($sp)
 /* 3A840 80039C40 AFA60008 */  sw         $a2, 0x8($sp)

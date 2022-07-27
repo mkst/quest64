@@ -15,8 +15,8 @@ glabel func_80008BB0
 /* 97E4 80008BE4 A4430514 */  sh         $v1, 0x514($v0)
 /* 97E8 80008BE8 A44303EC */  sh         $v1, 0x3EC($v0)
 /* 97EC 80008BEC A44302C4 */  sh         $v1, 0x2C4($v0)
-/* 97F0 80008BF0 3C0E8008 */  lui        $t6, %hi(D_80084F10)
-/* 97F4 80008BF4 95CE4F10 */  lhu        $t6, %lo(D_80084F10)($t6)
+/* 97F0 80008BF0 3C0E8008 */  lui        $t6, %hi(gAllowBattles)
+/* 97F4 80008BF4 95CE4F10 */  lhu        $t6, %lo(gAllowBattles)($t6)
 /* 97F8 80008BF8 244204A0 */  addiu      $v0, $v0, 0x4A0
 /* 97FC 80008BFC 31CF0001 */  andi       $t7, $t6, 0x1
 /* 9800 80008C00 51E00004 */  beql       $t7, $zero, .L80008C14

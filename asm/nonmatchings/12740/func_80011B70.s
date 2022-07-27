@@ -24,8 +24,8 @@ glabel func_80011B70
 .L80011BC4:
 /* 127C4 80011BC4 1261004D */  beq        $s3, $at, .L80011CFC
 /* 127C8 80011BC8 3C048008 */   lui       $a0, %hi(D_800869A0)
-/* 127CC 80011BCC 3C188008 */  lui        $t8, %hi(D_80084EE8)
-/* 127D0 80011BD0 8F184EE8 */  lw         $t8, %lo(D_80084EE8)($t8)
+/* 127CC 80011BCC 3C188008 */  lui        $t8, %hi(gNextSubmap)
+/* 127D0 80011BD0 8F184EE8 */  lw         $t8, %lo(gNextSubmap)($t8)
 /* 127D4 80011BD4 8C4F0004 */  lw         $t7, 0x4($v0)
 /* 127D8 80011BD8 3C048008 */  lui        $a0, %hi(D_800869A0)
 /* 127DC 80011BDC 0018C8C0 */  sll        $t9, $t8, 3

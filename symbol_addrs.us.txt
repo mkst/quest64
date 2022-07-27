@@ -102,6 +102,8 @@ alSndpStop 				  = 0x80039960;
 alSndpSetPitch 			  = 0x800399b0;
 alSndpSetVol 			  = 0x80039a10;
 alSndpSetPan 			  = 0x80039a70;
+__ull_div                 = 0x80039b38;
+__ll_mul                  = 0x80039c38;
 osPfsInitPak              = 0x80039d90;
 
 osMotorStop               = 0x8003a000;
@@ -248,6 +250,7 @@ alSynStartVoiceParams     = 0x80044540;
 alSynSetPan               = 0x80044630;
 alSynSetFXMix             = 0x800446c0;
 alSynStartVoice           = 0x80044760;
+__osSiCreateAccessQueue	  = 0x800447f0;
 __osSiGetAccess           = 0x80044840;
 __osSiRelAccess           = 0x80044884;
 __osPfsGetStatus          = 0x800448b0;
@@ -258,6 +261,7 @@ __osIdCheckSum            = 0x80044b4c;
 __osRepairPackId          = 0x80044bb4;
 __osCheckPackId           = 0x80044fcc;
 
+__osGetId				  = 0x80045164;
 __osCheckId               = 0x800453c0;
 __osPfsRWInode            = 0x800454bc;
 __osPfsSelectBank         = 0x800457dc;
@@ -316,8 +320,23 @@ alSeqNew                  = 0x80049c78;
 alSynSetPriority          = 0x80049d50;
 ldiv                      = 0x80049e60;
 
+osClockRate               = 0x8006F400
+//__osPiTable               = 0x8006f43c; 
+
+__osContinitialized		  = 0x800709C0;
 gameMode                  = 0x8007b2e0;
+
+gNextSubmap				  = 0x80084ee8;
+gAllowBattles             = 0x80084f10;
+gMapData                  = 0x80084f18;
 
 currentTime               = 0x800859d0;
 dayLength				  = 0x800859d4;
 currentDay				  = 0x800859e0;
+
+__osContPifRam            = 0x80095450;
+__osContLastCmd           = 0x80095490;
+__osMaxControllers        = 0x80095491;
+__osEepromTimerQ          = 0x800954B8;
+__osEepromTimerMsg        = 0x800954D0;
+__osPfsPifRam             = 0x80095660;

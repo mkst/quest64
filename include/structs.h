@@ -1,6 +1,12 @@
 #ifndef _STRUCTS_H_
 #define _STRUCTS_H_
 
+typedef struct map_data_s{
+    char unk0[0x30];
+    s32 unk30;
+    s32 unk34;
+}sMapData; //Map Data Struct
+
 typedef struct unk_7d4_s{
     s32 unk0;
     s32 unk4;
@@ -161,3 +167,4 @@ typedef struct temp {
 } temp;
 
 #endif
+

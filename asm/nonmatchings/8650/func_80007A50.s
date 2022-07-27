@@ -1,8 +1,8 @@
 glabel func_80007A50
 /* 8650 80007A50 27BDFFE8 */  addiu      $sp, $sp, -0x18
 /* 8654 80007A54 AFBF0014 */  sw         $ra, 0x14($sp)
-/* 8658 80007A58 3C0E8008 */  lui        $t6, %hi(D_80084F10)
-/* 865C 80007A5C 95CE4F10 */  lhu        $t6, %lo(D_80084F10)($t6)
+/* 8658 80007A58 3C0E8008 */  lui        $t6, %hi(gAllowBattles)
+/* 865C 80007A5C 95CE4F10 */  lhu        $t6, %lo(gAllowBattles)($t6)
 /* 8660 80007A60 3C018008 */  lui        $at, %hi(D_8007BCE4)
 /* 8664 80007A64 AC20BCE4 */  sw         $zero, %lo(D_8007BCE4)($at)
 /* 8668 80007A68 31CF0001 */  andi       $t7, $t6, 0x1

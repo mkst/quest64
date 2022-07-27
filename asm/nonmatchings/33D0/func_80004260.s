@@ -59,8 +59,8 @@ glabel func_80004260
 /* 4F44 80004344 3C018008 */  lui        $at, %hi(D_8007B2F2)
 /* 4F48 80004348 2409001E */  addiu      $t1, $zero, 0x1E
 /* 4F4C 8000434C A429B2F2 */  sh         $t1, %lo(D_8007B2F2)($at)
-/* 4F50 80004350 3C0B8008 */  lui        $t3, %hi(D_80084EE8)
-/* 4F54 80004354 8D6B4EE8 */  lw         $t3, %lo(D_80084EE8)($t3)
+/* 4F50 80004350 3C0B8008 */  lui        $t3, %hi(gNextSubmap)
+/* 4F54 80004354 8D6B4EE8 */  lw         $t3, %lo(gNextSubmap)($t3)
 /* 4F58 80004358 3C018008 */  lui        $at, %hi(D_8007BA60)
 /* 4F5C 8000435C A42ABA60 */  sh         $t2, %lo(D_8007BA60)($at)
 /* 4F60 80004360 3C018008 */  lui        $at, %hi(D_8007BA62)

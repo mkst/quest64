@@ -6,11 +6,11 @@ glabel func_800074A0
 /* 80B0 800074B0 AFA50024 */  sw         $a1, 0x24($sp)
 /* 80B4 800074B4 3C0E8009 */  lui        $t6, %hi(D_8008C592)
 /* 80B8 800074B8 95CEC592 */  lhu        $t6, %lo(D_8008C592)($t6)
-/* 80BC 800074BC 3C188008 */  lui        $t8, %hi(D_80084F10)
+/* 80BC 800074BC 3C188008 */  lui        $t8, %hi(gAllowBattles)
 /* 80C0 800074C0 31CF0001 */  andi       $t7, $t6, 0x1
 /* 80C4 800074C4 55E00054 */  bnel       $t7, $zero, .L80007618
 /* 80C8 800074C8 8FAD0024 */   lw        $t5, 0x24($sp)
-/* 80CC 800074CC 97184F10 */  lhu        $t8, %lo(D_80084F10)($t8)
+/* 80CC 800074CC 97184F10 */  lhu        $t8, %lo(gAllowBattles)($t8)
 /* 80D0 800074D0 3C028008 */  lui        $v0, %hi(D_8007BC14)
 /* 80D4 800074D4 2442BC14 */  addiu      $v0, $v0, %lo(D_8007BC14)
 /* 80D8 800074D8 33190001 */  andi       $t9, $t8, 0x1

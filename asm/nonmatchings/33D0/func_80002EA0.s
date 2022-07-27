@@ -1,9 +1,9 @@
 glabel func_80002EA0
 /* 3AA0 80002EA0 3C068008 */  lui        $a2, %hi(D_80084EE4)
-/* 3AA4 80002EA4 3C078008 */  lui        $a3, %hi(D_80084EE8)
+/* 3AA4 80002EA4 3C078008 */  lui        $a3, %hi(gNextSubmap)
 /* 3AA8 80002EA8 3C088008 */  lui        $t0, %hi(D_80085368)
 /* 3AAC 80002EAC 25085368 */  addiu      $t0, $t0, %lo(D_80085368)
-/* 3AB0 80002EB0 24E74EE8 */  addiu      $a3, $a3, %lo(D_80084EE8)
+/* 3AB0 80002EB0 24E74EE8 */  addiu      $a3, $a3, %lo(gNextSubmap)
 /* 3AB4 80002EB4 24C64EE4 */  addiu      $a2, $a2, %lo(D_80084EE4)
 /* 3AB8 80002EB8 3C014248 */  lui        $at, (0x42480000 >> 16)
 /* 3ABC 80002EBC 3C0E8008 */  lui        $t6, %hi(D_8007BAC8)

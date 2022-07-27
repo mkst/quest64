@@ -2,6 +2,7 @@
 #define _VARIABLES_H_
 
 #include "structs.h"
+#include "controller.h"
 
 extern void* func_80024BEC;
 
@@ -10,6 +11,9 @@ extern s8 D_8005F010;
 extern s32 D_800539E4;
 extern u32 D_8005398C;
 extern s32 D_80053990;
+
+extern OSPiHandle *__osPiTable;
+extern u64 osClockRate;
 
 extern f32 D_80070F04;
 extern s16 D_8007B2E0;
@@ -46,7 +50,6 @@ extern s8 D_8008FD22;
 extern s32 D_8008FD24;
 extern temp D_8008FD30[];
 extern u8 D_8008D00D;
-extern u16 D_8008C592;
 extern unkShadows D_80085BD0[];
 extern s32 D_800862D0;
 extern s32 D_8008F92C;
@@ -59,8 +62,16 @@ extern s8 D_8008FD29;
 extern s8 D_8008FD2A;
 extern s8 D_8008FD2B;
 extern s8 D_8008FD2C;
+extern s32 D_8008C560;
+extern s32 D_8008C564;
+extern f32 D_8008C574;
+extern s16 D_8008C578;
+extern u16 D_8008C592;
 
 extern s8 D_80092870;
+extern OSPifRam __osPfsPifRam;
+extern u8 __osContLastCmd;
+
 
 
 extern s32 currentTime;
@@ -100,5 +111,10 @@ extern s32 D_80088428;
 extern s32 D_80088420;
 
 extern unk11170s D_800859E8[];
+
+extern s32 gNextSubmap;
+extern u16 gAllowBattles; 
+extern sMapData* gMapData;
+
 
 #endif

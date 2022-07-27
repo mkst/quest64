@@ -20,8 +20,8 @@ glabel func_8000DDB0
 /* E9F8 8000DDF8 F7B40028 */  sdc1       $f20, 0x28($sp)
 /* E9FC 8000DDFC AFA40100 */  sw         $a0, 0x100($sp)
 /* EA00 8000DE00 AFA60108 */  sw         $a2, 0x108($sp)
-/* EA04 8000DE04 3C0E8008 */  lui        $t6, %hi(D_80084F18)
-/* EA08 8000DE08 8DCE4F18 */  lw         $t6, %lo(D_80084F18)($t6)
+/* EA04 8000DE04 3C0E8008 */  lui        $t6, %hi(gMapData)
+/* EA08 8000DE08 8DCE4F18 */  lw         $t6, %lo(gMapData)($t6)
 /* EA0C 8000DE0C 8FAF0108 */  lw         $t7, 0x108($sp)
 /* EA10 8000DE10 00009825 */  or         $s3, $zero, $zero
 /* EA14 8000DE14 8DC30020 */  lw         $v1, 0x20($t6)

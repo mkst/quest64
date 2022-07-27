@@ -3,8 +3,8 @@ glabel func_8000BD10
 /* C914 8000BD14 AFB3002C */  sw         $s3, 0x2C($sp)
 /* C918 8000BD18 AFB10024 */  sw         $s1, 0x24($sp)
 /* C91C 8000BD1C 3C118008 */  lui        $s1, %hi(D_80084EE4)
-/* C920 8000BD20 3C138008 */  lui        $s3, %hi(D_80084F18)
-/* C924 8000BD24 26734F18 */  addiu      $s3, $s3, %lo(D_80084F18)
+/* C920 8000BD20 3C138008 */  lui        $s3, %hi(gMapData)
+/* C924 8000BD24 26734F18 */  addiu      $s3, $s3, %lo(gMapData)
 /* C928 8000BD28 26314EE4 */  addiu      $s1, $s1, %lo(D_80084EE4)
 /* C92C 8000BD2C AFBF0034 */  sw         $ra, 0x34($sp)
 /* C930 8000BD30 AFB40030 */  sw         $s4, 0x30($sp)
@@ -24,8 +24,8 @@ glabel func_8000BD10
 /* C968 8000BD68 AE780000 */   sw        $t8, 0x0($s3)
 /* C96C 8000BD6C 2401000B */  addiu      $at, $zero, 0xB
 /* C970 8000BD70 14410012 */  bne        $v0, $at, .L8000BDBC
-/* C974 8000BD74 3C198008 */   lui       $t9, %hi(D_80084EE8)
-/* C978 8000BD78 8F394EE8 */  lw         $t9, %lo(D_80084EE8)($t9)
+/* C974 8000BD74 3C198008 */   lui       $t9, %hi(gNextSubmap)
+/* C978 8000BD78 8F394EE8 */  lw         $t9, %lo(gNextSubmap)($t9)
 /* C97C 8000BD7C 24010002 */  addiu      $at, $zero, 0x2
 /* C980 8000BD80 3C038008 */  lui        $v1, %hi(D_80084EF0)
 /* C984 8000BD84 1721004B */  bne        $t9, $at, .L8000BEB4
@@ -211,9 +211,9 @@ glabel func_8000BD10
 /* CC2C 8000C02C A468FFFE */   sh        $t0, -0x2($v1)
 /* CC30 8000C030 3C098008 */  lui        $t1, %hi(D_80084EF0)
 /* CC34 8000C034 8D294EF0 */  lw         $t1, %lo(D_80084EF0)($t1)
-/* CC38 8000C038 3C018008 */  lui        $at, %hi(D_80084EE8)
+/* CC38 8000C038 3C018008 */  lui        $at, %hi(gNextSubmap)
 /* CC3C 8000C03C 3C128008 */  lui        $s2, %hi(D_80084F1C)
-/* CC40 8000C040 AC294EE8 */  sw         $t1, %lo(D_80084EE8)($at)
+/* CC40 8000C040 AC294EE8 */  sw         $t1, %lo(gNextSubmap)($at)
 /* CC44 8000C044 8E700000 */  lw         $s0, 0x0($s3)
 /* CC48 8000C048 00095880 */  sll        $t3, $t1, 2
 /* CC4C 8000C04C 01695823 */  subu       $t3, $t3, $t1
@@ -258,9 +258,9 @@ glabel func_8000BD10
 /* CCE8 8000C0E8 3C108006 */  lui        $s0, %hi(D_8005EFA8)
 /* CCEC 8000C0EC AC2F4F30 */  sw         $t7, %lo(D_80084F30)($at)
 /* CCF0 8000C0F0 944E0014 */  lhu        $t6, 0x14($v0)
-/* CCF4 8000C0F4 3C018008 */  lui        $at, %hi(D_80084F10)
+/* CCF4 8000C0F4 3C018008 */  lui        $at, %hi(gAllowBattles)
 /* CCF8 8000C0F8 2610EFA8 */  addiu      $s0, $s0, %lo(D_8005EFA8)
-/* CCFC 8000C0FC A42E4F10 */  sh         $t6, %lo(D_80084F10)($at)
+/* CCFC 8000C0FC A42E4F10 */  sh         $t6, %lo(gAllowBattles)($at)
 /* CD00 8000C100 8CC30000 */  lw         $v1, 0x0($a2)
 /* CD04 8000C104 3C018008 */  lui        $at, %hi(D_80084F12)
 /* CD08 8000C108 24060800 */  addiu      $a2, $zero, 0x800

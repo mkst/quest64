@@ -5,9 +5,9 @@ glabel func_8000B530
 /* C13C 8000B53C 3C018008 */  lui        $at, %hi(D_8007D1A0)
 /* C140 8000B540 3C03803B */  lui        $v1, %hi(D_803A9AD0)
 /* C144 8000B544 3C028008 */  lui        $v0, %hi(D_80084EE4)
-/* C148 8000B548 3C048008 */  lui        $a0, %hi(D_80084EE8)
+/* C148 8000B548 3C048008 */  lui        $a0, %hi(gNextSubmap)
 /* C14C 8000B54C AC20D1A0 */  sw         $zero, %lo(D_8007D1A0)($at)
-/* C150 8000B550 24844EE8 */  addiu      $a0, $a0, %lo(D_80084EE8)
+/* C150 8000B550 24844EE8 */  addiu      $a0, $a0, %lo(gNextSubmap)
 /* C154 8000B554 8C424EE4 */  lw         $v0, %lo(D_80084EE4)($v0)
 /* C158 8000B558 24639AD0 */  addiu      $v1, $v1, %lo(D_803A9AD0)
 /* C15C 8000B55C 00008025 */  or         $s0, $zero, $zero

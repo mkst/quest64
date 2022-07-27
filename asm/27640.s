@@ -1922,8 +1922,8 @@ glabel func_80028624
 /* 29264 80028664 3C0F8006 */  lui        $t7, %hi(D_8005F278)
 /* 29268 80028668 25E2F278 */  addiu      $v0, $t7, %lo(D_8005F278)
 /* 2926C 8002866C 3C058008 */  lui        $a1, %hi(D_80084EE4)
-/* 29270 80028670 3C088008 */  lui        $t0, %hi(D_80084EE8)
-/* 29274 80028674 25084EE8 */  addiu      $t0, $t0, %lo(D_80084EE8)
+/* 29270 80028670 3C088008 */  lui        $t0, %hi(gNextSubmap)
+/* 29274 80028674 25084EE8 */  addiu      $t0, $t0, %lo(gNextSubmap)
 /* 29278 80028678 8CA54EE4 */  lw         $a1, %lo(D_80084EE4)($a1)
 /* 2927C 8002867C 80430000 */  lb         $v1, 0x0($v0)
 /* 29280 80028680 2407FFFF */  addiu      $a3, $zero, -0x1
@@ -4439,7 +4439,7 @@ glabel func_8002AB64
 /* 2B848 8002AC48 8FA500C4 */  lw         $a1, 0xC4($sp)
 /* 2B84C 8002AC4C 8FA400C0 */  lw         $a0, 0xC0($sp)
 /* 2B850 8002AC50 24060000 */  addiu      $a2, $zero, 0x0
-/* 2B854 8002AC54 0C00E6CE */  jal        func_80039B38
+/* 2B854 8002AC54 0C00E6CE */  jal        __ull_div
 /* 2B858 8002AC58 2407000A */   addiu     $a3, $zero, 0xA
 /* 2B85C 8002AC5C 26100001 */  addiu      $s0, $s0, 0x1
 /* 2B860 8002AC60 2A010009 */  slti       $at, $s0, 0x9
@@ -4711,7 +4711,7 @@ glabel func_8002AF70
 /* 2BC54 8002B054 8FA500CC */  lw         $a1, 0xCC($sp)
 /* 2BC58 8002B058 8FA400C8 */  lw         $a0, 0xC8($sp)
 /* 2BC5C 8002B05C 24060000 */  addiu      $a2, $zero, 0x0
-/* 2BC60 8002B060 0C00E6CE */  jal        func_80039B38
+/* 2BC60 8002B060 0C00E6CE */  jal        __ull_div
 /* 2BC64 8002B064 2407000A */   addiu     $a3, $zero, 0xA
 /* 2BC68 8002B068 26100001 */  addiu      $s0, $s0, 0x1
 /* 2BC6C 8002B06C 2A010009 */  slti       $at, $s0, 0x9
@@ -4979,7 +4979,7 @@ glabel func_8002B364
 /* 2C05C 8002B45C 8FA50074 */  lw         $a1, 0x74($sp)
 /* 2C060 8002B460 8FA40070 */  lw         $a0, 0x70($sp)
 /* 2C064 8002B464 24060000 */  addiu      $a2, $zero, 0x0
-/* 2C068 8002B468 0C00E6CE */  jal        func_80039B38
+/* 2C068 8002B468 0C00E6CE */  jal        __ull_div
 /* 2C06C 8002B46C 2407000A */   addiu     $a3, $zero, 0xA
 /* 2C070 8002B470 26310001 */  addiu      $s1, $s1, 0x1
 /* 2C074 8002B474 2A210009 */  slti       $at, $s1, 0x9

@@ -15,12 +15,12 @@ glabel func_8001C560
 /* 1D194 8001C594 A420C578 */   sh        $zero, %lo(D_8008C578)($at)
 /* 1D198 8001C598 3C028008 */  lui        $v0, %hi(D_80084F18)
 /* 1D19C 8001C59C 8C424F18 */  lw         $v0, %lo(D_80084F18)($v0)
-/* 1D1A0 8001C5A0 3C048008 */  lui        $a0, %hi(D_80084EE8)
+/* 1D1A0 8001C5A0 3C048008 */  lui        $a0, %hi(gNextSubmap)
 /* 1D1A4 8001C5A4 3C018009 */  lui        $at, %hi(D_8008C560)
 /* 1D1A8 8001C5A8 8C430030 */  lw         $v1, 0x30($v0)
 /* 1D1AC 8001C5AC 1060000C */  beqz       $v1, .L8001C5E0
 /* 1D1B0 8001C5B0 00000000 */   nop
-/* 1D1B4 8001C5B4 8C844EE8 */  lw         $a0, %lo(D_80084EE8)($a0)
+/* 1D1B4 8001C5B4 8C844EE8 */  lw         $a0, %lo(gNextSubmap)($a0)
 /* 1D1B8 8001C5B8 3C018009 */  lui        $at, %hi(D_8008C560)
 /* 1D1BC 8001C5BC 000440C0 */  sll        $t0, $a0, 3
 /* 1D1C0 8001C5C0 00684821 */  addu       $t1, $v1, $t0

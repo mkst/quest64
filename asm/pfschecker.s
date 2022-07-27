@@ -19,7 +19,7 @@ glabel osPfsChecker
 /* 467D0 80045BD0 24010002 */  addiu      $at, $zero, 0x2
 /* 467D4 80045BD4 15C10004 */  bne        $t6, $at, .L80045BE8
 /* 467D8 80045BD8 00000000 */   nop
-/* 467DC 80045BDC 0C011459 */  jal        func_80045164
+/* 467DC 80045BDC 0C011459 */  jal        __osGetId
 /* 467E0 80045BE0 8FA40488 */   lw        $a0, 0x488($sp)
 /* 467E4 80045BE4 AFA20480 */  sw         $v0, 0x480($sp)
 .L80045BE8:

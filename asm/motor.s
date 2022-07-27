@@ -11,8 +11,8 @@ glabel osMotorStop
 /* 3AC00 8003A000 27BDFFB0 */  addiu      $sp, $sp, -0x50
 /* 3AC04 8003A004 AFA40050 */  sw         $a0, 0x50($sp)
 /* 3AC08 8003A008 8FAF0050 */  lw         $t7, 0x50($sp)
-/* 3AC0C 8003A00C 3C0E8009 */  lui        $t6, %hi(D_80095660)
-/* 3AC10 8003A010 25CE5660 */  addiu      $t6, $t6, %lo(D_80095660)
+/* 3AC0C 8003A00C 3C0E8009 */  lui        $t6, %hi(__osPfsPifRam)
+/* 3AC10 8003A010 25CE5660 */  addiu      $t6, $t6, %lo(__osPfsPifRam)
 /* 3AC14 8003A014 AFBF0014 */  sw         $ra, 0x14($sp)
 /* 3AC18 8003A018 AFAE0044 */  sw         $t6, 0x44($sp)
 /* 3AC1C 8003A01C 8DF80008 */  lw         $t8, 0x8($t7)
@@ -29,8 +29,8 @@ glabel osMotorStop
 /* 3AC44 8003A044 00000000 */   nop
 /* 3AC48 8003A048 8FAA0050 */  lw         $t2, 0x50($sp)
 /* 3AC4C 8003A04C 24090003 */  addiu      $t1, $zero, 0x3
-/* 3AC50 8003A050 3C018009 */  lui        $at, %hi(D_80095490)
-/* 3AC54 8003A054 A0295490 */  sb         $t1, %lo(D_80095490)($at)
+/* 3AC50 8003A050 3C018009 */  lui        $at, %hi(__osContLastCmd)
+/* 3AC54 8003A054 A0295490 */  sb         $t1, %lo(__osContLastCmd)($at)
 /* 3AC58 8003A058 8D4B0008 */  lw         $t3, 0x8($t2)
 /* 3AC5C 8003A05C 3C0D8009 */  lui        $t5, %hi(D_80095210)
 /* 3AC60 8003A060 25AD5210 */  addiu      $t5, $t5, %lo(D_80095210)
@@ -43,8 +43,8 @@ glabel osMotorStop
 /* 3AC7C 8003A07C 24060001 */  addiu      $a2, $zero, 0x1
 /* 3AC80 8003A080 0C00D008 */  jal        osRecvMesg
 /* 3AC84 8003A084 8DC40004 */   lw        $a0, 0x4($t6)
-/* 3AC88 8003A088 3C058009 */  lui        $a1, %hi(D_80095660)
-/* 3AC8C 8003A08C 24A55660 */  addiu      $a1, $a1, %lo(D_80095660)
+/* 3AC88 8003A088 3C058009 */  lui        $a1, %hi(__osPfsPifRam)
+/* 3AC8C 8003A08C 24A55660 */  addiu      $a1, $a1, %lo(__osPfsPifRam)
 /* 3AC90 8003A090 0C011A54 */  jal        __osSiRawStartDma
 /* 3AC94 8003A094 00002025 */   or        $a0, $zero, $zero
 /* 3AC98 8003A098 8FAF0050 */  lw         $t7, 0x50($sp)
@@ -54,8 +54,8 @@ glabel osMotorStop
 /* 3ACA8 8003A0A8 0C00D008 */  jal        osRecvMesg
 /* 3ACAC 8003A0AC 8DE40004 */   lw        $a0, 0x4($t7)
 /* 3ACB0 8003A0B0 8FB90050 */  lw         $t9, 0x50($sp)
-/* 3ACB4 8003A0B4 3C188009 */  lui        $t8, %hi(D_80095660)
-/* 3ACB8 8003A0B8 27185660 */  addiu      $t8, $t8, %lo(D_80095660)
+/* 3ACB4 8003A0B4 3C188009 */  lui        $t8, %hi(__osPfsPifRam)
+/* 3ACB8 8003A0B8 27185660 */  addiu      $t8, $t8, %lo(__osPfsPifRam)
 /* 3ACBC 8003A0BC AFB80044 */  sw         $t8, 0x44($sp)
 /* 3ACC0 8003A0C0 8F280008 */  lw         $t0, 0x8($t9)
 /* 3ACC4 8003A0C4 11000010 */  beqz       $t0, .L8003A108
@@ -123,8 +123,8 @@ glabel osMotorStart
 /* 3ADA0 8003A1A0 27BDFFB0 */  addiu      $sp, $sp, -0x50
 /* 3ADA4 8003A1A4 AFA40050 */  sw         $a0, 0x50($sp)
 /* 3ADA8 8003A1A8 8FAF0050 */  lw         $t7, 0x50($sp)
-/* 3ADAC 8003A1AC 3C0E8009 */  lui        $t6, %hi(D_80095660)
-/* 3ADB0 8003A1B0 25CE5660 */  addiu      $t6, $t6, %lo(D_80095660)
+/* 3ADAC 8003A1AC 3C0E8009 */  lui        $t6, %hi(__osPfsPifRam)
+/* 3ADB0 8003A1B0 25CE5660 */  addiu      $t6, $t6, %lo(__osPfsPifRam)
 /* 3ADB4 8003A1B4 AFBF0014 */  sw         $ra, 0x14($sp)
 /* 3ADB8 8003A1B8 AFAE0044 */  sw         $t6, 0x44($sp)
 /* 3ADBC 8003A1BC 8DF80008 */  lw         $t8, 0x8($t7)
@@ -141,8 +141,8 @@ glabel osMotorStart
 /* 3ADE4 8003A1E4 00000000 */   nop
 /* 3ADE8 8003A1E8 8FAA0050 */  lw         $t2, 0x50($sp)
 /* 3ADEC 8003A1EC 24090003 */  addiu      $t1, $zero, 0x3
-/* 3ADF0 8003A1F0 3C018009 */  lui        $at, %hi(D_80095490)
-/* 3ADF4 8003A1F4 A0295490 */  sb         $t1, %lo(D_80095490)($at)
+/* 3ADF0 8003A1F0 3C018009 */  lui        $at, %hi(__osContLastCmd)
+/* 3ADF4 8003A1F4 A0295490 */  sb         $t1, %lo(__osContLastCmd)($at)
 /* 3ADF8 8003A1F8 8D4B0008 */  lw         $t3, 0x8($t2)
 /* 3ADFC 8003A1FC 3C0D8009 */  lui        $t5, %hi(D_80095310)
 /* 3AE00 8003A200 25AD5310 */  addiu      $t5, $t5, %lo(D_80095310)
@@ -155,8 +155,8 @@ glabel osMotorStart
 /* 3AE1C 8003A21C 24060001 */  addiu      $a2, $zero, 0x1
 /* 3AE20 8003A220 0C00D008 */  jal        osRecvMesg
 /* 3AE24 8003A224 8DC40004 */   lw        $a0, 0x4($t6)
-/* 3AE28 8003A228 3C058009 */  lui        $a1, %hi(D_80095660)
-/* 3AE2C 8003A22C 24A55660 */  addiu      $a1, $a1, %lo(D_80095660)
+/* 3AE28 8003A228 3C058009 */  lui        $a1, %hi(__osPfsPifRam)
+/* 3AE2C 8003A22C 24A55660 */  addiu      $a1, $a1, %lo(__osPfsPifRam)
 /* 3AE30 8003A230 0C011A54 */  jal        __osSiRawStartDma
 /* 3AE34 8003A234 00002025 */   or        $a0, $zero, $zero
 /* 3AE38 8003A238 8FAF0050 */  lw         $t7, 0x50($sp)
@@ -166,8 +166,8 @@ glabel osMotorStart
 /* 3AE48 8003A248 0C00D008 */  jal        osRecvMesg
 /* 3AE4C 8003A24C 8DE40004 */   lw        $a0, 0x4($t7)
 /* 3AE50 8003A250 8FB90050 */  lw         $t9, 0x50($sp)
-/* 3AE54 8003A254 3C188009 */  lui        $t8, %hi(D_80095660)
-/* 3AE58 8003A258 27185660 */  addiu      $t8, $t8, %lo(D_80095660)
+/* 3AE54 8003A254 3C188009 */  lui        $t8, %hi(__osPfsPifRam)
+/* 3AE58 8003A258 27185660 */  addiu      $t8, $t8, %lo(__osPfsPifRam)
 /* 3AE5C 8003A25C AFB80044 */  sw         $t8, 0x44($sp)
 /* 3AE60 8003A260 8F280008 */  lw         $t0, 0x8($t9)
 /* 3AE64 8003A264 11000010 */  beqz       $t0, .L8003A2A8

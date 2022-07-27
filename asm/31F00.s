@@ -54,7 +54,7 @@ glabel func_80031300
 /* 31FA4 800313A4 3C058009 */  lui        $a1, %hi(D_80092A88)
 /* 31FA8 800313A8 24A52A88 */  addiu      $a1, $a1, %lo(D_80092A88)
 /* 31FAC 800313AC 24842880 */  addiu      $a0, $a0, %lo(D_80092880)
-/* 31FB0 800313B0 0C00E9F8 */  jal        osContInit
+/* 31FB0 800313B0 0C00E9F8 */  jal        func_8003a7e0
 /* 31FB4 800313B4 02003025 */   or        $a2, $s0, $zero
 /* 31FB8 800313B8 0C00EAE8 */  jal        osContSetCh
 /* 31FBC 800313BC 24040004 */   addiu     $a0, $zero, 0x4

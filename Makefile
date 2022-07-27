@@ -70,6 +70,20 @@ ASM_PROCESSOR_DIR := $(TOOLS_DIR)/asm-processor
 ### Optimisation Overrides
 build/src/seqpgetstate.c.o: OPT_FLAGS := -O2 
 build/src/aigetlen.c.o: OPT_FLAGS := -O1
+build/src/pfssearchfile.c.o: OPT_FLAGS := -O1
+build/src/pfsreadwritefile.c.o: OPT_FLAGS := -O1
+build/src/pfsfreeblocks.c.o: OPT_FLAGS := -O1
+build/src/pfsfilestate.c.o: OPT_FLAGS := -O1
+build/src/pfsdeletefile.c.o: OPT_FLAGS := -O1
+build/src/pfsallocatefile.c.o: OPT_FLAGS := -O1
+build/src/pfsnumfiles.c.o: OPT_FLAGS := -O1
+build/src/pfsgetstatus.c.o: OPT_FLAGS := -O1
+build/src/contpfs.c.o: OPT_FLAGS := -O1
+build/src/leodiskinit.c.o: OPT_FLAGS := -O1
+build/src/controller.c.o: OPT_FLAGS := -O1
+
+
+
 ### Targets
 
 default: all

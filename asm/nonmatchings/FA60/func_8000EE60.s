@@ -31,11 +31,11 @@ glabel func_8000EE60
 /* FAD4 8000EED4 E6460010 */   swc1      $f6, 0x10($s2)
 /* FAD8 8000EED8 3C028008 */  lui        $v0, %hi(D_80084F2C)
 /* FADC 8000EEDC 8C424F2C */  lw         $v0, %lo(D_80084F2C)($v0)
-/* FAE0 8000EEE0 3C188008 */  lui        $t8, %hi(D_80084EE8)
+/* FAE0 8000EEE0 3C188008 */  lui        $t8, %hi(gNextSubmap)
 /* FAE4 8000EEE4 02403825 */  or         $a3, $s2, $zero
 /* FAE8 8000EEE8 1040001E */  beqz       $v0, .L8000EF64
 /* FAEC 8000EEEC 00000000 */   nop
-/* FAF0 8000EEF0 8F184EE8 */  lw         $t8, %lo(D_80084EE8)($t8)
+/* FAF0 8000EEF0 8F184EE8 */  lw         $t8, %lo(gNextSubmap)($t8)
 /* FAF4 8000EEF4 4600A306 */  mov.s      $f12, $f20
 /* FAF8 8000EEF8 4600B386 */  mov.s      $f14, $f22
 /* FAFC 8000EEFC 0018C900 */  sll        $t9, $t8, 4
@@ -51,11 +51,11 @@ glabel func_8000EE60
 /* FB20 8000EF20 11000010 */  beqz       $t0, .L8000EF64
 /* FB24 8000EF24 3C028008 */   lui       $v0, %hi(D_80084F30)
 /* FB28 8000EF28 8C424F30 */  lw         $v0, %lo(D_80084F30)($v0)
-/* FB2C 8000EF2C 3C098008 */  lui        $t1, %hi(D_80084EE8)
+/* FB2C 8000EF2C 3C098008 */  lui        $t1, %hi(gNextSubmap)
 /* FB30 8000EF30 02403825 */  or         $a3, $s2, $zero
 /* FB34 8000EF34 1040000B */  beqz       $v0, .L8000EF64
 /* FB38 8000EF38 00000000 */   nop
-/* FB3C 8000EF3C 8D294EE8 */  lw         $t1, %lo(D_80084EE8)($t1)
+/* FB3C 8000EF3C 8D294EE8 */  lw         $t1, %lo(gNextSubmap)($t1)
 /* FB40 8000EF40 4600A306 */  mov.s      $f12, $f20
 /* FB44 8000EF44 4600B386 */  mov.s      $f14, $f22
 /* FB48 8000EF48 00095100 */  sll        $t2, $t1, 4
