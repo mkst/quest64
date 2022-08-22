@@ -1,6 +1,9 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/C120/func_8000B520.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/C120/func_8000B520.s")
+void func_8000B520(void) {
+    D_8007D19C = 0;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/C120/func_8000B530.s")
 

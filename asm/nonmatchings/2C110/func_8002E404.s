@@ -95,9 +95,9 @@ glabel func_8002E404
 /* 2F16C 8002E56C 14A0FFFB */  bnez       $a1, .L8002E55C
 /* 2F170 8002E570 A079FFFF */   sb        $t9, -0x1($v1)
 /* 2F174 8002E574 3C028009 */  lui        $v0, %hi(D_800903C8)
-/* 2F178 8002E578 3C038009 */  lui        $v1, %hi(D_8008CF78)
+/* 2F178 8002E578 3C038009 */  lui        $v1, %hi(gInventory)
 /* 2F17C 8002E57C 244203C8 */  addiu      $v0, $v0, %lo(D_800903C8)
-/* 2F180 8002E580 2463CF78 */  addiu      $v1, $v1, %lo(D_8008CF78)
+/* 2F180 8002E580 2463CF78 */  addiu      $v1, $v1, %lo(gInventory)
 /* 2F184 8002E584 24050097 */  addiu      $a1, $zero, 0x97
 .L8002E588:
 /* 2F188 8002E588 90490000 */  lbu        $t1, 0x0($v0)

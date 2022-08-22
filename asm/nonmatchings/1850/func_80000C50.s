@@ -103,7 +103,7 @@ glabel func_80000C50
 /* 19D8 80000DD8 00000000 */   nop
 /* 19DC 80000DDC 0C0009F4 */  jal        func_800027D0
 /* 19E0 80000DE0 00000000 */   nop
-/* 19E4 80000DE4 0C00845C */  jal        func_80021170
+/* 19E4 80000DE4 0C00845C */  jal        Inventory_Init
 /* 19E8 80000DE8 00000000 */   nop
 /* 19EC 80000DEC 0C004034 */  jal        func_800100D0
 /* 19F0 80000DF0 00000000 */   nop

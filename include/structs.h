@@ -166,5 +166,55 @@ typedef struct temp {
     s8 unk_01;
 } temp;
 
+typedef struct unk_213d8_s{
+    s16 unk0;
+    u16 unk2;
+    s16 unk4;
+    s16 unk6;
+    s16 unk8;
+    s16 unkA;
+} unk213d8s;
+
+typedef struct unk_232f4_s{
+    f32 unk0;
+    f32 unk4;
+}unk232f4s;
+
+typedef struct unk_23df4_s
+{
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    f32 unk28;
+}unk23df4s;
+
+typedef struct unk_23a08_s
+{
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    f32 unk20;
+    f32 unk24;
+    f32 unk28;
+    f32 unk2C;
+    f32 unk30;
+    f32 unk34;
+    f32 unk38;
+    f32 unk3C;
+}unk23a08s;
+
+
 #endif
 

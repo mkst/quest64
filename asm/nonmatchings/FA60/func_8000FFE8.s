@@ -1,7 +1,7 @@
 glabel func_8000FFE8
 /* 10BE8 8000FFE8 94820014 */  lhu        $v0, 0x14($a0)
-/* 10BEC 8000FFEC 3C068009 */  lui        $a2, %hi(D_8008CF78)
-/* 10BF0 8000FFF0 24C6CF78 */  addiu      $a2, $a2, %lo(D_8008CF78)
+/* 10BEC 8000FFEC 3C068009 */  lui        $a2, %hi(gInventory)
+/* 10BF0 8000FFF0 24C6CF78 */  addiu      $a2, $a2, %lo(gInventory)
 /* 10BF4 8000FFF4 304E0030 */  andi       $t6, $v0, 0x30
 /* 10BF8 8000FFF8 11C0001E */  beqz       $t6, .L80010074
 /* 10BFC 8000FFFC 24030001 */   addiu     $v1, $zero, 0x1

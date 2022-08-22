@@ -1,6 +1,6 @@
 osScAddClient             = 0x800007d4;
 
-
+Inventory_Init            = 0x80021170;
 
 osInitialize         	  = 0x80033850;
 osCreateThread       	  = 0x80033AE0;
@@ -333,6 +333,14 @@ gMapData                  = 0x80084f18;
 currentTime               = 0x800859d0;
 dayLength				  = 0x800859d4;
 currentDay				  = 0x800859e0;
+
+gInventoryScrollAmt       = 0x8008C760;
+gInvHighlightedItemIndex  = 0x8008c764;
+
+gVisibleInvItemIDs        = 0x8008C770;
+gInventory                = 0x8008CF78;
+
+gLastInvSlot              = 0x8008D00D;
 
 __osContPifRam            = 0x80095450;
 __osContLastCmd           = 0x80095490;

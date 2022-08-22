@@ -30,6 +30,8 @@ extern s16 D_8007BA60;
 extern u16 D_8007BA62;
 extern s16 D_8007BA64;
 extern s16 D_8007BABE;
+extern s8 D_8007D19C;
+
 
 extern u8 D_8008D00E;
 extern s32 D_80084EE4;
@@ -49,7 +51,7 @@ extern u16 D_8008FD20;
 extern s8 D_8008FD22;
 extern s32 D_8008FD24;
 extern temp D_8008FD30[];
-extern u8 D_8008D00D;
+extern u8 gLastInvSlot;
 extern unkShadows D_80085BD0[];
 extern s32 D_800862D0;
 extern s32 D_8008F92C;
@@ -92,7 +94,24 @@ extern unk2513cs2* D_800538E8;
 
 extern u16 D_80084EE0;
 extern unk222b4s* D_80084F1C;
-extern u8 D_8008CF78[150];
+
+//Inventory
+extern s32 gInventoryScrollAmt; 
+extern s32 gInvHighlightedItemIndex;
+extern u8 D_8008CF77;
+
+
+extern unk213d8s D_803A91F0[];
+extern void (*D_8004D490[])(s32, unk213d8s*, u8, s32);
+//Possibly amount the control stick is being pressed 
+//left or right to determine inventory scroll speed. 
+extern s32 D_8008C768; 
+//IDs of items visible in inventory. One per item no matter how many of it you have.  
+extern s8 gVisibleInvItemIDs[8]; 
+extern u8 gInventory[150];
+extern u8 D_803AAC20; //virt inventory palette
+extern u8 D_D3BE40; //phys inventory palette
+
 
 //screen dim/fade variables
 extern s16 D_8008D020;
@@ -115,6 +134,9 @@ extern unk11170s D_800859E8[];
 extern s32 gNextSubmap;
 extern u16 gAllowBattles; 
 extern sMapData* gMapData;
+
+extern f32 D_8008D030[4];
+
 
 
 #endif

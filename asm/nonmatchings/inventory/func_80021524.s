@@ -47,7 +47,7 @@ glabel func_80021524
 /* 221D8 800215D8 AC6E0004 */  sw         $t6, 0x4($v1)
 /* 221DC 800215DC 3C118009 */  lui        $s1, %hi(D_80092871)
 /* 221E0 800215E0 82312871 */  lb         $s1, %lo(D_80092871)($s1)
-/* 221E4 800215E4 3C0D8009 */  lui        $t5, %hi(D_8008C760)
+/* 221E4 800215E4 3C0D8009 */  lui        $t5, %hi(gInventoryScrollAmt)
 /* 221E8 800215E8 240A0008 */  addiu      $t2, $zero, 0x8
 /* 221EC 800215EC 2A210006 */  slti       $at, $s1, 0x6
 /* 221F0 800215F0 54200004 */  bnel       $at, $zero, .L80021604
@@ -62,9 +62,9 @@ glabel func_80021524
 /* 22210 80021610 26310005 */   addiu     $s1, $s1, 0x5
 /* 22214 80021614 00008825 */  or         $s1, $zero, $zero
 .L80021618:
-/* 22218 80021618 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
-/* 2221C 8002161C 3C0F8009 */  lui        $t7, %hi(D_8008CF78)
-/* 22220 80021620 25EFCF78 */  addiu      $t7, $t7, %lo(D_8008CF78)
+/* 22218 80021618 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
+/* 2221C 8002161C 3C0F8009 */  lui        $t7, %hi(gInventory)
+/* 22220 80021620 25EFCF78 */  addiu      $t7, $t7, %lo(gInventory)
 /* 22224 80021624 01AF2821 */  addu       $a1, $t5, $t7
 /* 22228 80021628 90B80000 */  lbu        $t8, 0x0($a1)
 /* 2222C 8002162C 240900FF */  addiu      $t1, $zero, 0xFF
@@ -100,35 +100,35 @@ glabel func_80021524
 /* 22298 80021698 14200022 */  bnez       $at, .L80021724
 /* 2229C 8002169C 01E01025 */   or        $v0, $t7, $zero
 /* 222A0 800216A0 AC800000 */  sw         $zero, 0x0($a0)
-/* 222A4 800216A4 3C188009 */  lui        $t8, %hi(D_8008C764)
-/* 222A8 800216A8 8F18C764 */  lw         $t8, %lo(D_8008C764)($t8)
-/* 222AC 800216AC 3C018009 */  lui        $at, %hi(D_8008C764)
+/* 222A4 800216A4 3C188009 */  lui        $t8, %hi(gInvHighlightedItemIndex)
+/* 222A8 800216A8 8F18C764 */  lw         $t8, %lo(gInvHighlightedItemIndex)($t8)
+/* 222AC 800216AC 3C018009 */  lui        $at, %hi(gInvHighlightedItemIndex)
 /* 222B0 800216B0 24060001 */  addiu      $a2, $zero, 0x1
 /* 222B4 800216B4 27190001 */  addiu      $t9, $t8, 0x1
-/* 222B8 800216B8 AC39C764 */  sw         $t9, %lo(D_8008C764)($at)
+/* 222B8 800216B8 AC39C764 */  sw         $t9, %lo(gInvHighlightedItemIndex)($at)
 /* 222BC 800216BC 0323082A */  slt        $at, $t9, $v1
 /* 222C0 800216C0 14200016 */  bnez       $at, .L8002171C
 /* 222C4 800216C4 246EFFFF */   addiu     $t6, $v1, -0x1
-/* 222C8 800216C8 3C018009 */  lui        $at, %hi(D_8008C764)
+/* 222C8 800216C8 3C018009 */  lui        $at, %hi(gInvHighlightedItemIndex)
 /* 222CC 800216CC 240F0096 */  addiu      $t7, $zero, 0x96
-/* 222D0 800216D0 AC2EC764 */  sw         $t6, %lo(D_8008C764)($at)
+/* 222D0 800216D0 AC2EC764 */  sw         $t6, %lo(gInvHighlightedItemIndex)($at)
 /* 222D4 800216D4 01E3C023 */  subu       $t8, $t7, $v1
 /* 222D8 800216D8 01B8082A */  slt        $at, $t5, $t8
 /* 222DC 800216DC 1020000F */  beqz       $at, .L8002171C
 /* 222E0 800216E0 25B90001 */   addiu     $t9, $t5, 0x1
-/* 222E4 800216E4 3C018009 */  lui        $at, %hi(D_8008C760)
-/* 222E8 800216E8 AC39C760 */  sw         $t9, %lo(D_8008C760)($at)
-/* 222EC 800216EC 3C0D8009 */  lui        $t5, %hi(D_8008C760)
-/* 222F0 800216F0 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
+/* 222E4 800216E4 3C018009 */  lui        $at, %hi(gInventoryScrollAmt)
+/* 222E8 800216E8 AC39C760 */  sw         $t9, %lo(gInventoryScrollAmt)($at)
+/* 222EC 800216EC 3C0D8009 */  lui        $t5, %hi(gInventoryScrollAmt)
+/* 222F0 800216F0 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
 /* 222F4 800216F4 3C0F8009 */  lui        $t7, %hi(D_8008CF77)
-/* 222F8 800216F8 3C018009 */  lui        $at, %hi(D_8008C760)
+/* 222F8 800216F8 3C018009 */  lui        $at, %hi(gInventoryScrollAmt)
 /* 222FC 800216FC 01A37021 */  addu       $t6, $t5, $v1
 /* 22300 80021700 01EE7821 */  addu       $t7, $t7, $t6
 /* 22304 80021704 91EFCF77 */  lbu        $t7, %lo(D_8008CF77)($t7)
 /* 22308 80021708 25B8FFFF */  addiu      $t8, $t5, -0x1
 /* 2230C 8002170C 152F0003 */  bne        $t1, $t7, .L8002171C
 /* 22310 80021710 00000000 */   nop
-/* 22314 80021714 AC38C760 */  sw         $t8, %lo(D_8008C760)($at)
+/* 22314 80021714 AC38C760 */  sw         $t8, %lo(gInventoryScrollAmt)($at)
 /* 22318 80021718 24C6FFFF */  addiu      $a2, $a2, -0x1
 .L8002171C:
 /* 2231C 8002171C 10000014 */  b          .L80021770
@@ -138,20 +138,20 @@ glabel func_80021524
 /* 22328 80021728 10200011 */  beqz       $at, .L80021770
 /* 2232C 8002172C 240C0008 */   addiu     $t4, $zero, 0x8
 /* 22330 80021730 AC800000 */  sw         $zero, 0x0($a0)
-/* 22334 80021734 3C198009 */  lui        $t9, %hi(D_8008C764)
-/* 22338 80021738 8F39C764 */  lw         $t9, %lo(D_8008C764)($t9)
-/* 2233C 8002173C 3C018009 */  lui        $at, %hi(D_8008C764)
+/* 22334 80021734 3C198009 */  lui        $t9, %hi(gInvHighlightedItemIndex)
+/* 22338 80021738 8F39C764 */  lw         $t9, %lo(gInvHighlightedItemIndex)($t9)
+/* 2233C 8002173C 3C018009 */  lui        $at, %hi(gInvHighlightedItemIndex)
 /* 22340 80021740 24060001 */  addiu      $a2, $zero, 0x1
 /* 22344 80021744 272EFFFF */  addiu      $t6, $t9, -0x1
 /* 22348 80021748 05C10009 */  bgez       $t6, .L80021770
-/* 2234C 8002174C AC2EC764 */   sw        $t6, %lo(D_8008C764)($at)
-/* 22350 80021750 3C018009 */  lui        $at, %hi(D_8008C764)
+/* 2234C 8002174C AC2EC764 */   sw        $t6, %lo(gInvHighlightedItemIndex)($at)
+/* 22350 80021750 3C018009 */  lui        $at, %hi(gInvHighlightedItemIndex)
 /* 22354 80021754 19A00005 */  blez       $t5, .L8002176C
-/* 22358 80021758 AC20C764 */   sw        $zero, %lo(D_8008C764)($at)
+/* 22358 80021758 AC20C764 */   sw        $zero, %lo(gInvHighlightedItemIndex)($at)
 /* 2235C 8002175C 25AFFFFF */  addiu      $t7, $t5, -0x1
-/* 22360 80021760 3C018009 */  lui        $at, %hi(D_8008C760)
+/* 22360 80021760 3C018009 */  lui        $at, %hi(gInventoryScrollAmt)
 /* 22364 80021764 10000002 */  b          .L80021770
-/* 22368 80021768 AC2FC760 */   sw        $t7, %lo(D_8008C760)($at)
+/* 22368 80021768 AC2FC760 */   sw        $t7, %lo(gInventoryScrollAmt)($at)
 .L8002176C:
 /* 2236C 8002176C 24C6FFFF */  addiu      $a2, $a2, -0x1
 .L80021770:
@@ -168,10 +168,10 @@ glabel func_80021524
 /* 22398 80021798 240A0008 */  addiu      $t2, $zero, 0x8
 /* 2239C 8002179C 8FA8013C */  lw         $t0, 0x13C($sp)
 .L800217A0:
-/* 223A0 800217A0 3C188009 */  lui        $t8, %hi(D_8008C760)
-/* 223A4 800217A4 8F18C760 */  lw         $t8, %lo(D_8008C760)($t8)
-/* 223A8 800217A8 3C198009 */  lui        $t9, %hi(D_8008CF78)
-/* 223AC 800217AC 2739CF78 */  addiu      $t9, $t9, %lo(D_8008CF78)
+/* 223A0 800217A0 3C188009 */  lui        $t8, %hi(gInventoryScrollAmt)
+/* 223A4 800217A4 8F18C760 */  lw         $t8, %lo(gInventoryScrollAmt)($t8)
+/* 223A8 800217A8 3C198009 */  lui        $t9, %hi(gInventory)
+/* 223AC 800217AC 2739CF78 */  addiu      $t9, $t9, %lo(gInventory)
 /* 223B0 800217B0 03192821 */  addu       $a1, $t8, $t9
 /* 223B4 800217B4 10000006 */  b          .L800217D0
 /* 223B8 800217B8 00A03825 */   or        $a3, $a1, $zero
@@ -182,9 +182,9 @@ glabel func_80021524
 /* 223C8 800217C8 00A03825 */  or         $a3, $a1, $zero
 /* 223CC 800217CC 240C0008 */  addiu      $t4, $zero, 0x8
 .L800217D0:
-/* 223D0 800217D0 3C038009 */  lui        $v1, %hi(D_8008C770)
+/* 223D0 800217D0 3C038009 */  lui        $v1, %hi(gVisibleInvItemIDs)
 /* 223D4 800217D4 27AD0114 */  addiu      $t5, $sp, 0x114
-/* 223D8 800217D8 2463C770 */  addiu      $v1, $v1, %lo(D_8008C770)
+/* 223D8 800217D8 2463C770 */  addiu      $v1, $v1, %lo(gVisibleInvItemIDs)
 .L800217DC:
 /* 223DC 800217DC 1100000B */  beqz       $t0, .L8002180C
 /* 223E0 800217E0 01001025 */   or        $v0, $t0, $zero
@@ -204,10 +204,10 @@ glabel func_80021524
 /* 22410 80021810 24630001 */   addiu     $v1, $v1, 0x1
 /* 22414 80021814 014CC023 */  subu       $t8, $t2, $t4
 /* 22418 80021818 A1B80000 */  sb         $t8, 0x0($t5)
-/* 2241C 8002181C 3C198009 */  lui        $t9, %hi(D_8008C760)
-/* 22420 80021820 8F39C760 */  lw         $t9, %lo(D_8008C760)($t9)
-/* 22424 80021824 3C0E8009 */  lui        $t6, %hi(D_8008CF78)
-/* 22428 80021828 25CECF78 */  addiu      $t6, $t6, %lo(D_8008CF78)
+/* 2241C 8002181C 3C198009 */  lui        $t9, %hi(gInventoryScrollAmt)
+/* 22420 80021820 8F39C760 */  lw         $t9, %lo(gInventoryScrollAmt)($t9)
+/* 22424 80021824 3C0E8009 */  lui        $t6, %hi(gInventory)
+/* 22428 80021828 25CECF78 */  addiu      $t6, $t6, %lo(gInventory)
 /* 2242C 8002182C 25AD0001 */  addiu      $t5, $t5, 0x1
 /* 22430 80021830 032E2821 */  addu       $a1, $t9, $t6
 .L80021834:
@@ -237,12 +237,12 @@ glabel func_80021524
 /* 22490 80021890 3C14E600 */  lui        $s4, (0xE6000000 >> 16)
 /* 22494 80021894 3C130700 */  lui        $s3, (0x7000000 >> 16)
 .L80021898:
-/* 22498 80021898 3C0E8009 */  lui        $t6, %hi(D_8008C770)
-/* 2249C 8002189C 91CEC770 */  lbu        $t6, %lo(D_8008C770)($t6)
-/* 224A0 800218A0 3C038009 */  lui        $v1, %hi(D_8008C770)
+/* 22498 80021898 3C0E8009 */  lui        $t6, %hi(gVisibleInvItemIDs)
+/* 2249C 8002189C 91CEC770 */  lbu        $t6, %lo(gVisibleInvItemIDs)($t6)
+/* 224A0 800218A0 3C038009 */  lui        $v1, %hi(gVisibleInvItemIDs)
 /* 224A4 800218A4 24020008 */  addiu      $v0, $zero, 0x8
 /* 224A8 800218A8 108E0007 */  beq        $a0, $t6, .L800218C8
-/* 224AC 800218AC 2463C770 */   addiu     $v1, $v1, %lo(D_8008C770)
+/* 224AC 800218AC 2463C770 */   addiu     $v1, $v1, %lo(gVisibleInvItemIDs)
 /* 224B0 800218B0 2442FFFF */  addiu      $v0, $v0, -0x1
 .L800218B4:
 /* 224B4 800218B4 10400004 */  beqz       $v0, .L800218C8
@@ -254,10 +254,10 @@ glabel func_80021524
 /* 224C8 800218C8 1440001E */  bnez       $v0, .L80021944
 /* 224CC 800218CC 240E0008 */   addiu     $t6, $zero, 0x8
 /* 224D0 800218D0 91A2FFFF */  lbu        $v0, -0x1($t5)
-/* 224D4 800218D4 3C018009 */  lui        $at, %hi(D_8008C770)
+/* 224D4 800218D4 3C018009 */  lui        $at, %hi(gVisibleInvItemIDs)
 /* 224D8 800218D8 3C0F00D4 */  lui        $t7, %hi(D_D3BE40)
 /* 224DC 800218DC 00220821 */  addu       $at, $at, $v0
-/* 224E0 800218E0 A028C770 */  sb         $t0, %lo(D_8008C770)($at)
+/* 224E0 800218E0 A028C770 */  sb         $t0, %lo(gVisibleInvItemIDs)($at)
 /* 224E4 800218E4 90F80000 */  lbu        $t8, 0x0($a3)
 /* 224E8 800218E8 25ADFFFF */  addiu      $t5, $t5, -0x1
 /* 224EC 800218EC AFBF0034 */  sw         $ra, 0x34($sp)
@@ -337,8 +337,8 @@ glabel func_80021524
 /* 2260C 80021A0C 3C19F200 */  lui        $t9, (0xF2000000 >> 16)
 /* 22610 80021A10 AC790000 */  sw         $t9, 0x0($v1)
 /* 22614 80021A14 AC6E0004 */  sw         $t6, 0x4($v1)
-/* 22618 80021A18 3C0F8009 */  lui        $t7, %hi(D_8008C764)
-/* 2261C 80021A1C 8DEFC764 */  lw         $t7, %lo(D_8008C764)($t7)
+/* 22618 80021A18 3C0F8009 */  lui        $t7, %hi(gInvHighlightedItemIndex)
+/* 2261C 80021A1C 8DEFC764 */  lw         $t7, %lo(gInvHighlightedItemIndex)($t7)
 /* 22620 80021A20 15FF0031 */  bne        $t7, $ra, .L80021AE8
 /* 22624 80021A24 00000000 */   nop
 /* 22628 80021A28 8D630000 */  lw         $v1, 0x0($t3)
@@ -475,8 +475,8 @@ glabel func_80021524
 /* 2282C 80021C2C 1501FF1A */  bne        $t0, $at, .L80021898
 /* 22830 80021C30 01002025 */   or        $a0, $t0, $zero
 .L80021C34:
-/* 22834 80021C34 3C118009 */  lui        $s1, %hi(D_8008C764)
-/* 22838 80021C38 8E31C764 */  lw         $s1, %lo(D_8008C764)($s1)
+/* 22834 80021C34 3C118009 */  lui        $s1, %hi(gInvHighlightedItemIndex)
+/* 22838 80021C38 8E31C764 */  lw         $s1, %lo(gInvHighlightedItemIndex)($s1)
 /* 2283C 80021C3C 3C048005 */  lui        $a0, %hi(D_8004D4A0)
 /* 22840 80021C40 9499D4A0 */  lhu        $t9, %lo(D_8004D4A0)($a0)
 /* 22844 80021C44 0011C100 */  sll        $t8, $s1, 4
@@ -564,7 +564,7 @@ glabel func_80021524
 /* 2298C 80021D8C AC730004 */  sw         $s3, 0x4($v1)
 /* 22990 80021D90 AC6C0000 */  sw         $t4, 0x0($v1)
 /* 22994 80021D94 8D630000 */  lw         $v1, 0x0($t3)
-/* 22998 80021D98 3C0D8009 */  lui        $t5, %hi(D_8008C760)
+/* 22998 80021D98 3C0D8009 */  lui        $t5, %hi(gInventoryScrollAmt)
 /* 2299C 80021D9C 00022343 */  sra        $a0, $v0, 13
 /* 229A0 80021DA0 246F0008 */  addiu      $t7, $v1, 0x8
 /* 229A4 80021DA4 AD6F0000 */  sw         $t7, 0x0($t3)
@@ -597,7 +597,7 @@ glabel func_80021524
 /* 22A10 80021E10 AD6E0000 */  sw         $t6, 0x0($t3)
 /* 22A14 80021E14 AC6F0004 */  sw         $t7, 0x4($v1)
 /* 22A18 80021E18 AC780000 */  sw         $t8, 0x0($v1)
-/* 22A1C 80021E1C 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
+/* 22A1C 80021E1C 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
 /* 22A20 80021E20 3C0EE423 */  lui        $t6, (0xE4234244 >> 16)
 /* 22A24 80021E24 35CE4244 */  ori        $t6, $t6, (0xE4234244 & 0xFFFF)
 /* 22A28 80021E28 11A0003A */  beqz       $t5, .L80021F14
@@ -657,8 +657,8 @@ glabel func_80021524
 /* 22B00 80021F00 3C0FB300 */  lui        $t7, (0xB3000000 >> 16)
 /* 22B04 80021F04 AC6F0000 */  sw         $t7, 0x0($v1)
 /* 22B08 80021F08 AC790004 */  sw         $t9, 0x4($v1)
-/* 22B0C 80021F0C 3C0D8009 */  lui        $t5, %hi(D_8008C760)
-/* 22B10 80021F10 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
+/* 22B0C 80021F0C 3C0D8009 */  lui        $t5, %hi(gInventoryScrollAmt)
+/* 22B10 80021F10 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
 .L80021F14:
 /* 22B14 80021F14 3C0E8009 */  lui        $t6, %hi(D_8008CF80)
 /* 22B18 80021F18 01CD7021 */  addu       $t6, $t6, $t5
@@ -732,30 +732,30 @@ glabel func_80021524
 /* 22C20 80022020 3C180600 */  lui        $t8, (0x6000000 >> 16)
 /* 22C24 80022024 AC780000 */  sw         $t8, 0x0($v1)
 /* 22C28 80022028 AC6F0004 */  sw         $t7, 0x4($v1)
-/* 22C2C 8002202C 3C198009 */  lui        $t9, %hi(D_8008C760)
-/* 22C30 80022030 3C0E8009 */  lui        $t6, %hi(D_8008C764)
-/* 22C34 80022034 8DCEC764 */  lw         $t6, %lo(D_8008C764)($t6)
-/* 22C38 80022038 8F39C760 */  lw         $t9, %lo(D_8008C760)($t9)
-/* 22C3C 8002203C 3C0F8009 */  lui        $t7, %hi(D_8008CF78)
+/* 22C2C 8002202C 3C198009 */  lui        $t9, %hi(gInventoryScrollAmt)
+/* 22C30 80022030 3C0E8009 */  lui        $t6, %hi(gInvHighlightedItemIndex)
+/* 22C34 80022034 8DCEC764 */  lw         $t6, %lo(gInvHighlightedItemIndex)($t6)
+/* 22C38 80022038 8F39C760 */  lw         $t9, %lo(gInventoryScrollAmt)($t9)
+/* 22C3C 8002203C 3C0F8009 */  lui        $t7, %hi(gInventory)
 /* 22C40 80022040 3C06803B */  lui        $a2, %hi(D_803A9954)
 /* 22C44 80022044 032EC021 */  addu       $t8, $t9, $t6
 /* 22C48 80022048 01F87821 */  addu       $t7, $t7, $t8
-/* 22C4C 8002204C 91EFCF78 */  lbu        $t7, %lo(D_8008CF78)($t7)
+/* 22C4C 8002204C 91EFCF78 */  lbu        $t7, %lo(gInventory)($t7)
 /* 22C50 80022050 24040077 */  addiu      $a0, $zero, 0x77
 /* 22C54 80022054 2405003E */  addiu      $a1, $zero, 0x3E
 /* 22C58 80022058 000FC880 */  sll        $t9, $t7, 2
 /* 22C5C 8002205C 00D93021 */  addu       $a2, $a2, $t9
 /* 22C60 80022060 0C00C3A8 */  jal        func_80030EA0
 /* 22C64 80022064 8CC69954 */   lw        $a2, %lo(D_803A9954)($a2)
-/* 22C68 80022068 3C0E8009 */  lui        $t6, %hi(D_8008C760)
-/* 22C6C 8002206C 3C188009 */  lui        $t8, %hi(D_8008C764)
-/* 22C70 80022070 8F18C764 */  lw         $t8, %lo(D_8008C764)($t8)
-/* 22C74 80022074 8DCEC760 */  lw         $t6, %lo(D_8008C760)($t6)
-/* 22C78 80022078 3C198009 */  lui        $t9, %hi(D_8008CF78)
+/* 22C68 80022068 3C0E8009 */  lui        $t6, %hi(gInventoryScrollAmt)
+/* 22C6C 8002206C 3C188009 */  lui        $t8, %hi(gInvHighlightedItemIndex)
+/* 22C70 80022070 8F18C764 */  lw         $t8, %lo(gInvHighlightedItemIndex)($t8)
+/* 22C74 80022074 8DCEC760 */  lw         $t6, %lo(gInventoryScrollAmt)($t6)
+/* 22C78 80022078 3C198009 */  lui        $t9, %hi(gInventory)
 /* 22C7C 8002207C 3C06803B */  lui        $a2, %hi(D_803A99D4)
 /* 22C80 80022080 01D87821 */  addu       $t7, $t6, $t8
 /* 22C84 80022084 032FC821 */  addu       $t9, $t9, $t7
-/* 22C88 80022088 9339CF78 */  lbu        $t9, %lo(D_8008CF78)($t9)
+/* 22C88 80022088 9339CF78 */  lbu        $t9, %lo(gInventory)($t9)
 /* 22C8C 8002208C 2404004E */  addiu      $a0, $zero, 0x4E
 /* 22C90 80022090 24050050 */  addiu      $a1, $zero, 0x50
 /* 22C94 80022094 00197080 */  sll        $t6, $t9, 2
@@ -764,27 +764,27 @@ glabel func_80021524
 /* 22CA0 800220A0 8CC699D4 */   lw        $a2, %lo(D_803A99D4)($a2)
 /* 22CA4 800220A4 3C188009 */  lui        $t8, %hi(D_80092876)
 /* 22CA8 800220A8 97182876 */  lhu        $t8, %lo(D_80092876)($t8)
-/* 22CAC 800220AC 3C198009 */  lui        $t9, %hi(D_8008C760)
-/* 22CB0 800220B0 3C0E8009 */  lui        $t6, %hi(D_8008C764)
+/* 22CAC 800220AC 3C198009 */  lui        $t9, %hi(gInventoryScrollAmt)
+/* 22CB0 800220B0 3C0E8009 */  lui        $t6, %hi(gInvHighlightedItemIndex)
 /* 22CB4 800220B4 330FA000 */  andi       $t7, $t8, 0xA000
 /* 22CB8 800220B8 11E00056 */  beqz       $t7, .L80022214
 /* 22CBC 800220BC 00000000 */   nop
-/* 22CC0 800220C0 8F39C760 */  lw         $t9, %lo(D_8008C760)($t9)
-/* 22CC4 800220C4 8DCEC764 */  lw         $t6, %lo(D_8008C764)($t6)
-/* 22CC8 800220C8 3C048009 */  lui        $a0, %hi(D_8008CF78)
+/* 22CC0 800220C0 8F39C760 */  lw         $t9, %lo(gInventoryScrollAmt)($t9)
+/* 22CC4 800220C4 8DCEC764 */  lw         $t6, %lo(gInvHighlightedItemIndex)($t6)
+/* 22CC8 800220C8 3C048009 */  lui        $a0, %hi(gInventory)
 /* 22CCC 800220CC 032EC021 */  addu       $t8, $t9, $t6
 /* 22CD0 800220D0 00982021 */  addu       $a0, $a0, $t8
 /* 22CD4 800220D4 0C0084B9 */  jal        func_800212E4
-/* 22CD8 800220D8 9084CF78 */   lbu       $a0, %lo(D_8008CF78)($a0)
+/* 22CD8 800220D8 9084CF78 */   lbu       $a0, %lo(gInventory)($a0)
 /* 22CDC 800220DC 1040004D */  beqz       $v0, .L80022214
-/* 22CE0 800220E0 3C0D8009 */   lui       $t5, %hi(D_8008C760)
-/* 22CE4 800220E4 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
-/* 22CE8 800220E8 3C028009 */  lui        $v0, %hi(D_8008C764)
-/* 22CEC 800220EC 8C42C764 */  lw         $v0, %lo(D_8008C764)($v0)
+/* 22CE0 800220E0 3C0D8009 */   lui       $t5, %hi(gInventoryScrollAmt)
+/* 22CE4 800220E4 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
+/* 22CE8 800220E8 3C028009 */  lui        $v0, %hi(gInvHighlightedItemIndex)
+/* 22CEC 800220EC 8C42C764 */  lw         $v0, %lo(gInvHighlightedItemIndex)($v0)
 /* 22CF0 800220F0 000D7023 */  negu       $t6, $t5
-/* 22CF4 800220F4 3C198009 */  lui        $t9, %hi(D_8008CF78)
+/* 22CF4 800220F4 3C198009 */  lui        $t9, %hi(gInventory)
 /* 22CF8 800220F8 01C26023 */  subu       $t4, $t6, $v0
-/* 22CFC 800220FC 2739CF78 */  addiu      $t9, $t9, %lo(D_8008CF78)
+/* 22CFC 800220FC 2739CF78 */  addiu      $t9, $t9, %lo(gInventory)
 /* 22D00 80022100 258C0095 */  addiu      $t4, $t4, 0x95
 /* 22D04 80022104 01A27821 */  addu       $t7, $t5, $v0
 /* 22D08 80022108 11800017 */  beqz       $t4, .L80022168
@@ -827,12 +827,12 @@ glabel func_80021524
 /* 22D90 80022190 24040006 */  addiu      $a0, $zero, 0x6
 /* 22D94 80022194 0C008AC2 */  jal        func_80022B08
 /* 22D98 80022198 24050004 */   addiu     $a1, $zero, 0x4
-/* 22D9C 8002219C 3C0D8009 */  lui        $t5, %hi(D_8008C760)
-/* 22DA0 800221A0 8DADC760 */  lw         $t5, %lo(D_8008C760)($t5)
-/* 22DA4 800221A4 3C028009 */  lui        $v0, %hi(D_8008C764)
-/* 22DA8 800221A8 8C42C764 */  lw         $v0, %lo(D_8008C764)($v0)
-/* 22DAC 800221AC 3C188009 */  lui        $t8, %hi(D_8008CF78)
-/* 22DB0 800221B0 2718CF78 */  addiu      $t8, $t8, %lo(D_8008CF78)
+/* 22D9C 8002219C 3C0D8009 */  lui        $t5, %hi(gInventoryScrollAmt)
+/* 22DA0 800221A0 8DADC760 */  lw         $t5, %lo(gInventoryScrollAmt)($t5)
+/* 22DA4 800221A4 3C028009 */  lui        $v0, %hi(gInvHighlightedItemIndex)
+/* 22DA8 800221A8 8C42C764 */  lw         $v0, %lo(gInvHighlightedItemIndex)($v0)
+/* 22DAC 800221AC 3C188009 */  lui        $t8, %hi(gInventory)
+/* 22DB0 800221B0 2718CF78 */  addiu      $t8, $t8, %lo(gInventory)
 /* 22DB4 800221B4 01B82821 */  addu       $a1, $t5, $t8
 /* 22DB8 800221B8 00A27821 */  addu       $t7, $a1, $v0
 /* 22DBC 800221BC 91F90000 */  lbu        $t9, 0x0($t7)
@@ -841,15 +841,15 @@ glabel func_80021524
 /* 22DC8 800221C8 90AF0007 */   lbu       $t7, 0x7($a1)
 /* 22DCC 800221CC 19A00004 */  blez       $t5, .L800221E0
 /* 22DD0 800221D0 25AEFFFF */   addiu     $t6, $t5, -0x1
-/* 22DD4 800221D4 3C018009 */  lui        $at, %hi(D_8008C760)
+/* 22DD4 800221D4 3C018009 */  lui        $at, %hi(gInventoryScrollAmt)
 /* 22DD8 800221D8 1000000E */  b          .L80022214
-/* 22DDC 800221DC AC2EC760 */   sw        $t6, %lo(D_8008C760)($at)
+/* 22DDC 800221DC AC2EC760 */   sw        $t6, %lo(gInventoryScrollAmt)($at)
 .L800221E0:
 /* 22DE0 800221E0 1840000C */  blez       $v0, .L80022214
 /* 22DE4 800221E4 2458FFFF */   addiu     $t8, $v0, -0x1
-/* 22DE8 800221E8 3C018009 */  lui        $at, %hi(D_8008C764)
+/* 22DE8 800221E8 3C018009 */  lui        $at, %hi(gInvHighlightedItemIndex)
 /* 22DEC 800221EC 10000009 */  b          .L80022214
-/* 22DF0 800221F0 AC38C764 */   sw        $t8, %lo(D_8008C764)($at)
+/* 22DF0 800221F0 AC38C764 */   sw        $t8, %lo(gInvHighlightedItemIndex)($at)
 /* 22DF4 800221F4 90AF0007 */  lbu        $t7, 0x7($a1)
 .L800221F8:
 /* 22DF8 800221F8 240100FF */  addiu      $at, $zero, 0xFF
@@ -857,8 +857,8 @@ glabel func_80021524
 /* 22E00 80022200 00000000 */   nop
 /* 22E04 80022204 19A00003 */  blez       $t5, .L80022214
 /* 22E08 80022208 25B9FFFF */   addiu     $t9, $t5, -0x1
-/* 22E0C 8002220C 3C018009 */  lui        $at, %hi(D_8008C760)
-/* 22E10 80022210 AC39C760 */  sw         $t9, %lo(D_8008C760)($at)
+/* 22E0C 8002220C 3C018009 */  lui        $at, %hi(gInventoryScrollAmt)
+/* 22E10 80022210 AC39C760 */  sw         $t9, %lo(gInventoryScrollAmt)($at)
 .L80022214:
 /* 22E14 80022214 3C0E8005 */  lui        $t6, %hi(D_8004D4A0)
 /* 22E18 80022218 95CED4A0 */  lhu        $t6, %lo(D_8004D4A0)($t6)
