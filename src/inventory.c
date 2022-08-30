@@ -69,8 +69,8 @@ s32 func_80021214(void) {
     goto loop_1;
   }
   return i;
-}
-*/
+}*/
+
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/inventory/func_800212A0.s")
 void func_800212A0(u8 arg0) {

@@ -3,15 +3,59 @@
 //TOTALLY NOT SRAND...RENAME THIS
 
 void func_80023A08(unk23a08s*, f32, f32, f32);       /* extern */
+f32 func_80023028(f32);                             /* extern */
 
 
-#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80022FD0.s")
+
+//#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80022FD0.s")
+u32 func_80022FD0(u32 arg0)
+{
+  u32 temp_t8;
+  if (arg0 != 0)
+  {
+    return ((u32) ((D_8004D748 = (D_8004D748 * 0x41C64E6D) + 0x3039) >> 0x10)) % arg0;
+  }
+  return 0U;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023028.s")
 
+
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_800231B0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023210.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023210.s")
+f32 func_80023210(f32 arg0, f32 arg1)
+{
+  f32 var_f2;
+  if (arg1 == 0.0f)
+  {
+    if (arg0 >= 0.0f)
+    {
+      var_f2 = (f32) D_800716E0;
+    }
+    else
+    {
+      var_f2 = (f32) D_800716E8;
+    }
+  }
+  else
+    if (arg1 > 0.0f)
+  {
+    var_f2 = func_80023028(arg0 / arg1);
+  }
+  else
+    if ((arg1 < 0.0f) && (arg0 <= 0.0f))
+  {
+    var_f2 = (f32) (((f64) func_80023028(arg0 / arg1)) - D_800716F0);
+  }
+  else
+  {
+    var_f2 = ((f64) func_80023028(arg0 / arg1)) + D_800716F8;
+
+
+  }
+  return var_f2;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_800232F4.s")
 
@@ -51,11 +95,13 @@ void func_80023570(unk23a08s *arg0, f32 arg1, f32 arg2, f32 arg3)
   arg0->unk3C = 1.0f;
 }
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_800236CC.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_800236CC.s")
+/*
 void func_800236CC(Mtx* arg0, f32 arg1, f32 arg2, f32 arg3) {
     func_80023570(&D_8008D030, arg1, arg2, arg3);
     guMtxF2L((f32 (*)[4]) &D_8008D030, arg0);
 }
+*/
 
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_8002371C.s")
 
@@ -63,7 +109,12 @@ void func_800236CC(Mtx* arg0, f32 arg1, f32 arg2, f32 arg3) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_800238E4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023974.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023974.s")
+void func_80023974(unk23974s* arg0, f32 arg1, f32 arg2, f32 arg3, f32* arg4, f32* arg5, f32* arg6) {
+    *arg4 = (arg0->unk20 * arg3) + ((arg0->unk0 * arg1) + (arg0->unk10 * arg2));
+    *arg5 = (arg0->unk24 * arg3) + ((arg0->unk4 * arg1) + (arg0->unk14 * arg2));
+    *arg6 = -((arg0->unk28 * arg3) + ((arg0->unk8 * arg1) + (arg0->unk18 * arg2)));
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023A08.s")
 /*void func_80023A08(unk23a08s *arg0, f32 arg1, f32 arg2, f32 arg3)
@@ -117,11 +168,15 @@ void func_800236CC(Mtx* arg0, f32 arg1, f32 arg2, f32 arg3) {
   arg0->unk3C = 1.0f;
 }
 */
-//#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023BCC.s")
+
+#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023BCC.s")
+/*
 void func_80023BCC(Mtx* arg0, f32 arg1, f32 arg2, f32 arg3) {
     func_80023A08((unk23a08s*)&D_8008D030, arg1, arg2, arg3);
     guMtxF2L((f32 (*)[4]) D_8008D030, arg0);
 }
+*/
+
 #pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023C1C.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/srand/func_80023DF4.s")

@@ -5,6 +5,8 @@ expected/
 junk/
 __pycache__/
 tools/
+nonmatchings/
+decomp-permuter/
 
 # files
 *.ld

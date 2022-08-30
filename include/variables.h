@@ -4,6 +4,15 @@
 #include "structs.h"
 #include "controller.h"
 
+
+extern unkdb38s D_80084E60; //Door animation data
+extern s32 D_8007D2D0;
+extern unke3c4s D_80084180;
+extern unke3c4s D_80084098;
+extern f64 D_80071240;
+extern s32 D_8007B2F4;
+extern s32 D_8007D2D4;
+
 extern void* func_80024BEC;
 
 extern s8 D_80053CA4;
@@ -135,8 +144,14 @@ extern s32 gNextSubmap;
 extern u16 gAllowBattles; 
 extern sMapData* gMapData;
 
-extern f32 D_8008D030[4];
-
+extern MtxF D_8008D030;
+extern u32 D_8004D748;
+extern f64 D_800716D0;
+extern f64 D_800716D8;
+extern f64 D_800716E0;
+extern f64 D_800716E8;
+extern f64 D_800716F0;
+extern f64 D_800716F8;
 
 
 #endif
