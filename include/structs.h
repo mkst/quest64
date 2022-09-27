@@ -285,5 +285,28 @@ typedef struct unk_1d8b0_s
     u16 unk60;
 }unk1d8b0s;
 
+typedef struct Message
+{
+/*0x00*/    s32 unk0; //textbox state? 
+/*0x04*/    s16 xpos; //textbox xpos
+/*0x06*/    s16 ypos; //textbox ypos
+/*0x08*/    s16 width; //width
+/*0x0A*/    s16 height; //height
+/*0x0C*/    s16 quillTimer; //quill position timer
+/*0x0E*/    u8 unkE;
+/*0x0F*/    s8 unkF;
+/*0x10*/    s8 unk10;
+/*0x11*/    s8 unk11;
+/*0x12*/    s16 unk12;
+/*0x14*/    s8 unk14;
+/*0x15*/    s8 unk15;
+/*0x16*/    s8 unk16;
+/*0x17*/    char unk17[0x21];
+/*0x38*/    s16 unk38;
+/*0x3A*/    s16 unk3A;
+/*0x3C*/    char unk3C[0x860];
+} Message; // size = 0x89C
+
+
 #endif
 

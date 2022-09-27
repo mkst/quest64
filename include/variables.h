@@ -145,13 +145,24 @@ extern u16 gAllowBattles;
 extern sMapData* gMapData;
 
 extern MtxF D_8008D030;
-extern u32 D_8004D748;
+extern u32 D_8004D748; //possibly RNG seed
 extern f64 D_800716D0;
 extern f64 D_800716D8;
 extern f64 D_800716E0;
 extern f64 D_800716E8;
 extern f64 D_800716F0;
 extern f64 D_800716F8;
+extern f32 D_80086E88[4];
+extern f32 D_80086ECC;
+extern f32 D_80086ED4;
+
+extern Message D_800905E0[];
+
+//joystick stuff?
+extern u8 D_80092850;
+extern u16 D_80092852;
+extern s8 D_80092871;
+extern s8 D_80092872;
 
 
 #endif
