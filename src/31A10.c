@@ -1,6 +1,15 @@
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/31A10/func_80030E10.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/31A10/func_80030E10.s")
+void func_80030E10(u8 *arg0, u8 *arg1)
+{
+    s32 i;
+
+    for(i = 0; arg1[i] != 0xFF; i++) {
+        arg0[i] = arg1[i];
+    }
+    arg0[i] = 0xFF;
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/31A10/func_80030E58.s")
 void func_80030E58(void) {

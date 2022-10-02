@@ -307,6 +307,62 @@ typedef struct Message
 /*0x3C*/    char unk3C[0x860];
 } Message; // size = 0x89C
 
+typedef struct player_Action_s
+{
+   /*0x00*/ s16 unk0;
+   /*0x02*/ s16 unk2; //pad? 
+   /*0x04*/ s16 dustTimer;
+   /*0x06*/ s16 doorSide;
+   /*0x08*/ u16 unk8;
+   /*0x0A*/ s16 unkA; //unconfirmed type
+   /*0x0C*/ s32 unkC; //unconfirmed type
+   /*0x10*/ void* unk10; //pointer to beginning of player struct 
+   /*0x14*/ f32 xpos;
+   /*0x18*/ f32 ypos;
+   /*0x1C*/ f32 zpos;
+    
+}sPlayerAction;
 
+typedef struct unk_30e10_s
+{
+    u8 unk0;
+    u8 unk1;
+}unk30e10s;
+
+typedef struct unk_1205c_s
+{
+    char unk0[0x60];
+    u16 unk60;
+    u16 unk62;
+}unk1205cs;
+
+typedef struct unkD_80086EE0_s
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s16 unkC;
+    s16 unkE;
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+}unkD80086EE0s;
+
+typedef struct unk_D_80086DC0_s
+{
+    s32 unk0;
+    s32 unk4;
+    u16 unk8;
+    char unkA[0x48];
+    f32 unk54;
+}unkD80086DC0s;
+
+typedef struct unk_228f8_s
+{
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+}unk228f8s;
 #endif
 

@@ -1,4 +1,5 @@
 #include "common.h"
+void func_800121B0(u16 arg0);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B40.s")
 
@@ -8,14 +9,28 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011E78.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_8001205C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_8001205C.s")
+void func_8001205C(unk1205cs* arg0) {
+    func_800121B0((s32) arg0->unk62);
+    arg0->unk60 = 0x805B;
+    func_8001D8B0(arg0, 1, 1, 2, 1, (u16) 1);
+    func_800268D4(0x1A, 8, 0xFF);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800120C0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012170.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012170.s")
+u8 func_80012170(u16 arg0) {
+    return D_800869D8[arg0 >> 3] & D_8004D740[arg0 & 7];
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800121B0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800121B0.s")
+void func_800121B0(u16 arg0) {
+    u8* temp_v1;
 
+    temp_v1 = &D_800869D8[arg0 >> 3];
+    *temp_v1 |= D_8004D740[arg0 & 7];
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800121F0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012220.s")
@@ -26,9 +41,19 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800125F4.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012700.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012700.s")
+u8 func_80012700(u16 arg0) {
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012740.s")
+    return *(&D_80086AE8[arg0 >> 3]) & *(&D_8004D740[arg0 & 7]);
+}
+
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012740.s")
+void func_80012740(u16 arg0) {
+    u8* temp_v1;
+
+    temp_v1 = &D_80086AE8[arg0 >> 3];
+    *temp_v1 |= D_8004D740[arg0 & 7];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012780.s")
 
@@ -63,7 +88,19 @@ void func_80013D30(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800140EC.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800143C0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800143C0.s")
+void func_800143C0(s32 arg0) {
+    func_80013F5C(arg0);
+    D_80086EE0.unk0 = 0;
+    D_80086EE0.unk4 = 0xF;
+    D_80086EE0.unk8 = (s32) D_80086DC0.unk0;
+    D_80086EE0.unkC = (u16) D_80086DC0.unk8;
+    D_80086EE0.unk14 = D_80071428;
+    D_80086EE0.unk18 = (f32) D_8007142C;
+    D_80086DC0.unk0 = 5;
+    D_80086DC0.unk54 = (f32) D_80086EE0.unk10;
+    
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80014434.s")
 

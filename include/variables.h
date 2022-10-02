@@ -90,6 +90,15 @@ extern s32 dayLength;
 extern s32 D_800859D8;
 extern u16 currentDay;
 
+extern unk228f8s* D_8008D028;
+
+extern Mtx D_2000000[];
+extern u8 D_2000040[];
+extern u8 D_8004D4F0[];
+extern s32 D_8007B2F8;
+extern u16 D_8008D020;
+extern s32 D_8008D024;
+
 
 //These types may be incorrect. Defined in func_8002513C
 extern s32 D_800538F0;
@@ -123,9 +132,6 @@ extern u8 D_D3BE40; //phys inventory palette
 
 
 //screen dim/fade variables
-extern s16 D_8008D020;
-extern s32 D_8008D024;
-extern s32 D_8008D028;
 
 
 extern void* D_803232A0;
@@ -163,6 +169,32 @@ extern u8 D_80092850;
 extern u16 D_80092852;
 extern s8 D_80092871;
 extern s8 D_80092872;
+
+extern s16 D_8008C630;
+extern s32 D_8008C638;
+extern s32 D_8008C63C;
+extern s32 D_8008C640;
+
+//HUD stuff
+extern s32 D_8008C648;
+extern s32 D_8008C64C;
+extern s32 D_8008C650; //number of lines to cover from left to right (HUD)
+extern s32 D_8008C654; //number of lines to cover from top to bottom (HUD)
+extern s32 D_8008C658; //number of lines to draw from left to right (HUD)
+extern s32 D_8008C65C; //number of lines to draw from top to bottom (HUD) 
+
+extern sPlayerAction D_8007BAB8; //Player action. 
+extern Gfx D_803A8C08[]; //exclamation mark display list
+extern Gfx* D_8007B2FC;
+
+extern f32 D_80071428;
+extern f32 D_8007142C;
+extern unkD80086DC0s D_80086DC0;
+extern unkD80086EE0s D_80086EE0;
+
+extern u8 D_8004D740[];
+extern u8 D_80086AE8[];
+extern u8 D_800869D8[];
 
 
 #endif
