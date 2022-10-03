@@ -1,8 +1,8 @@
 glabel func_800011DC
 /* 1DDC 800011DC 27BDFF78 */  addiu      $sp, $sp, -0x88
 /* 1DE0 800011E0 AFB00018 */  sw         $s0, 0x18($sp)
-/* 1DE4 800011E4 3C108008 */  lui        $s0, %hi(D_8007B2FC)
-/* 1DE8 800011E8 2610B2FC */  addiu      $s0, $s0, %lo(D_8007B2FC)
+/* 1DE4 800011E4 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
+/* 1DE8 800011E8 2610B2FC */  addiu      $s0, $s0, %lo(gMasterGfxPos)
 /* 1DEC 800011EC AFBF001C */  sw         $ra, 0x1C($sp)
 /* 1DF0 800011F0 AFA40088 */  sw         $a0, 0x88($sp)
 /* 1DF4 800011F4 8FAE0088 */  lw         $t6, 0x88($sp)
@@ -236,7 +236,7 @@ glabel func_800011DC
 /* 2178 80001578 8FA40024 */   lw        $a0, 0x24($sp)
 /* 217C 8000157C 0C00618E */  jal        func_80018638
 /* 2180 80001580 8FA40024 */   lw        $a0, 0x24($sp)
-/* 2184 80001584 0C008A3E */  jal        func_800228F8
+/* 2184 80001584 0C008A3E */  jal        DimScreen
 /* 2188 80001588 8FA40024 */   lw        $a0, 0x24($sp)
 /* 218C 8000158C 3C028008 */  lui        $v0, %hi(D_8007B2E4)
 /* 2190 80001590 8C42B2E4 */  lw         $v0, %lo(D_8007B2E4)($v0)

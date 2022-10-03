@@ -1,8 +1,8 @@
 glabel func_8002DF6C
-/* 2EB6C 8002DF6C 3C058008 */  lui        $a1, %hi(D_8007B2FC)
+/* 2EB6C 8002DF6C 3C058008 */  lui        $a1, %hi(gMasterGfxPos)
 /* 2EB70 8002DF70 3C068009 */  lui        $a2, %hi(D_8008FD0C)
 /* 2EB74 8002DF74 24C6FD0C */  addiu      $a2, $a2, %lo(D_8008FD0C)
-/* 2EB78 8002DF78 24A5B2FC */  addiu      $a1, $a1, %lo(D_8007B2FC)
+/* 2EB78 8002DF78 24A5B2FC */  addiu      $a1, $a1, %lo(gMasterGfxPos)
 /* 2EB7C 8002DF7C 8CA30000 */  lw         $v1, 0x0($a1)
 /* 2EB80 8002DF80 3C188006 */  lui        $t8, %hi(D_8005FAA0)
 /* 2EB84 8002DF84 2718FAA0 */  addiu      $t8, $t8, %lo(D_8005FAA0)

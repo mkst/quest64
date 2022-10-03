@@ -1,7 +1,7 @@
 glabel func_8002FD90
 /* 30990 8002FD90 27BDFFC0 */  addiu      $sp, $sp, -0x40
-/* 30994 8002FD94 3C078008 */  lui        $a3, %hi(D_8007B2FC)
-/* 30998 8002FD98 24E7B2FC */  addiu      $a3, $a3, %lo(D_8007B2FC)
+/* 30994 8002FD94 3C078008 */  lui        $a3, %hi(gMasterGfxPos)
+/* 30998 8002FD98 24E7B2FC */  addiu      $a3, $a3, %lo(gMasterGfxPos)
 /* 3099C 8002FD9C AFBF0024 */  sw         $ra, 0x24($sp)
 /* 309A0 8002FDA0 AFB10020 */  sw         $s1, 0x20($sp)
 /* 309A4 8002FDA4 AFB0001C */  sw         $s0, 0x1C($sp)

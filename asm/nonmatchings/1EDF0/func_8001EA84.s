@@ -38,10 +38,10 @@ glabel func_8001EA84
 /* 1F714 8001EB14 E7B00070 */  swc1       $f16, 0x70($sp)
 /* 1F718 8001EB18 0C00D480 */  jal        guMtxF2L
 /* 1F71C 8001EB1C E7AA006C */   swc1      $f10, 0x6C($sp)
-/* 1F720 8001EB20 3C098008 */  lui        $t1, %hi(D_8007B2FC)
+/* 1F720 8001EB20 3C098008 */  lui        $t1, %hi(gMasterGfxPos)
 /* 1F724 8001EB24 3C0A8008 */  lui        $t2, %hi(D_8007B2F8)
 /* 1F728 8001EB28 254AB2F8 */  addiu      $t2, $t2, %lo(D_8007B2F8)
-/* 1F72C 8001EB2C 2529B2FC */  addiu      $t1, $t1, %lo(D_8007B2FC)
+/* 1F72C 8001EB2C 2529B2FC */  addiu      $t1, $t1, %lo(gMasterGfxPos)
 /* 1F730 8001EB30 8D220000 */  lw         $v0, 0x0($t1)
 /* 1F734 8001EB34 3C190102 */  lui        $t9, (0x1020040 >> 16)
 /* 1F738 8001EB38 37390040 */  ori        $t9, $t9, (0x1020040 & 0xFFFF)

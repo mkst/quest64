@@ -386,8 +386,8 @@ glabel func_8000111C
 glabel func_800011DC
 /* 1DDC 800011DC 27BDFF78 */  addiu      $sp, $sp, -0x88
 /* 1DE0 800011E0 AFB00018 */  sw         $s0, 0x18($sp)
-/* 1DE4 800011E4 3C108008 */  lui        $s0, %hi(D_8007B2FC)
-/* 1DE8 800011E8 2610B2FC */  addiu      $s0, $s0, %lo(D_8007B2FC)
+/* 1DE4 800011E4 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
+/* 1DE8 800011E8 2610B2FC */  addiu      $s0, $s0, %lo(gMasterGfxPos)
 /* 1DEC 800011EC AFBF001C */  sw         $ra, 0x1C($sp)
 /* 1DF0 800011F0 AFA40088 */  sw         $a0, 0x88($sp)
 /* 1DF4 800011F4 8FAE0088 */  lw         $t6, 0x88($sp)
@@ -621,7 +621,7 @@ glabel func_800011DC
 /* 2178 80001578 8FA40024 */   lw        $a0, 0x24($sp)
 /* 217C 8000157C 0C00618E */  jal        func_80018638
 /* 2180 80001580 8FA40024 */   lw        $a0, 0x24($sp)
-/* 2184 80001584 0C008A3E */  jal        func_800228F8
+/* 2184 80001584 0C008A3E */  jal        DimScreen
 /* 2188 80001588 8FA40024 */   lw        $a0, 0x24($sp)
 /* 218C 8000158C 3C028008 */  lui        $v0, %hi(D_8007B2E4)
 /* 2190 80001590 8C42B2E4 */  lw         $v0, %lo(D_8007B2E4)($v0)
@@ -879,7 +879,7 @@ glabel func_80001800
 /* 252C 8000192C 00000000 */   nop
 /* 2530 80001930 0C006C34 */  jal        func_8001B0D0
 /* 2534 80001934 00000000 */   nop
-/* 2538 80001938 0C008A38 */  jal        func_800228E0
+/* 2538 80001938 0C008A38 */  jal        ScreenDimInit
 /* 253C 8000193C 00000000 */   nop
 /* 2540 80001940 0C00787C */  jal        func_8001E1F0
 /* 2544 80001944 00000000 */   nop
@@ -925,28 +925,28 @@ glabel func_80001800
 /* 25DC 800019DC 10000016 */  b          .L80001A38
 /* 25E0 800019E0 03001825 */   or        $v1, $t8, $zero
 .L800019E4:
-/* 25E4 800019E4 0C008AC2 */  jal        func_80022B08
+/* 25E4 800019E4 0C008AC2 */  jal        SetupScreenDim
 /* 25E8 800019E8 24C6D56C */   addiu     $a2, $a2, %lo(D_8004D56C)
 /* 25EC 800019EC 10000012 */  b          .L80001A38
 /* 25F0 800019F0 8EC30000 */   lw        $v1, 0x0($s6)
 .L800019F4:
 /* 25F4 800019F4 3C068005 */  lui        $a2, %hi(D_8004D5AC)
 /* 25F8 800019F8 24C6D5AC */  addiu      $a2, $a2, %lo(D_8004D5AC)
-/* 25FC 800019FC 0C008AC2 */  jal        func_80022B08
+/* 25FC 800019FC 0C008AC2 */  jal        SetupScreenDim
 /* 2600 80001A00 24050004 */   addiu     $a1, $zero, 0x4
 /* 2604 80001A04 1000000C */  b          .L80001A38
 /* 2608 80001A08 8EC30000 */   lw        $v1, 0x0($s6)
 .L80001A0C:
 /* 260C 80001A0C 3C068005 */  lui        $a2, %hi(D_8004D674)
 /* 2610 80001A10 24C6D674 */  addiu      $a2, $a2, %lo(D_8004D674)
-/* 2614 80001A14 0C008AC2 */  jal        func_80022B08
+/* 2614 80001A14 0C008AC2 */  jal        SetupScreenDim
 /* 2618 80001A18 24050004 */   addiu     $a1, $zero, 0x4
 /* 261C 80001A1C 10000006 */  b          .L80001A38
 /* 2620 80001A20 8EC30000 */   lw        $v1, 0x0($s6)
 .L80001A24:
 /* 2624 80001A24 3C068005 */  lui        $a2, %hi(D_8004D714)
 /* 2628 80001A28 24C6D714 */  addiu      $a2, $a2, %lo(D_8004D714)
-/* 262C 80001A2C 0C008AC2 */  jal        func_80022B08
+/* 262C 80001A2C 0C008AC2 */  jal        SetupScreenDim
 /* 2630 80001A30 24050004 */   addiu     $a1, $zero, 0x4
 /* 2634 80001A34 8EC30000 */  lw         $v1, 0x0($s6)
 .L80001A38:
@@ -1221,28 +1221,28 @@ glabel func_80001800
 /* 2A30 80001E30 10000015 */  b          .L80001E88
 /* 2A34 80001E34 00000000 */   nop
 .L80001E38:
-/* 2A38 80001E38 0C008AC2 */  jal        func_80022B08
+/* 2A38 80001E38 0C008AC2 */  jal        SetupScreenDim
 /* 2A3C 80001E3C 24C6D530 */   addiu     $a2, $a2, %lo(D_8004D530)
 /* 2A40 80001E40 10000011 */  b          .L80001E88
 /* 2A44 80001E44 00000000 */   nop
 .L80001E48:
 /* 2A48 80001E48 3C068005 */  lui        $a2, %hi(D_8004D570)
 /* 2A4C 80001E4C 24C6D570 */  addiu      $a2, $a2, %lo(D_8004D570)
-/* 2A50 80001E50 0C008AC2 */  jal        func_80022B08
+/* 2A50 80001E50 0C008AC2 */  jal        SetupScreenDim
 /* 2A54 80001E54 24050002 */   addiu     $a1, $zero, 0x2
 /* 2A58 80001E58 1000000B */  b          .L80001E88
 /* 2A5C 80001E5C 00000000 */   nop
 .L80001E60:
 /* 2A60 80001E60 3C068005 */  lui        $a2, %hi(D_8004D5F8)
 /* 2A64 80001E64 24C6D5F8 */  addiu      $a2, $a2, %lo(D_8004D5F8)
-/* 2A68 80001E68 0C008AC2 */  jal        func_80022B08
+/* 2A68 80001E68 0C008AC2 */  jal        SetupScreenDim
 /* 2A6C 80001E6C 24050002 */   addiu     $a1, $zero, 0x2
 /* 2A70 80001E70 10000005 */  b          .L80001E88
 /* 2A74 80001E74 00000000 */   nop
 .L80001E78:
 /* 2A78 80001E78 3C068005 */  lui        $a2, %hi(D_8004D698)
 /* 2A7C 80001E7C 24C6D698 */  addiu      $a2, $a2, %lo(D_8004D698)
-/* 2A80 80001E80 0C008AC2 */  jal        func_80022B08
+/* 2A80 80001E80 0C008AC2 */  jal        SetupScreenDim
 /* 2A84 80001E84 24050002 */   addiu     $a1, $zero, 0x2
 .L80001E88:
 /* 2A88 80001E88 0C009996 */  jal        func_80026658

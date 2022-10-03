@@ -42,7 +42,7 @@ void func_8001F9B0(void) {
 
     if (func_8002413C(D_8007BAB8.xpos, (f32) ((f64) D_8007BAB8.ypos + 11.0), D_8007BAB8.zpos, &sp34, &sp30) != 0) {
 
-        gSPDisplayList(D_8007B2FC++, D_803A8C08);
+        gSPDisplayList(gMasterGfxPos++, D_803A8C08);
         func_80020F8C(sp34, sp30 - 0x1E, 0x10, 0x1E, 0, 0, 0x400, 0x400);
     }
 }
@@ -150,7 +150,7 @@ void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
         arg5 = (arg5 - arg1) + D_8008C654;
         arg1 = D_8008C654;
       }
-      gSPTextureRectangle(D_8007B2FC++, arg0 << 2, arg1 << 2, arg2 << 2, arg3 << 2, 0, arg4 << 5, arg5 << 5, arg6, arg7);
+      gSPTextureRectangle(gMasterGfxPos++, arg0 << 2, arg1 << 2, arg2 << 2, arg3 << 2, 0, arg4 << 5, arg5 << 5, arg6, arg7);
     }
   }
 }

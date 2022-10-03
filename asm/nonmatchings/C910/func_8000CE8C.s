@@ -19,8 +19,8 @@ glabel func_8000CE8C
 /* DAD0 8000CED0 AE4E0000 */  sw         $t6, 0x0($s2)
 /* DAD4 8000CED4 3C138008 */  lui        $s3, %hi(D_800828E4)
 /* DAD8 8000CED8 8E7328E4 */  lw         $s3, %lo(D_800828E4)($s3)
-/* DADC 8000CEDC 3C108008 */  lui        $s0, %hi(D_8007B2FC)
-/* DAE0 8000CEE0 2610B2FC */  addiu      $s0, $s0, %lo(D_8007B2FC)
+/* DADC 8000CEDC 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
+/* DAE0 8000CEE0 2610B2FC */  addiu      $s0, $s0, %lo(gMasterGfxPos)
 /* DAE4 8000CEE4 12600023 */  beqz       $s3, .L8000CF74
 /* DAE8 8000CEE8 00000000 */   nop
 /* DAEC 8000CEEC 8E020000 */  lw         $v0, 0x0($s0)
@@ -58,9 +58,9 @@ glabel func_8000CE8C
 /* DB6C 8000CF6C AC4B0004 */  sw         $t3, 0x4($v0)
 /* DB70 8000CF70 AC4A0000 */  sw         $t2, 0x0($v0)
 .L8000CF74:
-/* DB74 8000CF74 3C108008 */  lui        $s0, %hi(D_8007B2FC)
+/* DB74 8000CF74 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
 /* DB78 8000CF78 1260003C */  beqz       $s3, .L8000D06C
-/* DB7C 8000CF7C 2610B2FC */   addiu     $s0, $s0, %lo(D_8007B2FC)
+/* DB7C 8000CF7C 2610B2FC */   addiu     $s0, $s0, %lo(gMasterGfxPos)
 /* DB80 8000CF80 3C170200 */  lui        $s7, %hi(D_2000000)
 /* DB84 8000CF84 3C160102 */  lui        $s6, (0x1020040 >> 16)
 /* DB88 8000CF88 3C158008 */  lui        $s5, %hi(D_80084F34)

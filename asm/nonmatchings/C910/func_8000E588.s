@@ -40,11 +40,11 @@ glabel func_8000E588
 /* F21C 8000E61C 3C018007 */  lui        $at, %hi(D_80071250)
 /* F220 8000E620 3C160102 */  lui        $s6, (0x1020040 >> 16)
 /* F224 8000E624 3C158008 */  lui        $s5, %hi(D_80084F34)
-/* F228 8000E628 3C138008 */  lui        $s3, %hi(D_8007B2FC)
+/* F228 8000E628 3C138008 */  lui        $s3, %hi(gMasterGfxPos)
 /* F22C 8000E62C 3C128008 */  lui        $s2, %hi(D_8007B2F8)
 /* F230 8000E630 4480C000 */  mtc1       $zero, $f24
 /* F234 8000E634 2652B2F8 */  addiu      $s2, $s2, %lo(D_8007B2F8)
-/* F238 8000E638 2673B2FC */  addiu      $s3, $s3, %lo(D_8007B2FC)
+/* F238 8000E638 2673B2FC */  addiu      $s3, $s3, %lo(gMasterGfxPos)
 /* F23C 8000E63C 26B54F34 */  addiu      $s5, $s5, %lo(D_80084F34)
 /* F240 8000E640 36D60040 */  ori        $s6, $s6, (0x1020040 & 0xFFFF)
 /* F244 8000E644 D4341250 */  ldc1       $f20, %lo(D_80071250)($at)

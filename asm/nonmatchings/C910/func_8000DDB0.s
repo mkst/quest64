@@ -41,9 +41,9 @@ glabel func_8000DDB0
 /* EA4C 8000DE4C D43A1210 */  ldc1       $f26, %lo(D_80071210)($at)
 /* EA50 8000DE50 3C018007 */  lui        $at, %hi(D_80071218)
 /* EA54 8000DE54 3C128008 */  lui        $s2, %hi(D_8007B2F8)
-/* EA58 8000DE58 3C118008 */  lui        $s1, %hi(D_8007B2FC)
+/* EA58 8000DE58 3C118008 */  lui        $s1, %hi(gMasterGfxPos)
 /* EA5C 8000DE5C 4480E000 */  mtc1       $zero, $f28
-/* EA60 8000DE60 2631B2FC */  addiu      $s1, $s1, %lo(D_8007B2FC)
+/* EA60 8000DE60 2631B2FC */  addiu      $s1, $s1, %lo(gMasterGfxPos)
 /* EA64 8000DE64 2652B2F8 */  addiu      $s2, $s2, %lo(D_8007B2F8)
 /* EA68 8000DE68 D4381218 */  ldc1       $f24, %lo(D_80071218)($at)
 /* EA6C 8000DE6C 26D66DC0 */  addiu      $s6, $s6, %lo(D_80086DC0)

@@ -1,7 +1,7 @@
 glabel func_8002263C
 /* 2323C 8002263C 27BDFF98 */  addiu      $sp, $sp, -0x68
-/* 23240 80022640 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 23244 80022644 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 23240 80022640 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 23244 80022644 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 23248 80022648 AFB1000C */  sw         $s1, 0xC($sp)
 /* 2324C 8002264C AFB00008 */  sw         $s0, 0x8($sp)
 /* 23250 80022650 8C620000 */  lw         $v0, 0x0($v1)

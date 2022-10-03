@@ -37,8 +37,8 @@ glabel func_8001FEEC
 /* 20B70 8001FF70 8E660008 */  lw         $a2, 0x8($s3)
 /* 20B74 8001FF74 0C00904F */  jal        func_8002413C
 /* 20B78 8001FF78 AFB90010 */   sw        $t9, 0x10($sp)
-/* 20B7C 8001FF7C 3C048008 */  lui        $a0, %hi(D_8007B2FC)
-/* 20B80 8001FF80 2484B2FC */  addiu      $a0, $a0, %lo(D_8007B2FC)
+/* 20B7C 8001FF7C 3C048008 */  lui        $a0, %hi(gMasterGfxPos)
+/* 20B80 8001FF80 2484B2FC */  addiu      $a0, $a0, %lo(gMasterGfxPos)
 /* 20B84 8001FF84 3C0DE700 */  lui        $t5, (0xE7000000 >> 16)
 /* 20B88 8001FF88 00406025 */  or         $t4, $v0, $zero
 /* 20B8C 8001FF8C 8C830000 */  lw         $v1, 0x0($a0)

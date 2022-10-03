@@ -23,8 +23,8 @@ glabel func_80020F8C
 /* 21BE0 80020FE0 14200044 */  bnez       $at, .L800210F4
 /* 21BE4 80020FE4 00000000 */   nop
 /* 21BE8 80020FE8 8D29C65C */  lw         $t1, %lo(D_8008C65C)($t1)
-/* 21BEC 80020FEC 3C0A8008 */  lui        $t2, %hi(D_8007B2FC)
-/* 21BF0 80020FF0 254AB2FC */  addiu      $t2, $t2, %lo(D_8007B2FC)
+/* 21BEC 80020FEC 3C0A8008 */  lui        $t2, %hi(gMasterGfxPos)
+/* 21BF0 80020FF0 254AB2FC */  addiu      $t2, $t2, %lo(gMasterGfxPos)
 /* 21BF4 80020FF4 0125082A */  slt        $at, $t1, $a1
 /* 21BF8 80020FF8 1420003E */  bnez       $at, .L800210F4
 /* 21BFC 80020FFC 0106082A */   slt       $at, $t0, $a2

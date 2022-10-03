@@ -4,6 +4,11 @@
 #include "structs.h"
 #include "controller.h"
 
+//USED BY MANY C FILES
+extern Mtx D_2000000[]; //Gfx matrix 
+extern Mtx D_2000040[];
+extern s32 D_8007B2F8; //Gfx matrix index? 
+
 
 extern unkdb38s D_80084E60; //Door animation data
 extern s32 D_8007D2D0;
@@ -90,14 +95,7 @@ extern s32 dayLength;
 extern s32 D_800859D8;
 extern u16 currentDay;
 
-extern unk228f8s* D_8008D028;
 
-extern Mtx D_2000000[];
-extern u8 D_2000040[];
-extern u8 D_8004D4F0[];
-extern s32 D_8007B2F8;
-extern u16 D_8008D020;
-extern s32 D_8008D024;
 
 
 //These types may be incorrect. Defined in func_8002513C
@@ -185,7 +183,7 @@ extern s32 D_8008C65C; //number of lines to draw from top to bottom (HUD)
 
 extern sPlayerAction D_8007BAB8; //Player action. 
 extern Gfx D_803A8C08[]; //exclamation mark display list
-extern Gfx* D_8007B2FC;
+extern Gfx* gMasterGfxPos;
 
 extern f32 D_80071428;
 extern f32 D_8007142C;

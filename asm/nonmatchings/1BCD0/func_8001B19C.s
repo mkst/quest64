@@ -22,10 +22,10 @@ glabel func_8001B19C
 /* 1BDEC 8001B1EC 3C013F80 */  lui        $at, (0x3F800000 >> 16)
 /* 1BDF0 8001B1F0 3C148008 */  lui        $s4, %hi(D_80086DC0)
 /* 1BDF4 8001B1F4 3C138008 */  lui        $s3, %hi(D_8007B2F8)
-/* 1BDF8 8001B1F8 3C128008 */  lui        $s2, %hi(D_8007B2FC)
+/* 1BDF8 8001B1F8 3C128008 */  lui        $s2, %hi(gMasterGfxPos)
 /* 1BDFC 8001B1FC 4481B000 */  mtc1       $at, $f22
 /* 1BE00 8001B200 4480A000 */  mtc1       $zero, $f20
-/* 1BE04 8001B204 2652B2FC */  addiu      $s2, $s2, %lo(D_8007B2FC)
+/* 1BE04 8001B204 2652B2FC */  addiu      $s2, $s2, %lo(gMasterGfxPos)
 /* 1BE08 8001B208 2673B2F8 */  addiu      $s3, $s3, %lo(D_8007B2F8)
 /* 1BE0C 8001B20C 26946DC0 */  addiu      $s4, $s4, %lo(D_80086DC0)
 /* 1BE10 8001B210 27BE0074 */  addiu      $fp, $sp, 0x74

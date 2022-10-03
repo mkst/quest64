@@ -2,10 +2,10 @@ glabel func_800203D0
 /* 20FD0 800203D0 27BDFFC8 */  addiu      $sp, $sp, -0x38
 /* 20FD4 800203D4 AFB10030 */  sw         $s1, 0x30($sp)
 /* 20FD8 800203D8 AFB0002C */  sw         $s0, 0x2C($sp)
-/* 20FDC 800203DC 3C108008 */  lui        $s0, %hi(D_8007B2FC)
+/* 20FDC 800203DC 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
 /* 20FE0 800203E0 3C118008 */  lui        $s1, %hi(D_8007D088)
 /* 20FE4 800203E4 2631D088 */  addiu      $s1, $s1, %lo(D_8007D088)
-/* 20FE8 800203E8 2610B2FC */  addiu      $s0, $s0, %lo(D_8007B2FC)
+/* 20FE8 800203E8 2610B2FC */  addiu      $s0, $s0, %lo(gMasterGfxPos)
 /* 20FEC 800203EC AFBF0034 */  sw         $ra, 0x34($sp)
 /* 20FF0 800203F0 3C0AE700 */  lui        $t2, (0xE7000000 >> 16)
 /* 20FF4 800203F4 240E00B5 */  addiu      $t6, $zero, 0xB5

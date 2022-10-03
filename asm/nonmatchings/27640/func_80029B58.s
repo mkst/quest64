@@ -97,10 +97,10 @@ glabel L80029C4C
 /* 2A8B0 80029CB0 AFB900E4 */  sw         $t9, 0xE4($sp)
 .L80029CB4:
 /* 2A8B4 80029CB4 8FAE00E4 */  lw         $t6, 0xE4($sp)
-/* 2A8B8 80029CB8 3C038008 */  lui        $v1, %hi(D_8007B2FC)
+/* 2A8B8 80029CB8 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
 /* 2A8BC 80029CBC 8FAF00E8 */  lw         $t7, 0xE8($sp)
 /* 2A8C0 80029CC0 19C00003 */  blez       $t6, .L80029CD0
-/* 2A8C4 80029CC4 2463B2FC */   addiu     $v1, $v1, %lo(D_8007B2FC)
+/* 2A8C4 80029CC4 2463B2FC */   addiu     $v1, $v1, %lo(gMasterGfxPos)
 /* 2A8C8 80029CC8 5DE00003 */  bgtzl      $t7, .L80029CD8
 /* 2A8CC 80029CCC AFAA00C4 */   sw        $t2, 0xC4($sp)
 .L80029CD0:

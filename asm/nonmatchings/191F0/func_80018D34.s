@@ -14,8 +14,8 @@ glabel func_80018D34
 /* 19960 80018D60 00024080 */  sll        $t0, $v0, 2
 /* 19964 80018D64 00280821 */  addu       $at, $at, $t0
 /* 19968 80018D68 C420CF68 */  lwc1       $f0, %lo(D_8004CF68)($at)
-/* 1996C 80018D6C 3C068008 */  lui        $a2, %hi(D_8007B2FC)
-/* 19970 80018D70 24C6B2FC */  addiu      $a2, $a2, %lo(D_8007B2FC)
+/* 1996C 80018D6C 3C068008 */  lui        $a2, %hi(gMasterGfxPos)
+/* 19970 80018D70 24C6B2FC */  addiu      $a2, $a2, %lo(gMasterGfxPos)
 /* 19974 80018D74 E480002C */  swc1       $f0, 0x2C($a0)
 /* 19978 80018D78 E4800028 */  swc1       $f0, 0x28($a0)
 /* 1997C 80018D7C 8CC50000 */  lw         $a1, 0x0($a2)

@@ -101,8 +101,8 @@ glabel func_80008CF4
 /* 98F4 80008CF4 27BDFFA8 */  addiu      $sp, $sp, -0x58
 /* 98F8 80008CF8 AFB60048 */  sw         $s6, 0x48($sp)
 /* 98FC 80008CFC 3C168008 */  lui        $s6, %hi(D_8007D08C)
-/* 9900 80008D00 3C058008 */  lui        $a1, %hi(D_8007B2FC)
-/* 9904 80008D04 24A5B2FC */  addiu      $a1, $a1, %lo(D_8007B2FC)
+/* 9900 80008D00 3C058008 */  lui        $a1, %hi(gMasterGfxPos)
+/* 9904 80008D04 24A5B2FC */  addiu      $a1, $a1, %lo(gMasterGfxPos)
 /* 9908 80008D08 26D6D08C */  addiu      $s6, $s6, %lo(D_8007D08C)
 /* 990C 80008D0C AFBF0054 */  sw         $ra, 0x54($sp)
 /* 9910 80008D10 AFBE0050 */  sw         $fp, 0x50($sp)

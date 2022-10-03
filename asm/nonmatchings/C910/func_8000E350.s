@@ -1,6 +1,6 @@
 glabel func_8000E350
-/* EF50 8000E350 3C058008 */  lui        $a1, %hi(D_8007B2FC)
-/* EF54 8000E354 24A5B2FC */  addiu      $a1, $a1, %lo(D_8007B2FC)
+/* EF50 8000E350 3C058008 */  lui        $a1, %hi(gMasterGfxPos)
+/* EF54 8000E354 24A5B2FC */  addiu      $a1, $a1, %lo(gMasterGfxPos)
 /* EF58 8000E358 3C014000 */  lui        $at, (0x40000000 >> 16)
 /* EF5C 8000E35C 44813000 */  mtc1       $at, $f6
 /* EF60 8000E360 C4800034 */  lwc1       $f0, 0x34($a0)

@@ -4,8 +4,8 @@ glabel func_80030EA0
 /* 31AA8 80030EA8 AFB70024 */  sw         $s7, 0x24($sp)
 /* 31AAC 80030EAC AFB60020 */  sw         $s6, 0x20($sp)
 /* 31AB0 80030EB0 AFB1000C */  sw         $s1, 0xC($sp)
-/* 31AB4 80030EB4 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 31AB8 80030EB8 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 31AB4 80030EB4 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 31AB8 80030EB8 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 31ABC 80030EBC 00C08825 */  or         $s1, $a2, $zero
 /* 31AC0 80030EC0 3C16E700 */  lui        $s6, (0xE7000000 >> 16)
 /* 31AC4 80030EC4 0080B825 */  or         $s7, $a0, $zero

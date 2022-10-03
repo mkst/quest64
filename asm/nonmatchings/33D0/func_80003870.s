@@ -1,7 +1,7 @@
 glabel func_80003870
 /* 4470 80003870 27BDFFC8 */  addiu      $sp, $sp, -0x38
-/* 4474 80003874 3C058008 */  lui        $a1, %hi(D_8007B2FC)
-/* 4478 80003878 24A5B2FC */  addiu      $a1, $a1, %lo(D_8007B2FC)
+/* 4474 80003874 3C058008 */  lui        $a1, %hi(gMasterGfxPos)
+/* 4478 80003878 24A5B2FC */  addiu      $a1, $a1, %lo(gMasterGfxPos)
 /* 447C 8000387C AFBF0024 */  sw         $ra, 0x24($sp)
 /* 4480 80003880 AFA40038 */  sw         $a0, 0x38($sp)
 /* 4484 80003884 8CA30000 */  lw         $v1, 0x0($a1)

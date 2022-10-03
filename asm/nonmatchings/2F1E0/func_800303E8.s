@@ -1,7 +1,7 @@
 glabel func_800303E8
 /* 30FE8 800303E8 27BDFF88 */  addiu      $sp, $sp, -0x78
-/* 30FEC 800303EC 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 30FF0 800303F0 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 30FEC 800303EC 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 30FF0 800303F0 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 30FF4 800303F4 AFBF001C */  sw         $ra, 0x1C($sp)
 /* 30FF8 800303F8 AFA40078 */  sw         $a0, 0x78($sp)
 /* 30FFC 800303FC 3C0F8006 */  lui        $t7, %hi(D_8005FA08)

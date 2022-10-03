@@ -1,6 +1,6 @@
 glabel func_8000E224
-/* EE24 8000E224 3C058008 */  lui        $a1, %hi(D_8007B2FC)
-/* EE28 8000E228 24A5B2FC */  addiu      $a1, $a1, %lo(D_8007B2FC)
+/* EE24 8000E224 3C058008 */  lui        $a1, %hi(gMasterGfxPos)
+/* EE28 8000E228 24A5B2FC */  addiu      $a1, $a1, %lo(gMasterGfxPos)
 /* EE2C 8000E22C C4840018 */  lwc1       $f4, 0x18($a0)
 /* EE30 8000E230 C4860030 */  lwc1       $f6, 0x30($a0)
 /* EE34 8000E234 C4800034 */  lwc1       $f0, 0x34($a0)

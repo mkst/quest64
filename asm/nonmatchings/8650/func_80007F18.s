@@ -29,10 +29,10 @@ glabel func_80007F18
 /* 8B84 80007F84 3C018007 */  lui        $at, %hi(D_80071124)
 /* 8B88 80007F88 C4361124 */  lwc1       $f22, %lo(D_80071124)($at)
 /* 8B8C 80007F8C 3C018007 */  lui        $at, %hi(D_80071128)
-/* 8B90 80007F90 3C168008 */  lui        $s6, %hi(D_8007B2FC)
+/* 8B90 80007F90 3C168008 */  lui        $s6, %hi(gMasterGfxPos)
 /* 8B94 80007F94 3C158008 */  lui        $s5, %hi(D_8007BAB8)
 /* 8B98 80007F98 26B5BAB8 */  addiu      $s5, $s5, %lo(D_8007BAB8)
-/* 8B9C 80007F9C 26D6B2FC */  addiu      $s6, $s6, %lo(D_8007B2FC)
+/* 8B9C 80007F9C 26D6B2FC */  addiu      $s6, $s6, %lo(gMasterGfxPos)
 /* 8BA0 80007FA0 C4341128 */  lwc1       $f20, %lo(D_80071128)($at)
 /* 8BA4 80007FA4 2417000C */  addiu      $s7, $zero, 0xC
 .L80007FA8:

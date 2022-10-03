@@ -27,8 +27,8 @@ glabel func_8001F818
 /* 2047C 8001F87C 3C098009 */  lui        $t1, %hi(D_8008C644)
 /* 20480 8001F880 10400019 */  beqz       $v0, .L8001F8E8
 /* 20484 8001F884 2529C644 */   addiu     $t1, $t1, %lo(D_8008C644)
-/* 20488 8001F888 3C088008 */  lui        $t0, %hi(D_8007B2FC)
-/* 2048C 8001F88C 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 20488 8001F888 3C088008 */  lui        $t0, %hi(gMasterGfxPos)
+/* 2048C 8001F88C 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 20490 8001F890 8D030000 */  lw         $v1, 0x0($t0)
 /* 20494 8001F894 3C0D803B */  lui        $t5, %hi(D_803A8B90)
 /* 20498 8001F898 25AD8B90 */  addiu      $t5, $t5, %lo(D_803A8B90)

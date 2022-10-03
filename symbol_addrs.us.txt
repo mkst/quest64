@@ -2,6 +2,10 @@ osScAddClient             = 0x800007d4;
 
 Inventory_Init            = 0x80021170;
 
+ScreenDimInit             = 0x800228E0;
+DimScreen				  = 0x800228F8;
+SetupScreenDim			  = 0x80022B08;
+
 osInitialize         	  = 0x80033850;
 osCreateThread       	  = 0x80033AE0;
 osStartThread        	  = 0x80033C30;
@@ -320,11 +324,14 @@ alSeqNew                  = 0x80049c78;
 alSynSetPriority          = 0x80049d50;
 ldiv                      = 0x80049e60;
 
+dlScreenDimRectangle      = 0x8004D4F0;
+
 osClockRate               = 0x8006F400
 //__osPiTable               = 0x8006f43c; 
 
 __osContinitialized		  = 0x800709C0;
 gameMode                  = 0x8007b2e0;
+gMasterGfxPos             = 0x8007B2FC;
 
 gNextSubmap				  = 0x80084ee8;
 gAllowBattles             = 0x80084f10;
@@ -341,6 +348,9 @@ gVisibleInvItemIDs        = 0x8008C770;
 gInventory                = 0x8008CF78;
 
 gLastInvSlot              = 0x8008D00D;
+gScreenDimFlags           = 0x8008D020;
+gScreenDimTimer           = 0x8008D024;
+gScreenDimRGBA            = 0x8008D028;
 
 __osContPifRam            = 0x80095450;
 __osContLastCmd           = 0x80095490;

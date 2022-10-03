@@ -14,11 +14,11 @@ glabel func_80018F60
 /* 19B90 80018F90 3C118008 */  lui        $s1, %hi(D_800873D0)
 /* 19B94 80018F94 3C018007 */  lui        $at, %hi(D_80071580)
 /* 19B98 80018F98 3C160400 */  lui        $s6, (0x4000400 >> 16)
-/* 19B9C 80018F9C 3C108008 */  lui        $s0, %hi(D_8007B2FC)
+/* 19B9C 80018F9C 3C108008 */  lui        $s0, %hi(gMasterGfxPos)
 /* 19BA0 80018FA0 0000B825 */  or         $s7, $zero, $zero
 /* 19BA4 80018FA4 241E000A */  addiu      $fp, $zero, 0xA
 /* 19BA8 80018FA8 263173D0 */  addiu      $s1, $s1, %lo(D_800873D0)
-/* 19BAC 80018FAC 2610B2FC */  addiu      $s0, $s0, %lo(D_8007B2FC)
+/* 19BAC 80018FAC 2610B2FC */  addiu      $s0, $s0, %lo(gMasterGfxPos)
 /* 19BB0 80018FB0 36D60400 */  ori        $s6, $s6, (0x4000400 & 0xFFFF)
 /* 19BB4 80018FB4 D4341580 */  ldc1       $f20, %lo(D_80071580)($at)
 /* 19BB8 80018FB8 3C15B300 */  lui        $s5, (0xB3000000 >> 16)

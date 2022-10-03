@@ -52,8 +52,8 @@ glabel func_8001FA60
 /* 2071C 8001FB1C 0C00904F */  jal        func_8002413C
 /* 20720 8001FB20 AFAC0010 */   sw        $t4, 0x10($sp)
 /* 20724 8001FB24 10400017 */  beqz       $v0, .L8001FB84
-/* 20728 8001FB28 3C088008 */   lui       $t0, %hi(D_8007B2FC)
-/* 2072C 8001FB2C 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 20728 8001FB28 3C088008 */   lui       $t0, %hi(gMasterGfxPos)
+/* 2072C 8001FB2C 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 20730 8001FB30 8D030000 */  lw         $v1, 0x0($t0)
 /* 20734 8001FB34 3C0F803B */  lui        $t7, %hi(D_803A8CF8)
 /* 20738 8001FB38 25EF8CF8 */  addiu      $t7, $t7, %lo(D_803A8CF8)

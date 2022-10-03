@@ -1,6 +1,6 @@
 glabel func_80020E2C
-/* 21A2C 80020E2C 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 21A30 80020E30 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 21A2C 80020E2C 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 21A30 80020E30 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 21A34 80020E34 27BDFFD0 */  addiu      $sp, $sp, -0x30
 /* 21A38 80020E38 8C620000 */  lw         $v0, 0x0($v1)
 /* 21A3C 80020E3C 3C01FD48 */  lui        $at, (0xFD480000 >> 16)

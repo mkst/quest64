@@ -7,10 +7,10 @@ glabel func_8000B618
 /* C22C 8000B62C 3C098008 */  lui        $t1, %hi(D_8007D1A8)
 /* C230 8000B630 2529D1A8 */  addiu      $t1, $t1, %lo(D_8007D1A8)
 /* C234 8000B634 11C0003E */  beqz       $t6, .L8000B730
-/* C238 8000B638 3C0A8008 */   lui       $t2, %hi(D_8007B2FC)
+/* C238 8000B638 3C0A8008 */   lui       $t2, %hi(gMasterGfxPos)
 /* C23C 8000B63C 852F0074 */  lh         $t7, 0x74($t1)
 /* C240 8000B640 3C08803B */  lui        $t0, %hi(D_803AA164)
-/* C244 8000B644 254AB2FC */  addiu      $t2, $t2, %lo(D_8007B2FC)
+/* C244 8000B644 254AB2FC */  addiu      $t2, $t2, %lo(gMasterGfxPos)
 /* C248 8000B648 000FC080 */  sll        $t8, $t7, 2
 /* C24C 8000B64C 01184021 */  addu       $t0, $t0, $t8
 /* C250 8000B650 8D08A164 */  lw         $t0, %lo(D_803AA164)($t0)

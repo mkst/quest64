@@ -17,8 +17,8 @@ glabel func_8001F900
 /* 2053C 8001F93C 0C00904F */  jal        func_8002413C
 /* 20540 8001F940 27A70034 */   addiu     $a3, $sp, 0x34
 /* 20544 8001F944 10400016 */  beqz       $v0, .L8001F9A0
-/* 20548 8001F948 3C088008 */   lui       $t0, %hi(D_8007B2FC)
-/* 2054C 8001F94C 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 20548 8001F948 3C088008 */   lui       $t0, %hi(gMasterGfxPos)
+/* 2054C 8001F94C 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 20550 8001F950 8D030000 */  lw         $v1, 0x0($t0)
 /* 20554 8001F954 3C19803B */  lui        $t9, %hi(D_803A8C80)
 /* 20558 8001F958 27398C80 */  addiu      $t9, $t9, %lo(D_803A8C80)

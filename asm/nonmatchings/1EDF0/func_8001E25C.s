@@ -1,10 +1,10 @@
 glabel func_8001E25C
 /* 1EE5C 8001E25C 27BDFFD8 */  addiu      $sp, $sp, -0x28
-/* 1EE60 8001E260 3C088008 */  lui        $t0, %hi(D_8007B2FC)
+/* 1EE60 8001E260 3C088008 */  lui        $t0, %hi(gMasterGfxPos)
 /* 1EE64 8001E264 3C098008 */  lui        $t1, %hi(D_8007B2F8)
 /* 1EE68 8001E268 44800000 */  mtc1       $zero, $f0
 /* 1EE6C 8001E26C 2529B2F8 */  addiu      $t1, $t1, %lo(D_8007B2F8)
-/* 1EE70 8001E270 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 1EE70 8001E270 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 1EE74 8001E274 AFBF0014 */  sw         $ra, 0x14($sp)
 /* 1EE78 8001E278 AFA40028 */  sw         $a0, 0x28($sp)
 /* 1EE7C 8001E27C 8D020000 */  lw         $v0, 0x0($t0)
@@ -26,11 +26,11 @@ glabel func_8001E25C
 /* 1EEBC 8001E2BC 0C00D866 */  jal        guTranslate
 /* 1EEC0 8001E2C0 3C06C2F0 */   lui       $a2, (0xC2F00000 >> 16)
 /* 1EEC4 8001E2C4 3C068005 */  lui        $a2, %hi(D_8004D2B4)
-/* 1EEC8 8001E2C8 3C088008 */  lui        $t0, %hi(D_8007B2FC)
+/* 1EEC8 8001E2C8 3C088008 */  lui        $t0, %hi(gMasterGfxPos)
 /* 1EECC 8001E2CC 3C098008 */  lui        $t1, %hi(D_8007B2F8)
 /* 1EED0 8001E2D0 44800000 */  mtc1       $zero, $f0
 /* 1EED4 8001E2D4 2529B2F8 */  addiu      $t1, $t1, %lo(D_8007B2F8)
-/* 1EED8 8001E2D8 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 1EED8 8001E2D8 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 1EEDC 8001E2DC 24C6D2B4 */  addiu      $a2, $a2, %lo(D_8004D2B4)
 /* 1EEE0 8001E2E0 8D020000 */  lw         $v0, 0x0($t0)
 /* 1EEE4 8001E2E4 3C0D0101 */  lui        $t5, (0x1010040 >> 16)

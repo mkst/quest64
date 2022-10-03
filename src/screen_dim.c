@@ -1,49 +1,80 @@
 #include "common.h"
 #include <gbi.h>
 
-void func_800228E0(void) {
-    D_8008D020 = 0;
-    D_8008D024 = 0;
+#define SCREEN_DIMMABLE 1
+#define USE_TIMER 2
+#define SCREEN_BRIGHTENING 4
+
+
+typedef struct
+{
+    u8 red;
+    u8 green;
+    u8 blue;
+    u8 alpha;
+}Color_RGBA8;
+
+
+extern u16 gScreenDimFlags;
+extern s32 gScreenDimTimer;         
+extern Color_RGBA8* gScreenDimRGBA; //pointer to RGBA color data table
+extern u8 dlScreenDimRectangle[];
+
+void ScreenDimInit(void); 
+void DimScreen(Mtx* arg0);
+void SetupScreenDim(s32 arg0, u16 arg1, s32 arg2);
+
+void ScreenDimInit(void) 
+{
+    gScreenDimFlags = 0;
+    gScreenDimTimer = 0;
 }
 
-void func_800228F8(Mtx* arg0)
+void DimScreen(Mtx* arg0)
 {    
-  if (D_8008D020 & 1)
+  if (gScreenDimFlags & SCREEN_DIMMABLE)
   {
-    gDPPipeSync(D_8007B2FC++);
-    gSPMatrix(D_8007B2FC++, D_2000040, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
+    gDPPipeSync(gMasterGfxPos++);
+    gSPMatrix(gMasterGfxPos++, D_2000040, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     guMtxIdent(&arg0[3] + D_8007B2F8);
-    gSPMatrix(D_8007B2FC++, &D_2000000[D_8007B2F8 + 3], G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    gSPMatrix(gMasterGfxPos++, &D_2000000[D_8007B2F8 + 3], G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
     D_8007B2F8++;
-    gDPSetEnvColor(D_8007B2FC++, D_8008D028->unk0, D_8008D028->unk1, D_8008D028->unk2, D_8008D028->unk3);
-    if (D_8008D028->unk3 == 0xFF) {
-      gDPSetRenderMode(D_8007B2FC++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
-    } else {
-      gDPSetRenderMode(D_8007B2FC++, G_RM_CLD_SURF, G_RM_CLD_SURF2);
-    }
-    gSPDisplayList(D_8007B2FC++, D_8004D4F0);
+    gDPSetEnvColor(gMasterGfxPos++, gScreenDimRGBA->red, gScreenDimRGBA->green, gScreenDimRGBA->blue, gScreenDimRGBA->alpha);
 
- if (D_8008D024 != 0)
+    //Makes the screen opaque if alpha value is 0xFF. Else make it partially or completely transparent. 
+    if (gScreenDimRGBA->alpha == 0xFF) {
+      gDPSetRenderMode(gMasterGfxPos++, G_RM_OPA_SURF, G_RM_OPA_SURF2);
+    } else {
+      gDPSetRenderMode(gMasterGfxPos++, G_RM_CLD_SURF, G_RM_CLD_SURF2);
+    }
+    gSPDisplayList(gMasterGfxPos++, dlScreenDimRectangle);
+
+/*If the screen dim timer is non-zero, it checks the dim/brighten flag. If it's set, the screen brightens,
+if it's not, the screen dims. The timer is also the index number for the RGBA table.*/
+ if (gScreenDimTimer != 0)
     {
-      if (D_8008D020 & 4)
+      if (gScreenDimFlags & SCREEN_BRIGHTENING)
       {
-        D_8008D028--;
+        gScreenDimRGBA--;
       }
       else
       {
-        D_8008D028++;
+        gScreenDimRGBA++;
       }
-      D_8008D024--;
-      if (!D_8008D024 & !(D_8008D020 & 2))
+      gScreenDimTimer--;
+
+      /*Resets the screen dim flag if the timer is 0, or flag 2 isn't set.*/
+      if (!gScreenDimTimer & !(gScreenDimFlags & USE_TIMER))
       {
-        D_8008D020 &= ~1;
+        gScreenDimFlags &= ~SCREEN_DIMMABLE;
       }
     }
   }
 }   
 
-void func_80022B08(s32 arg0, u16 arg1, s32 arg2) {
-    D_8008D024 = arg0;
-    D_8008D020 = (arg1) | 1;
-    D_8008D028 = arg2;
+void SetupScreenDim(s32 timer, u16 flags, s32 RGBA)
+{
+    gScreenDimTimer = timer;
+    gScreenDimFlags = (flags) | 1;
+    gScreenDimRGBA = (Color_RGBA8*)RGBA;
 }

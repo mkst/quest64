@@ -1,8 +1,8 @@
 glabel func_80019CCC
 /* 1A8CC 80019CCC 27BDFEA8 */  addiu      $sp, $sp, -0x158
 /* 1A8D0 80019CD0 AFB1005C */  sw         $s1, 0x5C($sp)
-/* 1A8D4 80019CD4 3C118008 */  lui        $s1, %hi(D_8007B2FC)
-/* 1A8D8 80019CD8 2631B2FC */  addiu      $s1, $s1, %lo(D_8007B2FC)
+/* 1A8D4 80019CD4 3C118008 */  lui        $s1, %hi(gMasterGfxPos)
+/* 1A8D8 80019CD8 2631B2FC */  addiu      $s1, $s1, %lo(gMasterGfxPos)
 /* 1A8DC 80019CDC AFBF007C */  sw         $ra, 0x7C($sp)
 /* 1A8E0 80019CE0 AFBE0078 */  sw         $fp, 0x78($sp)
 /* 1A8E4 80019CE4 AFB70074 */  sw         $s7, 0x74($sp)

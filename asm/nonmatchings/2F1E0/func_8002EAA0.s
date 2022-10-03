@@ -1,8 +1,8 @@
 glabel func_8002EAA0
 /* 2F6A0 8002EAA0 27BDFEE8 */  addiu      $sp, $sp, -0x118
 /* 2F6A4 8002EAA4 AFB60038 */  sw         $s6, 0x38($sp)
-/* 2F6A8 8002EAA8 3C168008 */  lui        $s6, %hi(D_8007B2FC)
-/* 2F6AC 8002EAAC 26D6B2FC */  addiu      $s6, $s6, %lo(D_8007B2FC)
+/* 2F6A8 8002EAA8 3C168008 */  lui        $s6, %hi(gMasterGfxPos)
+/* 2F6AC 8002EAAC 26D6B2FC */  addiu      $s6, $s6, %lo(gMasterGfxPos)
 /* 2F6B0 8002EAB0 AFBF0044 */  sw         $ra, 0x44($sp)
 /* 2F6B4 8002EAB4 AFBE0040 */  sw         $fp, 0x40($sp)
 /* 2F6B8 8002EAB8 AFB7003C */  sw         $s7, 0x3C($sp)

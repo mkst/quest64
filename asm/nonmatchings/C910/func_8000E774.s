@@ -30,11 +30,11 @@ glabel func_8000E774
 /* F3E4 8000E7E4 12A000C5 */  beqz       $s5, .L8000EAFC
 /* F3E8 8000E7E8 AFAE0060 */   sw        $t6, 0x60($sp)
 /* F3EC 8000E7EC 3C138008 */  lui        $s3, %hi(D_8007B2F8)
-/* F3F0 8000E7F0 3C118008 */  lui        $s1, %hi(D_8007B2FC)
+/* F3F0 8000E7F0 3C118008 */  lui        $s1, %hi(gMasterGfxPos)
 /* F3F4 8000E7F4 3C1F8008 */  lui        $ra, %hi(D_80084F34)
 /* F3F8 8000E7F8 4480A000 */  mtc1       $zero, $f20
 /* F3FC 8000E7FC 27FF4F34 */  addiu      $ra, $ra, %lo(D_80084F34)
-/* F400 8000E800 2631B2FC */  addiu      $s1, $s1, %lo(D_8007B2FC)
+/* F400 8000E800 2631B2FC */  addiu      $s1, $s1, %lo(gMasterGfxPos)
 /* F404 8000E804 2673B2F8 */  addiu      $s3, $s3, %lo(D_8007B2F8)
 /* F408 8000E808 3C1E0600 */  lui        $fp, (0x6000000 >> 16)
 /* F40C 8000E80C 8ED20000 */  lw         $s2, 0x0($s6)

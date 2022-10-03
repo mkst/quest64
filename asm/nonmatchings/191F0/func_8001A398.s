@@ -1,10 +1,10 @@
 glabel func_8001A398
 /* 1AF98 8001A398 27BDFFC0 */  addiu      $sp, $sp, -0x40
 /* 1AF9C 8001A39C AFB1001C */  sw         $s1, 0x1C($sp)
-/* 1AFA0 8001A3A0 3C118008 */  lui        $s1, %hi(D_8007B2FC)
+/* 1AFA0 8001A3A0 3C118008 */  lui        $s1, %hi(gMasterGfxPos)
 /* 1AFA4 8001A3A4 AFB40028 */  sw         $s4, 0x28($sp)
 /* 1AFA8 8001A3A8 0080A025 */  or         $s4, $a0, $zero
-/* 1AFAC 8001A3AC 2631B2FC */  addiu      $s1, $s1, %lo(D_8007B2FC)
+/* 1AFAC 8001A3AC 2631B2FC */  addiu      $s1, $s1, %lo(gMasterGfxPos)
 /* 1AFB0 8001A3B0 AFBF003C */  sw         $ra, 0x3C($sp)
 /* 1AFB4 8001A3B4 AFBE0038 */  sw         $fp, 0x38($sp)
 /* 1AFB8 8001A3B8 AFB70034 */  sw         $s7, 0x34($sp)

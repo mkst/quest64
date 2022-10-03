@@ -1,8 +1,8 @@
 glabel func_8001ED5C
 /* 1F95C 8001ED5C 27BDFF80 */  addiu      $sp, $sp, -0x80
 /* 1F960 8001ED60 AFB10030 */  sw         $s1, 0x30($sp)
-/* 1F964 8001ED64 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 1F968 8001ED68 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 1F964 8001ED64 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 1F968 8001ED68 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 1F96C 8001ED6C 00808825 */  or         $s1, $a0, $zero
 /* 1F970 8001ED70 AFBF0034 */  sw         $ra, 0x34($sp)
 /* 1F974 8001ED74 AFB0002C */  sw         $s0, 0x2C($sp)

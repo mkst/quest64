@@ -4,8 +4,8 @@ glabel func_80020B4C
 /* 21754 80020B54 AFB3003C */  sw         $s3, 0x3C($sp)
 /* 21758 80020B58 AFB20038 */  sw         $s2, 0x38($sp)
 /* 2175C 80020B5C AFB10034 */  sw         $s1, 0x34($sp)
-/* 21760 80020B60 3C088008 */  lui        $t0, %hi(D_8007B2FC)
-/* 21764 80020B64 2508B2FC */  addiu      $t0, $t0, %lo(D_8007B2FC)
+/* 21760 80020B60 3C088008 */  lui        $t0, %hi(gMasterGfxPos)
+/* 21764 80020B64 2508B2FC */  addiu      $t0, $t0, %lo(gMasterGfxPos)
 /* 21768 80020B68 00E08825 */  or         $s1, $a3, $zero
 /* 2176C 80020B6C 00809025 */  or         $s2, $a0, $zero
 /* 21770 80020B70 00A09825 */  or         $s3, $a1, $zero

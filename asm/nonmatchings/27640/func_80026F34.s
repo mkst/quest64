@@ -1,8 +1,8 @@
 glabel func_80026F34
 /* 27B34 80026F34 27BDFFA8 */  addiu      $sp, $sp, -0x58
 /* 27B38 80026F38 AFB20028 */  sw         $s2, 0x28($sp)
-/* 27B3C 80026F3C 3C098008 */  lui        $t1, %hi(D_8007B2FC)
-/* 27B40 80026F40 2529B2FC */  addiu      $t1, $t1, %lo(D_8007B2FC)
+/* 27B3C 80026F3C 3C098008 */  lui        $t1, %hi(gMasterGfxPos)
+/* 27B40 80026F40 2529B2FC */  addiu      $t1, $t1, %lo(gMasterGfxPos)
 /* 27B44 80026F44 00809025 */  or         $s2, $a0, $zero
 /* 27B48 80026F48 AFBF002C */  sw         $ra, 0x2C($sp)
 /* 27B4C 80026F4C AFB10024 */  sw         $s1, 0x24($sp)

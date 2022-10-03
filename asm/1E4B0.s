@@ -423,8 +423,8 @@ glabel func_8001DC78
 /* 1EAA0 8001DEA0 0C00D480 */  jal        guMtxF2L
 /* 1EAA4 8001DEA4 24A500C0 */   addiu     $a1, $a1, 0xC0
 .L8001DEA8:
-/* 1EAA8 8001DEA8 3C048008 */  lui        $a0, %hi(D_8007B2FC)
-/* 1EAAC 8001DEAC 2484B2FC */  addiu      $a0, $a0, %lo(D_8007B2FC)
+/* 1EAA8 8001DEA8 3C048008 */  lui        $a0, %hi(gMasterGfxPos)
+/* 1EAAC 8001DEAC 2484B2FC */  addiu      $a0, $a0, %lo(gMasterGfxPos)
 /* 1EAB0 8001DEB0 8C820000 */  lw         $v0, 0x0($a0)
 /* 1EAB4 8001DEB4 3C180102 */  lui        $t8, (0x1020040 >> 16)
 /* 1EAB8 8001DEB8 37180040 */  ori        $t8, $t8, (0x1020040 & 0xFFFF)

@@ -7,23 +7,23 @@
 
 .section .text, "ax"
 
-glabel func_800228E0
-/* 234E0 800228E0 3C018009 */  lui        $at, %hi(D_8008D020)
-/* 234E4 800228E4 A420D020 */  sh         $zero, %lo(D_8008D020)($at)
-/* 234E8 800228E8 3C018009 */  lui        $at, %hi(D_8008D024)
-/* 234EC 800228EC AC20D024 */  sw         $zero, %lo(D_8008D024)($at)
+glabel ScreenDimInit
+/* 234E0 800228E0 3C018009 */  lui        $at, %hi(gScreenDimFlags)
+/* 234E4 800228E4 A420D020 */  sh         $zero, %lo(gScreenDimFlags)($at)
+/* 234E8 800228E8 3C018009 */  lui        $at, %hi(gScreenDimTimer)
+/* 234EC 800228EC AC20D024 */  sw         $zero, %lo(gScreenDimTimer)($at)
 /* 234F0 800228F0 03E00008 */  jr         $ra
 /* 234F4 800228F4 00000000 */   nop
 
-glabel func_800228F8
+glabel DimScreen
 /* 234F8 800228F8 27BDFFE8 */  addiu      $sp, $sp, -0x18
-/* 234FC 800228FC 3C098009 */  lui        $t1, %hi(D_8008D020)
-/* 23500 80022900 2529D020 */  addiu      $t1, $t1, %lo(D_8008D020)
+/* 234FC 800228FC 3C098009 */  lui        $t1, %hi(gScreenDimFlags)
+/* 23500 80022900 2529D020 */  addiu      $t1, $t1, %lo(gScreenDimFlags)
 /* 23504 80022904 AFBF0014 */  sw         $ra, 0x14($sp)
 /* 23508 80022908 00803825 */  or         $a3, $a0, $zero
 /* 2350C 8002290C 952E0000 */  lhu        $t6, 0x0($t1)
-/* 23510 80022910 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 23514 80022914 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 23510 80022910 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 23514 80022914 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 23518 80022918 31CF0001 */  andi       $t7, $t6, 0x1
 /* 2351C 8002291C 11E00076 */  beqz       $t7, .L80022AF8
 /* 23520 80022920 3C088008 */   lui       $t0, %hi(D_8007B2F8)
@@ -48,14 +48,14 @@ glabel func_800228F8
 /* 2356C 8002296C 00EE2021 */  addu       $a0, $a3, $t6
 /* 23570 80022970 0C00D4E2 */  jal        guMtxIdent
 /* 23574 80022974 248400C0 */   addiu     $a0, $a0, 0xC0
-/* 23578 80022978 3C038008 */  lui        $v1, %hi(D_8007B2FC)
-/* 2357C 8002297C 3C078009 */  lui        $a3, %hi(D_8008D028)
+/* 23578 80022978 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
+/* 2357C 8002297C 3C078009 */  lui        $a3, %hi(gScreenDimRGBA)
 /* 23580 80022980 3C088008 */  lui        $t0, %hi(D_8007B2F8)
-/* 23584 80022984 3C098009 */  lui        $t1, %hi(D_8008D020)
-/* 23588 80022988 2529D020 */  addiu      $t1, $t1, %lo(D_8008D020)
+/* 23584 80022984 3C098009 */  lui        $t1, %hi(gScreenDimFlags)
+/* 23588 80022988 2529D020 */  addiu      $t1, $t1, %lo(gScreenDimFlags)
 /* 2358C 8002298C 2508B2F8 */  addiu      $t0, $t0, %lo(D_8007B2F8)
-/* 23590 80022990 24E7D028 */  addiu      $a3, $a3, %lo(D_8008D028)
-/* 23594 80022994 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* 23590 80022990 24E7D028 */  addiu      $a3, $a3, %lo(gScreenDimRGBA)
+/* 23594 80022994 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* 23598 80022998 8C620000 */  lw         $v0, 0x0($v1)
 /* 2359C 8002299C 3C180102 */  lui        $t8, (0x1020040 >> 16)
 /* 235A0 800229A0 37180040 */  ori        $t8, $t8, (0x1020040 & 0xFFFF)
@@ -70,8 +70,8 @@ glabel func_800228F8
 /* 235C4 800229C4 016C6821 */  addu       $t5, $t3, $t4
 /* 235C8 800229C8 AC4D0004 */  sw         $t5, 0x4($v0)
 /* 235CC 800229CC 8D0E0000 */  lw         $t6, 0x0($t0)
-/* 235D0 800229D0 3C068009 */  lui        $a2, %hi(D_8008D024)
-/* 235D4 800229D4 24C6D024 */  addiu      $a2, $a2, %lo(D_8008D024)
+/* 235D0 800229D0 3C068009 */  lui        $a2, %hi(gScreenDimTimer)
+/* 235D4 800229D4 24C6D024 */  addiu      $a2, $a2, %lo(gScreenDimTimer)
 /* 235D8 800229D8 25CF0001 */  addiu      $t7, $t6, 0x1
 /* 235DC 800229DC AD0F0000 */  sw         $t7, 0x0($t0)
 /* 235E0 800229E0 8C620000 */  lw         $v0, 0x0($v1)
@@ -118,8 +118,8 @@ glabel func_800228F8
 /* 23680 80022A80 AC4C0000 */  sw         $t4, 0x0($v0)
 .L80022A84:
 /* 23684 80022A84 8C620000 */  lw         $v0, 0x0($v1)
-/* 23688 80022A88 3C188005 */  lui        $t8, %hi(D_8004D4F0)
-/* 2368C 80022A8C 2718D4F0 */  addiu      $t8, $t8, %lo(D_8004D4F0)
+/* 23688 80022A88 3C188005 */  lui        $t8, %hi(dlScreenDimRectangle)
+/* 2368C 80022A8C 2718D4F0 */  addiu      $t8, $t8, %lo(dlScreenDimRectangle)
 /* 23690 80022A90 24590008 */  addiu      $t9, $v0, 0x8
 /* 23694 80022A94 AC790000 */  sw         $t9, 0x0($v1)
 /* 23698 80022A98 3C0A0600 */  lui        $t2, (0x6000000 >> 16)
@@ -154,17 +154,17 @@ glabel func_800228F8
 /* 23700 80022B00 03E00008 */  jr         $ra
 /* 23704 80022B04 00000000 */   nop
 
-glabel func_80022B08
+glabel SetupScreenDim
 /* 23708 80022B08 AFA50004 */  sw         $a1, 0x4($sp)
 /* 2370C 80022B0C 30AEFFFF */  andi       $t6, $a1, 0xFFFF
 /* 23710 80022B10 01C02825 */  or         $a1, $t6, $zero
-/* 23714 80022B14 3C018009 */  lui        $at, %hi(D_8008D024)
-/* 23718 80022B18 AC24D024 */  sw         $a0, %lo(D_8008D024)($at)
-/* 2371C 80022B1C 3C018009 */  lui        $at, %hi(D_8008D020)
+/* 23714 80022B14 3C018009 */  lui        $at, %hi(gScreenDimTimer)
+/* 23718 80022B18 AC24D024 */  sw         $a0, %lo(gScreenDimTimer)($at)
+/* 2371C 80022B1C 3C018009 */  lui        $at, %hi(gScreenDimFlags)
 /* 23720 80022B20 34AF0001 */  ori        $t7, $a1, 0x1
-/* 23724 80022B24 A42FD020 */  sh         $t7, %lo(D_8008D020)($at)
-/* 23728 80022B28 3C018009 */  lui        $at, %hi(D_8008D028)
-/* 2372C 80022B2C AC26D028 */  sw         $a2, %lo(D_8008D028)($at)
+/* 23724 80022B24 A42FD020 */  sh         $t7, %lo(gScreenDimFlags)($at)
+/* 23728 80022B28 3C018009 */  lui        $at, %hi(gScreenDimRGBA)
+/* 2372C 80022B2C AC26D028 */  sw         $a2, %lo(gScreenDimRGBA)($at)
 /* 23730 80022B30 03E00008 */  jr         $ra
 /* 23734 80022B34 00000000 */   nop
 /* 23738 80022B38 00000000 */  nop

@@ -357,12 +357,6 @@ typedef struct unk_D_80086DC0_s
     f32 unk54;
 }unkD80086DC0s;
 
-typedef struct unk_228f8_s
-{
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 unk3;
-}unk228f8s;
+
 #endif
 

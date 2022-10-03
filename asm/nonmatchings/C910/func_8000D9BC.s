@@ -28,10 +28,10 @@ glabel func_8000D9BC
 /* E624 8000DA24 E7A60014 */  swc1       $f6, 0x14($sp)
 /* E628 8000DA28 0C008D40 */  jal        func_80023500
 /* E62C 8000DA2C E7B2001C */   swc1      $f18, 0x1C($sp)
-/* E630 8000DA30 3C038008 */  lui        $v1, %hi(D_8007B2FC)
+/* E630 8000DA30 3C038008 */  lui        $v1, %hi(gMasterGfxPos)
 /* E634 8000DA34 3C088008 */  lui        $t0, %hi(D_8007B2F8)
 /* E638 8000DA38 2508B2F8 */  addiu      $t0, $t0, %lo(D_8007B2F8)
-/* E63C 8000DA3C 2463B2FC */  addiu      $v1, $v1, %lo(D_8007B2FC)
+/* E63C 8000DA3C 2463B2FC */  addiu      $v1, $v1, %lo(gMasterGfxPos)
 /* E640 8000DA40 8C620000 */  lw         $v0, 0x0($v1)
 /* E644 8000DA44 3C090102 */  lui        $t1, (0x1020040 >> 16)
 /* E648 8000DA48 35290040 */  ori        $t1, $t1, (0x1020040 & 0xFFFF)

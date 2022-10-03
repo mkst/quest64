@@ -211,10 +211,10 @@ glabel func_8000C4C4
 /* D3E4 8000C7E4 0C003546 */  jal        func_8000D518
 /* D3E8 8000C7E8 02002025 */   or        $a0, $s0, $zero
 .L8000C7EC:
-/* D3EC 8000C7EC 3C158008 */  lui        $s5, %hi(D_8007B2FC)
+/* D3EC 8000C7EC 3C158008 */  lui        $s5, %hi(gMasterGfxPos)
 /* D3F0 8000C7F0 3C1E8008 */  lui        $fp, %hi(D_80084F34)
 /* D3F4 8000C7F4 27DE4F34 */  addiu      $fp, $fp, %lo(D_80084F34)
-/* D3F8 8000C7F8 26B5B2FC */  addiu      $s5, $s5, %lo(D_8007B2FC)
+/* D3F8 8000C7F8 26B5B2FC */  addiu      $s5, $s5, %lo(gMasterGfxPos)
 /* D3FC 8000C7FC 8EA30000 */  lw         $v1, 0x0($s5)
 /* D400 8000C800 3C0F0100 */  lui        $t7, %hi(D_10000E8)
 /* D404 8000C804 25EF00E8 */  addiu      $t7, $t7, %lo(D_10000E8)
