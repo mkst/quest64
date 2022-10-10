@@ -48,7 +48,7 @@ glabel func_80024260
 /* 24EE8 800242E8 AFB40018 */   sw        $s4, 0x18($sp)
 /* 24EEC 800242EC 02802025 */  or         $a0, $s4, $zero
 /* 24EF0 800242F0 00002825 */  or         $a1, $zero, $zero
-/* 24EF4 800242F4 0C00D008 */  jal        func_80034020
+/* 24EF4 800242F4 0C00D008 */  jal        osRecvMesg
 /* 24EF8 800242F8 24060001 */   addiu     $a2, $zero, 0x1
 /* 24EFC 800242FC 02308823 */  subu       $s1, $s1, $s0
 /* 24F00 80024300 02709821 */  addu       $s3, $s3, $s0

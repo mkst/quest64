@@ -220,3 +220,33 @@ void func_80023DF4(unk23df4s* arg0, f32 arg1, f32 arg2, f32 arg3) {
 #pragma GLOBAL_ASM("asm/nonmatchings/camera/func_80023E80.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/camera/func_8002413C.s")
+/*
+s32 func_8002413C(f32 arg0, f32 arg1, f32 arg2, s32 *arg3, s32 *arg4)
+{
+  f32 sp30;
+  f32 sp38;
+  f32 sp34;
+  
+  f32 temp_f0;
+  f32 temp_f6;
+  s32 ret;
+  guMtxXFMF((f32 (*)[4]) D_80086E88, arg0, arg1, arg2, &sp38, &sp34, &sp30);
+  temp_f6 = D_80086ECC;
+  ret = 0;
+  if (sp30 < (-D_80086ECC))
+  {
+    ret = 1;
+  }
+  if (ret != 0)
+  {
+    temp_f0 = sp30 * D_80086ED4;
+    ret = 0;
+    *arg3 = 0xA0 - ((s32) (((((f64) sp38) * 160.0) / ((f64) temp_f0)) * 0.75));
+    *arg4 = ((s32) ((120.0f * sp34) / temp_f0)) + 0x78;
+    if (sp30 < (-temp_f6))
+    {
+      ret = 1;
+    }
+  }
+  return ret;
+}*/

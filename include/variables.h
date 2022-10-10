@@ -142,8 +142,6 @@ extern s32 D_8007D0C4;
 extern s32 D_80088428;
 extern s32 D_80088420;
 
-extern unk11170s D_800859E8[];
-
 extern s32 gNextSubmap;
 extern u16 gAllowBattles; 
 extern sMapData* gMapData;
@@ -181,7 +179,6 @@ extern s32 D_8008C654; //number of lines to cover from top to bottom (HUD)
 extern s32 D_8008C658; //number of lines to draw from left to right (HUD)
 extern s32 D_8008C65C; //number of lines to draw from top to bottom (HUD) 
 
-extern sPlayerAction D_8007BAB8; //Player action. 
 extern Gfx D_803A8C08[]; //exclamation mark display list
 extern Gfx* gMasterGfxPos;
 
@@ -193,6 +190,4 @@ extern unkD80086EE0s D_80086EE0;
 extern u8 D_8004D740[];
 extern u8 D_80086AE8[];
 extern u8 D_800869D8[];
-
-
 #endif
