@@ -1,9 +1,9 @@
 .include "macro.inc"
 
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purpose registers
+/* assembler directives */
+.set noat      /* allow manual use of $at */
+.set noreorder /* don't insert nops after branches */
+.set gp=64     /* allow use of 64-bit general purpose registers */
 
 .section .text, "ax"
 
@@ -470,7 +470,7 @@ glabel L800404D4
 .L80040748:
 /* 41348 80040748 00115080 */  sll        $t2, $s1, 2
 /* 4134C 8004074C 026A9021 */  addu       $s2, $s3, $t2
-/* 41350 80040750 8E4B0000 */  lw         $t3, 0x0($s2)
+/* 41350 80040750 8E4B0000 */  lw         $t3, %lo(D_80070000)($s2)
 /* 41354 80040754 00002025 */  or         $a0, $zero, $zero
 /* 41358 80040758 00002825 */  or         $a1, $zero, $zero
 /* 4135C 8004075C 11600019 */  beqz       $t3, .L800407C4
@@ -492,7 +492,7 @@ glabel L800404D4
 /* 4139C 8004079C 3239FFFF */  andi       $t9, $s1, 0xFFFF
 /* 413A0 800407A0 ADC20028 */  sw         $v0, 0x28($t6)
 /* 413A4 800407A4 8E180020 */  lw         $t8, 0x20($s0)
-/* 413A8 800407A8 8E4F0000 */  lw         $t7, 0x0($s2)
+/* 413A8 800407A8 8E4F0000 */  lw         $t7, %lo(D_80070000)($s2)
 /* 413AC 800407AC 03208825 */  or         $s1, $t9, $zero
 /* 413B0 800407B0 A70F0000 */  sh         $t7, 0x0($t8)
 /* 413B4 800407B4 0C0100D4 */  jal        init_lpfilter

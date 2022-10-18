@@ -311,4 +311,3 @@ segments:
   - [0xEEFCE0, bin, SE_tbl]
   - [0xF94380, bin, trailer] # 0xff to end
   - [0x1000000]
-

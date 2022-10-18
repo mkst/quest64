@@ -1,9 +1,9 @@
 .include "macro.inc"
 
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purpose registers
+/* assembler directives */
+.set noat      /* allow manual use of $at */
+.set noreorder /* don't insert nops after branches */
+.set gp=64     /* allow use of 64-bit general purpose registers */
 
 .section .text, "ax"
 
@@ -22,11 +22,11 @@ glabel osEPiRawReadIo
 /* 48808 80047C08 00000000 */   nop
 .L80047C0C:
 /* 4880C 80047C0C 8C88000C */  lw         $t0, 0xC($a0)
-/* 48810 80047C10 3C01A000 */  lui        $at, (0xA0000000 >> 16)
+/* 48810 80047C10 3C01A000 */  lui        $at, %hi(D_A0000000)
 /* 48814 80047C14 00001025 */  or         $v0, $zero, $zero
 /* 48818 80047C18 01054825 */  or         $t1, $t0, $a1
 /* 4881C 80047C1C 01215025 */  or         $t2, $t1, $at
-/* 48820 80047C20 8D4B0000 */  lw         $t3, 0x0($t2)
+/* 48820 80047C20 8D4B0000 */  lw         $t3, %lo(D_A0000000)($t2)
 /* 48824 80047C24 27BD0008 */  addiu      $sp, $sp, 0x8
 /* 48828 80047C28 03E00008 */  jr         $ra
 /* 4882C 80047C2C ACCB0000 */   sw        $t3, 0x0($a2)

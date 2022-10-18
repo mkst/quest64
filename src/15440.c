@@ -1,5 +1,14 @@
 #include "common.h"
 
+typedef struct {
+    s32 unk0;
+    u16 unk4;
+    char unk6[0x36];
+}unk15b50s;
+
+extern unk15b50s D_80086F18;
+extern u16 D_80086F1C;
+
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80014840.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80014890.s")
@@ -30,7 +39,18 @@
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_800156D0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80015B50.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80015B50.s") //! TODO May need more work. D_80086F18 is the beginning of an array of structs.
+s32 func_80015B50(void) {
+    unk15b50s* var_v0;
+    s32 var_v1;
+    var_v1 = 10;
+    var_v0 = &D_80086F18;
+    while (var_v1 != 0 && var_v0->unk4 == 0) {
+        var_v1--;
+        var_v0++;
+    }
+    return var_v1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80015B8C.s")
 

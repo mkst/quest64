@@ -1,7 +1,5 @@
 #include "common.h"
 
-extern unk11170s D_80085A14[];
-extern unk11170s D_800859E8[];
 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_8000EE60.s")
@@ -70,10 +68,7 @@ void func_800110D0(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_80011100.s")
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_80011150.s")
-void func_80011150(s32 arg0) {
-    D_800859E8[arg0].unk0 = 0;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_80011150.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_80011170.s")
 void func_80011170(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
@@ -99,10 +94,8 @@ void func_800111A4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
     temp_v0->unk24 = arg3;
 }
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_800111D8.s")
-void func_800111D8(s32 arg0, s32 arg1) {
-    D_80085A14[arg0].unk0 = arg1;
-}
+#pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_800111D8.s")
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_800111F8.s")
 

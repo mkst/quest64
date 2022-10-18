@@ -1,9 +1,9 @@
 .include "macro.inc"
 
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purpose registers
+/* assembler directives */
+.set noat      /* allow manual use of $at */
+.set noreorder /* don't insert nops after branches */
+.set gp=64     /* allow use of 64-bit general purpose registers */
 
 .section .text, "ax"
 
@@ -20,10 +20,10 @@ glabel __osSpRawWriteIo
 .L8003CA34:
 /* 3D634 8003CA34 8FAF0018 */  lw         $t7, 0x18($sp)
 /* 3D638 8003CA38 8FAE001C */  lw         $t6, 0x1C($sp)
-/* 3D63C 8003CA3C 3C01A000 */  lui        $at, (0xA0000000 >> 16)
+/* 3D63C 8003CA3C 3C01A000 */  lui        $at, %hi(D_A0000000)
 /* 3D640 8003CA40 01E1C025 */  or         $t8, $t7, $at
 /* 3D644 8003CA44 00001025 */  or         $v0, $zero, $zero
-/* 3D648 8003CA48 AF0E0000 */  sw         $t6, 0x0($t8)
+/* 3D648 8003CA48 AF0E0000 */  sw         $t6, %lo(D_A0000000)($t8)
 .L8003CA4C:
 /* 3D64C 8003CA4C 8FBF0014 */  lw         $ra, 0x14($sp)
 /* 3D650 8003CA50 27BD0018 */  addiu      $sp, $sp, 0x18

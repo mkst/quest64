@@ -1,5 +1,24 @@
 #include "common.h"
 
+typedef struct {
+    char unk0[0x52];
+    s16 unk52;
+    u16 unk54;
+    u16 unk56;
+    s16 unk58;
+    s16 unk5A;
+    u16 unk5C;
+    s16 unk5E;
+    u16 unk60;
+}unk1e0acs;
+
+typedef struct {
+    s16 unk0;
+    s16 unk2;
+}unk1e0acs2;
+
+
+
 //#pragma GLOBAL_ASM("asm/nonmatchings/1E4B0/func_8001D8B0.s")
 void func_8001D8B0(unk1d8b0s *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, u16 arg5)
 {
@@ -38,6 +57,32 @@ void func_8001D8B0(unk1d8b0s *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, u16 
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1E4B0/func_8001DC78.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1E4B0/func_8001E0AC.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1E4B0/func_8001E0AC.s")
+void func_8001E0AC(s32 arg0, unk1e0acs *arg1, unk1e0acs2 *arg2)
+{
+  s32 temp_v0;
+  temp_v0 = (arg1->unk54 += arg0);
+  if (temp_v0 >= arg2->unk2)
+  {
+    if (arg1->unk52 != arg1->unk5A)
+    {
+      arg1->unk52 = arg1->unk5A;
+      arg1->unk54 = 0U;
+      arg1->unk56 = 0U;
+      arg1->unk58 = (u16) arg1->unk5C;
+      (*arg1).unk60 = (u16) (arg1->unk60 | 0x400);
+    }
+    else
+    {
+      arg1->unk54 = (u16) (temp_v0 - arg2->unk2);
+      arg1->unk60 = (u16) (arg1->unk60 | 0x200);
+    }
+  }
+  else
+  {
+    arg1->unk60 = (u16) (arg1->unk60 & 0xF9FF);
+  }
+  arg1->unk56 = (u16) (arg1->unk56 + 1);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1E4B0/func_8001E138.s")

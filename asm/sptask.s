@@ -1,9 +1,9 @@
 .include "macro.inc"
 
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purpose registers
+/* assembler directives */
+.set noat      /* allow manual use of $at */
+.set noreorder /* don't insert nops after branches */
+.set gp=64     /* allow use of 64-bit general purpose registers */
 
 .section .text, "ax"
 
@@ -111,10 +111,10 @@ glabel osSpTaskLoad
 /* 3518C 8003458C 11600007 */  beqz       $t3, .L800345AC
 /* 35190 80034590 00000000 */   nop
 /* 35194 80034594 8E0C0038 */  lw         $t4, 0x38($s0)
-/* 35198 80034598 3C01A000 */  lui        $at, (0xA0000000 >> 16)
+/* 35198 80034598 3C01A000 */  lui        $at, %hi(D_A0000000)
 /* 3519C 8003459C 258D0BFC */  addiu      $t5, $t4, 0xBFC
 /* 351A0 800345A0 01A17025 */  or         $t6, $t5, $at
-/* 351A4 800345A4 8DCF0000 */  lw         $t7, 0x0($t6)
+/* 351A4 800345A4 8DCF0000 */  lw         $t7, %lo(D_A0000000)($t6)
 /* 351A8 800345A8 AC4F0010 */  sw         $t7, 0x10($v0)
 .L800345AC:
 /* 351AC 800345AC 0C00D394 */  jal        osWritebackDCache

@@ -102,10 +102,9 @@ extract: check
 	$(PYTHON) $(TOOLS_DIR)/splat/split.py $(BASENAME).$(VERSION).yaml
 
 clean:
-	rm -rf asm
 	rm -rf assets
 	rm -rf build
-	rm -f *auto.txt
+	#rm -f *auto.txt
 
 ### Recipes
 

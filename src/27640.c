@@ -1,18 +1,7 @@
 #include "common.h"
 
-extern s8 D_8008FD00[4] = {0, 0, 0, 0};
-extern u16 D_8008FD0C = 0; //pause and save screen flags 
-extern u16 D_8008FD20 = 0; //unknown at this time, but found between save menu and pfs related vars. 
+#pragma GLOBAL_ASM("asm/nonmatchings/27640/func_80026A40.s")
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/27640/func_80026A40.s")
-void func_80026A40(void) {
-    s32 i;
-    D_8008FD0C = 0x8000;
-    D_8008FD20 = 0;
-    for(i=0; i<4; i++) {
-        D_8008FD00[i] = i;
-    }
-}
 #pragma GLOBAL_ASM("asm/nonmatchings/27640/func_80026A7C.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/27640/func_80026D1C.s")
