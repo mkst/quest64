@@ -4,14 +4,19 @@
 #define ON_GROUND 0
 #define FLYING 1
 #define MAMMON 2
-
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+}unk20e2cs;
 extern f64 D_800716C0; //.rodata value 4075E00000000000 or 350.0 
 extern EnemyAction D_8007C998[]; //enemy action data
 extern Gfx D_803A8CF8[]; //Staff icon DL
+extern unk20e2cs D_803A6F40;
 
 s32 func_8002413C(f32 arg0, f32 arg1, f32 arg2, s32* arg3, s32* arg4);
 void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
-
+void func_800210FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8);
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E1F0.s")
 void func_8001E1F0(void)
 {
@@ -27,7 +32,35 @@ void func_8001E1F0(void)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E25C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E7FC.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E7FC.s")
+void func_8001E7FC(BrianData2 *arg0)
+{
+  s32 temp_lo;
+  unk20e2cs *gfxHUD;
+  BrianData1 *brianData;
+  brianData = arg0->brianData1;
+  gfxHUD = &D_803A6F40;
+    
+  func_800210FC((s32) gfxHUD, 0, 1, 0x3E, 0x11, 0x20, 0x27, 0x400, 0x400);
+  func_800210FC((s32) gfxHUD, 0, 0x12, 0x3E, 0x12, 0x20, 0x38, 0x400, 0x400);
+  temp_lo = ((s32) (brianData->currHP * 0x38)) / ((s32) brianData->maxHP);
+  if (temp_lo != 0)
+  {
+    func_800210FC((s32) gfxHUD, 3, 0xB, temp_lo, 5, 0x5E, 0x27, 0x400, 0x400);
+  }
+  temp_lo = ((s32) (brianData->currMP * 0x38)) / ((s32) brianData->maxMP);
+  if (temp_lo != 0)
+  {
+    func_800210FC((s32) gfxHUD, 3, 0x15, temp_lo, 5, 0x5E, 0x2C, 0x400, 0x400);
+  }
+  func_80020E2C(gfxHUD, 0x20, 0x1D, 0x80, 0xA);
+  func_80020D4C(3, 0xC, 0, (s32) brianData->currHP);
+  func_80020D4C(1, 0x36, 0, (s32) brianData->maxHP);
+  func_80020D4C(3, 0xC, 0x1B, (s32) brianData->currMP);
+  func_80020D4C(1, 0x36, 0x1B, (s32) brianData->maxMP);
+  func_80020F8C(0x2F, 0, 8, 0xA, 0x70, 0x1D, 0x400, 0x400);
+  func_80020F8C(0x2F, 0x1B, 8, 0xA, 0x70, 0x1D, 0x400, 0x400);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EA84.s")
 

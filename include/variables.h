@@ -132,7 +132,7 @@ extern u8 D_D3BE40; //phys inventory palette
 //screen dim/fade variables
 
 
-extern void* D_803232A0;
+extern u64 D_803232A0[];
 extern void* D_80331A30;
 extern u8 D_D3E240[];
 extern u8 D_D3E2C0[];

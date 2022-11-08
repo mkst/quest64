@@ -3,13 +3,11 @@
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/2F1E0/func_8002E5E0.s")
 void func_8002E5E0(s32 arg0) {
-    s32 var_s0;
+    s32 i;
 
-    var_s0 = 0;
-    do {
-        func_8002E628(var_s0, 0);
-        var_s0 += 1;
-    } while (var_s0 != 4);
+for (i = 0; i != 4; i++){
+    func_8002E628(i, 0);
+    }
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/2F1E0/func_8002E628.s")
