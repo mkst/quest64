@@ -4,19 +4,30 @@
 #define ON_GROUND 0
 #define FLYING 1
 #define MAMMON 2
+
 typedef struct {
     s32 unk0;
     s32 unk4;
     s32 unk8;
 }unk20e2cs;
+
 extern f64 D_800716C0; //.rodata value 4075E00000000000 or 350.0 
 extern EnemyAction D_8007C998[]; //enemy action data
 extern Gfx D_803A8CF8[]; //Staff icon DL
 extern unk20e2cs D_803A6F40;
+extern s32 D_8007B2F8;
+extern f32 D_80086DEC;
+extern s32 D_8008C648;
+extern s32 D_8008C64C;
+extern Mtx D_2000000[];
+extern Gfx D_803A8EA0[]; //Compass Display List
+extern Gfx D_803A8C80[];
 
+void func_80020D4C(u16 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_8002413C(f32 arg0, f32 arg1, f32 arg2, s32* arg3, s32* arg4);
 void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
 void func_800210FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8);
+void func_80020E2C(unk20e2cs* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E1F0.s")
 void func_8001E1F0(void)
 {
@@ -25,8 +36,8 @@ void func_8001E1F0(void)
   D_8008C640 = -1;
   D_8008C648 = D_8008C64C = 0;
   D_8008C650 = D_8008C654 = 0;  
-  D_8008C658 = 0x140;
-  D_8008C65C = 0xF0;
+  D_8008C658 = 0x140; //HUD height
+  D_8008C65C = 0xF0; //HUD Width
   D_8008C630 = 0;
 }
 
@@ -63,6 +74,38 @@ void func_8001E7FC(BrianData2 *arg0)
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EA84.s")
+/*void func_8001EA84(s32 arg0) {
+    MtxF sp38;
+
+    D_8008C648 = 0x104;
+    D_8008C64C = 0x18;
+    func_80023570(&sp38, 0.0f, 0.0f, D_80086DEC);
+    sp38.mf[3][0] = (f32) (D_8008C648 + 0x11);
+    sp38.mf[3][1] = (f32) (D_8008C64C + 0x11);
+    sp38.mf[3][2] = 0.0f;
+    
+    guMtxF2L((f32 (*)[4]) &sp38, arg0 + (D_8007B2F8 << 6) + 0xC0);
+
+    gSPMatrix(gMasterGfxPos++, ((D_8007B2F8) + 0xC0 + D_2000000), G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
+    
+    //temp_v0 = gMasterGfxPos;
+    //gMasterGfxPos = temp_v0 + 8;
+    //temp_v0->words.w0 = 0x01020040;
+    //temp_v0->words.w1 = (u32) ((D_8007B2F8 << 6) + 0xC0 + D_2000000);
+    
+    
+    D_8007B2F8++;
+
+    gSPDisplayList(gMasterGfxPos++, D_803A8EA0);
+    
+    //temp_v0_2 = gMasterGfxPos;
+    //gMasterGfxPos = temp_v0_2 + 8;
+    //temp_v0_2->words.w1 = (u32) D_803A8EA0;
+    //temp_v0_2->words.w0 = 0x06000000;
+    
+    
+    func_800210FC((s32) &D_803A6F40, 0xD, 0xA, 0xB, 0xE, 0x93, 0, 0x400, 0x400);
+}*/
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EBDC.s")
 
@@ -72,7 +115,16 @@ void func_8001E7FC(BrianData2 *arg0)
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F818.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F900.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F900.s")
+void func_8001F900(void) {
+    s32 sp34;
+    s32 sp30;
+
+    if (func_8002413C(D_8007BAB8.xpos, (D_8007BAB8.ypos + 11.0), D_8007BAB8.zpos, &sp34, &sp30) != 0) {
+        gSPDisplayList(gMasterGfxPos++, D_803A8C80);
+        func_80020F8C(sp34, sp30 - 0x1E, 0x18, 0x1E, 0, 0, 0x400, 0x400);
+    }
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F9B0.s")
 //displays exclamation mark above brian's head
@@ -182,11 +234,57 @@ s32 func_80020D18(u8* arg0) {
 }
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D4C.s")
+/*
+void func_80020D4C(u16 arg0, s32 arg1, s32 arg2, s32 arg3)
+{
+  u8 *var_s1;
+  u8 sp48[0xC];
+  s32 var_s2;
+  // s32 temp_v0;
+  // s32 var_s0;
 
+    
+  // var_s0 = arg1;
+  var_s1 = sp48;
+  var_s2 = func_80024330(arg3, sp48, arg0);
+    for (;var_s2 != 0; var_s2--, var_s1++)
+  // if (var_s2 != 0)
+  // {
+    // do
+    {
+      if (*var_s1 != ' ')
+      {
+        func_80020F8C(arg1, arg2, 8, 0xA, (*var_s1 * 8) + ' ', 0x1D, 0x400, 0x400);
+        // goto block_5;
+        arg1 += 7;
+      } else
+      if (arg0 & 6)
+      {
+        // block_5:
+        arg1 += 7;
+
+      }
+      // var_s2--;
+      // var_s1++;
+    }
+  //   while (var_s2 != 0);
+  // }
+}
+*/
 void func_80020E24(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020E2C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020E2C.s")
+void func_80020E2C(unk20e2cs* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+        
+    gDPSetTextureImage(gMasterGfxPos++, G_IM_FMT_CI, G_IM_SIZ_8b, arg0->unk8, arg0->unk0);
+    gDPSetTile(gMasterGfxPos++, G_IM_FMT_CI, G_IM_SIZ_8b, ((((arg1 + arg3) - arg1) + 8)) >> 3, 0x0000, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+    gDPLoadSync(gMasterGfxPos++);
+    gDPLoadTile(gMasterGfxPos++, G_TX_LOADTILE, arg1 * 4, arg2 * 4, (arg1 + arg3) * 4, (arg2 + arg4) * 4);
+    gDPPipeSync(gMasterGfxPos++);
+    gDPSetTile(gMasterGfxPos++, G_IM_FMT_CI, G_IM_SIZ_8b, ((((arg1 + arg3) - arg1) + 8)) >> 3, 0x0000, G_TX_RENDERTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+    gDPSetTileSize(gMasterGfxPos++, G_TX_RENDERTILE, arg1 * 4, arg2 * 4, (arg1 + arg3) * 4, (arg2 + arg4) * 4);
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020F8C.s")
 /*
