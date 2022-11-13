@@ -214,6 +214,7 @@ void func_80020888(void) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020B4C.s")
 
+
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D18.s")
 s32 func_80020D18(u8* arg0) {
     s32 var_v1;
@@ -274,7 +275,7 @@ void func_80020D4C(u16 arg0, s32 arg1, s32 arg2, s32 arg3)
 void func_80020E24(void) {
 }
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020E2C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020E2C.s") //Assist by StuckPixel
 void func_80020E2C(unk20e2cs* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         
     gDPSetTextureImage(gMasterGfxPos++, G_IM_FMT_CI, G_IM_SIZ_8b, arg0->unk8, arg0->unk0);

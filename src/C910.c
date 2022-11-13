@@ -1,4 +1,14 @@
 #include "common.h"
+typedef struct {
+    u16 unk0;
+    u16 unk2;
+    char unk4[0x18];
+    f32 unk1C;
+    char unk20[0x14];
+    f32 unk34;
+}unke350s;
+extern f64 D_80071238;
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/C910/func_8000BD10.s")
 
@@ -65,7 +75,13 @@ loop_1:
 
 #pragma GLOBAL_ASM("asm/nonmatchings/C910/func_8000E2C0.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/C910/func_8000E350.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/C910/func_8000E350.s")
+void func_8000E350(unke350s *arg0)
+{
+  arg0->unk1C = (f32) (arg0->unk1C + (arg0->unk34 / 2));
+  arg0->unk34 = (f32) (((f64) arg0->unk34) - D_80071238);
+  gDPSetEnvColor(gMasterGfxPos++, 0xFF, 0xFF, 0xFF, arg0->unk0 * 5);
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/C910/func_8000E3C4.s")
 void func_8000E3C4(void) {
