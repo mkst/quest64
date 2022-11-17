@@ -228,10 +228,8 @@ void func_800203D0(void)
   gDPPipeSync(gMasterGfxPos++);
   gDPSetTextureImage(gMasterGfxPos++, 0, G_IM_SIZ_16b, 1, D_8039D990);
   gDPTileSync(gMasterGfxPos++);
-  gDPSetTile(gMasterGfxPos++, 0, G_IM_SIZ_4b, 0, 0x0100, 7, 0, 0 | 0, 0, 0, 0 | 0, 0, 0);
-  gDPLoadSync(gMasterGfxPos++);
-  gDPLoadTLUTCmd(gMasterGfxPos++, 7, 255);
-  gDPPipeSync(gMasterGfxPos++);
+  gDPSetTile(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);  gDPLoadSync(gMasterGfxPos++);
+  gDPLoadTLUTCmd(gMasterGfxPos++, G_TX_LOADTILE, 255);  gDPPipeSync(gMasterGfxPos++);
   new_var = &D_803A6F60;
   if (D_8007D088->unk90 & 0x80)
   {
@@ -250,9 +248,8 @@ void func_800203D0(void)
   func_80020E2C(&D_803A6F40, 0x20, 0x1D, 0x80, 0xA);
   gDPSetTextureImage(gMasterGfxPos++, 0, G_IM_SIZ_16b, 1, D_80399AB0);
   gDPTileSync(gMasterGfxPos++);
-  gDPSetTile(gMasterGfxPos++, 0, G_IM_SIZ_4b, 0, 0x0100, 7, 0, 0 | 0, 0, 0, 0 | 0, 0, 0);
-  gDPLoadSync(gMasterGfxPos++);
-  gDPLoadTLUTCmd(gMasterGfxPos++, 7, 255);
+  gDPSetTile(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);  gDPLoadSync(gMasterGfxPos++);
+  gDPLoadTLUTCmd(gMasterGfxPos++, G_TX_LOADTILE, 255);
   gDPPipeSync(gMasterGfxPos++);
   if (D_8007D088->unk90 & 0x80)
   {
