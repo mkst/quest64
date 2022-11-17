@@ -305,6 +305,8 @@ segments:
   - [0xD3E240, bin, text_palettes]
   - [0xD3E2C0, bin, font_tbl]
   - [0xD4B3C0, bin]
+ 
+  - [0xDA99F8, bin]         
   - [0xE7E800, bin, Instrument_ctl]
   - [0xE81610, bin, Instrument_tbl]
   - [0xEEE020, bin, SE_ctl]

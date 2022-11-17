@@ -11,6 +11,33 @@ typedef struct {
     s32 unk8;
 }unk20e2cs;
 
+typedef struct {
+    s16 unk0;
+    s16 unk2;
+    s16 unk4;
+    u16 unk6;
+    u16 unk8;
+    s16 unkA;
+    u16 unkC;
+    u16 unkE;
+    char unk10[0x16];
+    u16 unk26;
+    u16 unk28;
+    u16 unk2A;
+}unk203d0s2;
+
+typedef struct {
+    char unk0[0x20];
+    unk203d0s2* unk20;
+    char unk24[0x6C];
+    u16 unk90;    
+}unk203d0s;
+
+extern unk203d0s* D_8007D088;
+extern s32 *D_8007D0AC;
+extern u8 D_80399AB0[];
+extern u8 D_8039D990[];
+extern unk20e2cs D_803A6F60;
 extern f64 D_800716C0; //.rodata value 4075E00000000000 or 350.0 
 extern EnemyAction D_8007C998[]; //enemy action data
 extern Gfx D_803A8CF8[]; //Staff icon DL
@@ -192,7 +219,53 @@ void func_800203C0(void) {
 void func_800203C8(void) {
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800203D0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800203D0.s")
+void func_800203D0(void)
+{
+  unk20e2cs *new_var;
+  D_8008C648 = 0xB5;
+  D_8008C64C = 0x1A;
+  gDPPipeSync(gMasterGfxPos++);
+  gDPSetTextureImage(gMasterGfxPos++, 0, G_IM_SIZ_16b, 1, D_8039D990);
+  gDPTileSync(gMasterGfxPos++);
+  gDPSetTile(gMasterGfxPos++, 0, G_IM_SIZ_4b, 0, 0x0100, 7, 0, 0 | 0, 0, 0, 0 | 0, 0, 0);
+  gDPLoadSync(gMasterGfxPos++);
+  gDPLoadTLUTCmd(gMasterGfxPos++, 7, 255);
+  gDPPipeSync(gMasterGfxPos++);
+  new_var = &D_803A6F60;
+  if (D_8007D088->unk90 & 0x80)
+  {
+    func_800210FC((s32) new_var, 0, 0, 0x6E, 0x10, 0x64, 0x1C, 0x400, 0x400);
+    func_800210FC((s32) new_var, 0, 0x10, 0x6E, 0x10, 0x64, 0x2C, 0x400, 0x400);
+    func_800210FC((s32) new_var, 0, 0x20, 0x6E, 0x10, 0x64, 0x3C, 0x400, 0x400);
+    func_800210FC((s32) new_var, 0, 0x30, 0x6E, 4, 0x64, 0x4C, 0x400, 0x400);
+  }
+  else
+  {
+    func_800210FC((s32) new_var, 0, 0, 0x6E, 0x10, 0x64, 0x1C, 0x400, 0x400);
+    func_800210FC((s32) new_var, 0, 0x10, 0x6E, 0xA, 0x64, 0x2C, 0x400, 0x400);
+    func_800210FC((s32) new_var, 0, 0x1A, 0x6E, 2, 0x64, 0x4E, 0x400, 0x400);
+  }
+  func_80020B4C(4, 0x11, 0, D_8007D0AC[D_8007D088->unk20->unk2]);
+  func_80020E2C(&D_803A6F40, 0x20, 0x1D, 0x80, 0xA);
+  gDPSetTextureImage(gMasterGfxPos++, 0, G_IM_SIZ_16b, 1, D_80399AB0);
+  gDPTileSync(gMasterGfxPos++);
+  gDPSetTile(gMasterGfxPos++, 0, G_IM_SIZ_4b, 0, 0x0100, 7, 0, 0 | 0, 0, 0, 0 | 0, 0, 0);
+  gDPLoadSync(gMasterGfxPos++);
+  gDPLoadTLUTCmd(gMasterGfxPos++, 7, 255);
+  gDPPipeSync(gMasterGfxPos++);
+  if (D_8007D088->unk90 & 0x80)
+  {
+    func_80020D4C(3U, 0x10, 0x1C, (s32) D_8007D088->unk20->unk6);
+    func_80020D4C(3U, 0x10, 0x26, (s32) D_8007D088->unk20->unkE);
+    func_80020D4C(3U, 0x46, 0x1C, (s32) D_8007D088->unk20->unk2A);
+    func_80020D4C(3U, 0x46, 0x26, (s32) D_8007D088->unk20->unkC);
+    if (D_8007D088->unk20->unk26 != 4)
+    {
+      func_800210FC((s32) (&D_803A6F40), 0x5B, 3, 0xC, 0xC, (D_8007D088->unk20->unk26 * 0xC) + 0x20, 0x10, 0x400, 0x400);
+    }
+  }
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020888.s")
 void func_80020888(void) {
