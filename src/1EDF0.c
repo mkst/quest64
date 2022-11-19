@@ -345,9 +345,9 @@ void func_80020988(void)
       }
       func_8002413C(var_f12, var_f14, var_f0, &sp74, &sp70);
       func_800210FC((s32) new_var, sp74 - (((s32) var_s0->unk18) >> 1), sp70 - var_s0->unk1A, (s32) var_s0->unk18, (s32) var_s0->unk1A, (s32) var_s0->unk14, (s32) var_s0->unk16, 0x400, 0x400);
-      var_s0->unk0 = (u16) (var_s0->unk0 - 1);
+      var_s0->unk0--;
     }
-    var_s1 -= 1;
+    var_s1--;
     var_s0++;
   }
 }
