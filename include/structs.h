@@ -156,10 +156,6 @@ typedef struct unk_2260c_s{
     s16 unk4;
 }unk2260cs;
 
-typedef struct unk_20888_s{
-    s16 unk0;
-    char unk4[0x1A];
-}unk20888s;
 
 typedef struct temp {
     s8 unk_00;

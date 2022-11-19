@@ -57,7 +57,7 @@ extern u16 D_80084F14;
 extern s32 D_80085370;
 extern s16 D_800859E2;
 extern f32 D_80086E44;
-extern unk20888s D_8008C668;
+//extern unk20888s D_8008C668;
 extern s8 D_8008FCC1;
 extern u16 D_8008FCC2;
 extern s16 D_8008FCC4;

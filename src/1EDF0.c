@@ -33,6 +33,33 @@ typedef struct {
     u16 unk90;    
 }unk203d0s;
 
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    
+}unks;
+
+typedef struct unk_20888_s{
+    u16 unk0;
+    s16 unk2;
+    unks* unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    u16 unk14;
+    u16 unk16;
+    u16 unk18;
+    u16 unk1A;
+}unk20888s;
+
+
+extern unk20888s D_8008C668;
+extern u8 D_803A2960[]; //Status icons palette
+extern unk20e2cs D_803A6F70;
+extern u8 D_8004D44C;
+extern unk20e2cs D_803A6F80;
+extern void* D_803A6FB0[];
 extern unk203d0s* D_8007D088;
 extern s32 *D_8007D0AC;
 extern u8 D_80399AB0[];
@@ -280,9 +307,53 @@ void func_80020888(void) {
 }
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800208B8.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020988.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020988.s")
+void func_80020988(void)
+{
+    
+  unk20e2cs *new_var;
+  f32 var_f0;
+  f32 var_f12;
+  f32 var_f14;
+  s32 sp74;
+  s32 sp70;
+  unk20888s *var_s0;
+  s32 var_s1;
+
+  gDPPipeSync(gMasterGfxPos++);
+  gDPSetTextureImage(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, D_803A2960);
+  gDPTileSync(gMasterGfxPos++);
+  gDPSetTile(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+  gDPLoadSync(gMasterGfxPos++);
+  gDPLoadTLUTCmd(gMasterGfxPos++, G_TX_LOADTILE, 255);
+  gDPPipeSync(gMasterGfxPos++);
+  var_s0 = &D_8008C668;
+  var_s1 = 8;
+  while (var_s1 != 0)
+  {
+    if (var_s0->unk0 != 0)
+    {
+      var_f12 = var_s0->unk8;
+      var_f14 = var_s0->unkC;
+      new_var = &D_803A6F70;
+      var_f0 = var_s0->unk10;
+      if (var_s0->unk4 != NULL)
+      {
+        var_f12 += var_s0->unk4->unk0;
+        var_f14 += var_s0->unk4->unk4;
+        var_f0 += var_s0->unk4->unk8;
+      }
+      func_8002413C(var_f12, var_f14, var_f0, &sp74, &sp70);
+      func_800210FC((s32) new_var, sp74 - (((s32) var_s0->unk18) >> 1), sp70 - var_s0->unk1A, (s32) var_s0->unk18, (s32) var_s0->unk1A, (s32) var_s0->unk14, (s32) var_s0->unk16, 0x400, 0x400);
+      var_s0->unk0 = (u16) (var_s0->unk0 - 1);
+    }
+    var_s1 -= 1;
+    var_s0++;
+  }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020B4C.s")
+
 
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020D18.s")
