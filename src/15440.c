@@ -6,6 +6,18 @@ typedef struct {
     char unk6[0x36];
 }unk15b50s;
 
+typedef struct {
+    char unk0[0x8C];
+    u16 unk8C;
+}unk18278s2;
+
+typedef struct {
+    char unk0[0x68];
+    unk18278s2* unk68;
+}unk18278s;
+
+
+extern u16 D_8004CD74[];
 extern unk15b50s D_80086F18;
 extern u16 D_80086F1C;
 
@@ -177,9 +189,15 @@ void func_800175B8(s32 arg0, unk173e0s* arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_8001817C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80018278.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80018278.s")
+s32 func_80018278(s32 arg0, unk18278s* arg1) {
+    return *(&D_8004CD74[arg0]) & arg1->unk68->unk8C;
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_8001829C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_8001829C.s")
+void func_8001829C(s32 arg0, unk18278s* arg1) {
+    arg1->unk68->unk8C |= D_8004CD74[arg0];
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_800182C4.s")
 
