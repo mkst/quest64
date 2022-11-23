@@ -1,4 +1,12 @@
 #include "common.h"
+
+
+extern u8 D_8004C460[];
+extern u8 D_8007C570[];
+extern u8 D_8007C574[];
+extern u8 D_8007C970[];
+extern u8* D_803A9954[]; //array of pointers to item names
+
 void func_800121B0(u16 arg0);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B40.s")
@@ -17,7 +25,33 @@ void func_8001205C(unk1205cs* arg0) {
     func_800268D4(0x1A, 8, 0xFF);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800120C0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800120C0.s")
+void func_800120C0(s32 arg0) //Writes data for [ITEM NAME] obtained! box. 
+{
+  u8 var_a1_2;
+  u8 *var_v0;
+  u8 *var_v0_2;
+  u8 *var_v1;
+    
+  var_v0 = D_803A9954[arg0];
+  D_8007C570[0] = 0x7F;
+  D_8007C570[1] = 0xE0;
+  D_8007C570[2] = 0x7F;
+  D_8007C570[3] = 0x7F;  
+
+    for (var_v1 = D_8007C574; *var_v0 != 0xFF; var_v1 ++, var_v0++)
+        {
+            *var_v1 = *var_v0;
+        }
+  
+    for (var_v0 = D_8004C460; *var_v0 != 0xFF; var_v1 ++, var_v0++)
+        {
+            *var_v1 = *var_v0;
+        }
+     
+  *var_v1 = *var_v0;
+  *D_8007C970 = 0xFF;
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012170.s")
 u8 func_80012170(u16 arg0) {

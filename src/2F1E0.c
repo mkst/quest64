@@ -1,5 +1,10 @@
 #include "common.h"
 
+extern u8 D_8004C460[];
+extern u8 D_8007C570[];
+extern u8 D_8007C574[];
+extern u8 D_8007C970[];
+extern u8* D_803A9954[]; //array of pointers to item names
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/2F1E0/func_8002E5E0.s")
 void func_8002E5E0(s32 arg0) {

@@ -2,7 +2,7 @@ options:
   base_path: .
   basename: quest64
   compiler: IDO
-  create_detected_syms: yes
+  #create_detected_syms: yes
   find_file_boundaries: True
   platform: n64
   symbol_addrs_path: symbol_addrs.us.txt
