@@ -160,7 +160,7 @@ extern f32 D_80086E88[4];
 extern f32 D_80086ECC;
 extern f32 D_80086ED4;
 
-extern Message D_800905E0[];
+//extern Message D_800905E0[];
 
 //joystick stuff?
 extern u8 D_80092850;

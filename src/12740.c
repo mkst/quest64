@@ -8,6 +8,7 @@ extern u8 D_8007C970[];
 extern u8* D_803A9954[]; //array of pointers to item names
 
 void func_800121B0(u16 arg0);
+void func_800120C0(s32 arg0);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B40.s")
 
