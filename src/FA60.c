@@ -96,7 +96,6 @@ void func_800111A4(s32 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_800111D8.s")
 
-
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_800111F8.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/FA60/func_80011768.s")

@@ -1,4 +1,4 @@
-options:
+    options:
   base_path: .
   basename: quest64
   compiler: IDO
