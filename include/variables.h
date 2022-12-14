@@ -148,7 +148,7 @@ extern s32 gNextSubmap;
 extern u16 gAllowBattles; 
 extern sMapData* gMapData;
 
-extern MtxF D_8008D030;
+
 extern u32 D_8004D748; //possibly RNG seed
 extern f64 D_800716D0;
 extern f64 D_800716D8;

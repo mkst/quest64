@@ -6,3 +6,4 @@ s32 osContInit(OSMesgQueue*, u8*, OSContStatus*);
 void func_80024260(u8* arg0, void* arg1, u32 arg2);                 /* extern */
 s32 func_80024330(s32 arg0, u8* arg1, u16 arg2);
 float _nsqrtf(float value);
+u32 func_80022FD0(u32 arg0);

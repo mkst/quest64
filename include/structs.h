@@ -378,8 +378,9 @@ typedef struct {
     /* 0x2C */ u16 aiScriptNumber;
     /* 0x2E */ u16 unk2E;
     /* 0x30 */ AIScript* AIScript;
-    /* 0x34 */ u16 itemDrop;
-    /* 0x36 */ u16 unk32;
+    /* 0x34 */ u8 itemDrop;
+    /* 0x35 */ u8 unk35;
+    /* 0x36 */ u16 unk36;
 } MonsterBaseData; // size 0x38
 
 typedef struct {
