@@ -44,7 +44,6 @@ extern s16 D_8007BA60;
 extern u16 D_8007BA62;
 extern s16 D_8007BA64;
 extern s16 D_8007BABE;
-extern s8 D_8007D19C;
 
 
 extern u8 D_8008D00E;
