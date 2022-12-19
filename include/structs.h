@@ -176,6 +176,17 @@ typedef struct unk_232f4_s{
     f32 unk4;
 }unk232f4s;
 
+typedef struct unk_1d924_s
+{
+    s32 unk0;
+    s16 unk4;
+    s16 unk6;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+}unk1d924s;
+
 typedef struct unk_23df4_s
 {
     f32 unk0;

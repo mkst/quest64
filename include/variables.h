@@ -60,10 +60,7 @@ extern f32 D_80086E44;
 extern s8 D_8008FCC1;
 extern u16 D_8008FCC2;
 extern s16 D_8008FCC4;
-extern u16 D_8008FD20;
 extern s8 D_8008FD22;
-extern s32 D_8008FD24;
-extern temp D_8008FD30[];
 extern u8 gLastInvSlot;
 extern unkShadows D_80085BD0[];
 extern s32 D_800862D0;
@@ -71,12 +68,8 @@ extern s32 D_8008F92C;
 extern s32 D_8008D090;
 extern OSMesgQueue D_8008F288;
 extern s16 gameMode;
-extern u16 D_8008FD0C;
 extern u8 D_8008FD28;
-extern s8 D_8008FD29;
-extern s8 D_8008FD2A;
 extern s8 D_8008FD2B;
-extern s8 D_8008FD2C;
 extern s32 D_8008C560;
 extern s32 D_8008C564;
 extern f32 D_8008C574;
@@ -159,7 +152,6 @@ extern f32 D_80086E88[4];
 extern f32 D_80086ECC;
 extern f32 D_80086ED4;
 
-//extern Message D_800905E0[];
 
 //joystick stuff?
 extern u8 D_80092850;
