@@ -1,5 +1,10 @@
 #include "common.h"
 
+extern s16* D_8008F68C;
+extern ALSndPlayer D_8008F620;
+extern s32 D_800539A4;
+extern s32 D_800539B8;
+
 //#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_80024690.s")
 void func_80024690(s32 arg0, s32 arg1, s32 arg2) {
     OSIoMesg sp28;
@@ -73,10 +78,17 @@ void func_8002513C(s32 arg0, s32 arg1, u8* arg2, s32 arg3, u8* arg4) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/25290/func_80025634.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_8002568C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_8002568C.s")
+void func_8002568C(s32 arg0) {
+    alSndpSetSound(&D_8008F620, D_8008F68C[arg0]);
+    alSndpStop(&D_8008F620);
+}
 
-#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_800256D4.s")
-
+//#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_800256D4.s")
+void func_800256D4(s32 arg0) {
+    alSndpSetSound(&D_8008F620, D_8008F68C[arg0]);
+    alSndpGetState(&D_8008F620);
+}
 #pragma GLOBAL_ASM("asm/nonmatchings/25290/func_8002571C.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_800258F8.s")
@@ -124,6 +136,13 @@ s32 func_80026434(u32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/25290/func_80026488.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_8002650C.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/25290/func_8002650C.s")
+void func_8002650C(void) {
+    if (D_800539A4 != 0xFF) {
+        func_8002568C(D_800539A4);
+    }
+    D_800539B8 = 0;
+    D_800539A4 = 0xFF;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/25290/func_80026554.s")
