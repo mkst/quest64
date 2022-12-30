@@ -3,8 +3,10 @@
 extern OSPfs D_80092898[];
 extern s8 D_80092870;
 extern OSMesgQueue D_80092880;
+extern u8 D_8005FB40;
+extern s32 D_8005FB74;
 
-
+void func_800319E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8* arg4);
 #pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031300.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_800314C0.s")
@@ -34,7 +36,10 @@ void func_800314C0(s32 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_8003195C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_800319E0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_800319E0.s")
+void func_800319E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8* arg4) {
+    osPfsReadWriteFile(&D_80092898[arg0], arg1, 0U, arg2, arg3, arg4);
+}
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031A44.s")
 void func_80031A44(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8 *arg4)

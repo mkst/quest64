@@ -1,16 +1,34 @@
 #include "common.h"
 
+typedef struct {
+    f32 unk0;
+    f32 unk4;
+}unk13f20s;
+extern unk13f20s D_8004CCB0[];
+extern s32 D_80086C2C;
+extern f32 D_80086C30;
+extern f32 D_80086C34;
 
 extern u8 D_8004C460[];
 extern u8 D_8007C570[];
 extern u8 D_8007C574[];
 extern u8 D_8007C970[];
 extern u8* D_803A9954[]; //array of pointers to item names
+extern u8 D_800869F8;
+extern u8 D_800869D8[];
 
 void func_800121B0(u16 arg0);
 void func_800120C0(s32 arg0);
 
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B40.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B40.s")
+void func_80011B40(void) {
+
+    s32 i;
+
+    for(i=0; i<32; i++){
+        D_800869D8[i] = 0;
+    }
+}  
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80011B70.s")
 
@@ -66,7 +84,14 @@ void func_800121B0(u16 arg0) {
     temp_v1 = &D_800869D8[arg0 >> 3];
     *temp_v1 |= D_8004D740[arg0 & 7];
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800121F0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/12740/func_800121F0.s")
+void func_800121F0(void) {
+    s32 i;
+
+    for (i = 0; i < 0x10; i++) {
+            D_80086AE8[i] = 0;
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012220.s")
 
@@ -118,6 +143,7 @@ void func_80013D30(s32 arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013DE0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013F20.s")
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013F5C.s")
 
