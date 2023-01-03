@@ -7,6 +7,7 @@ extern u8 D_8005FB40;
 extern s32 D_8005FB74;
 
 void func_800319E0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, u8* arg4);
+
 #pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031300.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_800314C0.s")

@@ -180,9 +180,6 @@ void func_8001A238(void) {
     do {
         var_v0--;
         var_v1->unk0 = 0;
-        //var_v1->unk58 = 0;
-        //var_v1->unkB0 = 0;
-        //var_v1->unk108 = 0;
         var_v1++;
     } while (var_v0 != 0);
 }

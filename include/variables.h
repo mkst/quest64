@@ -106,7 +106,6 @@ extern unk222b4s* D_80084F1C;
 //Inventory
 extern s32 gInventoryScrollAmt; 
 extern s32 gInvHighlightedItemIndex;
-extern u8 D_8008CF77;
 
 
 extern unk213d8s D_803A91F0[];
@@ -131,8 +130,6 @@ extern u8 D_D3E2C0[];
 
 extern s32 D_8007D0C4;
 
-extern s32 D_80088428;
-extern s32 D_80088420;
 
 extern unk11170s D_800859E8[];
 

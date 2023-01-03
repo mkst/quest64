@@ -76,7 +76,7 @@ typedef struct unk_20888_s{
 
 typedef struct {
     char unk0[0x24];
-    u8 unk24;
+    u8 unk24[1]; // some size
 }unk1ebdcs;
 
 extern s32 D_8008C650;
@@ -183,8 +183,8 @@ void func_8001EA84(MtxF_t *arg0) {
     func_800210FC((s32) &D_803A6F40, 0xD, 0xA, 0xB, 0xE, 0x93, 0, 0x400, 0x400);
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EBDC.s")
-/*void func_8001EBDC(unk1ebdcs* arg0) {
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EBDC.s")
+void func_8001EBDC(unk1ebdcs* arg0) {
     s32 var_s0;
     s32 i;
     void* temp;
@@ -198,10 +198,10 @@ void func_8001EA84(MtxF_t *arg0) {
     
     var_s0 = 6;
     for (i = 0; i < 4; i++) {
-        func_80020D4C(1U, var_s0, 6, arg0->unk0[i+0x24]);
+        func_80020D4C(1U, var_s0, 6, arg0->unk24[i]);
         var_s0 += 0x16;
     }
-}*/
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001ED5C.s")
 

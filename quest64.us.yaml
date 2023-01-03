@@ -6,6 +6,7 @@ options:
   find_file_boundaries: True
   platform: n64
   symbol_addrs_path: symbol_addrs.us.txt
+  migrate_rodata_to_functions: False
   target_path: baserom.us.z64
 segments:
   - name:  header
@@ -216,7 +217,7 @@ segments:
       - [0x4AAF0, bin, ucode_boot]
       - [0x4ABC0, bin, ucode]
       - [0x4BFF0, bin]  # TBD whether this is actually code
-      #- [0x71AF0, rodata, 71AF0]
+      #- [0x71AF0, . rodata, 71AF0]
       - [0x72FD0, bin, ucode_data]
   - [0x737D0, bin]
   - [0x73A90, bin]

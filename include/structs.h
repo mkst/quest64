@@ -129,6 +129,14 @@ typedef struct unk_1b0d0_s{
     char unk2[0x3E];
 }unk1b0d0;
 
+typedef struct
+{
+    u8 red;
+    u8 green;
+    u8 blue;
+    u8 alpha;
+}Color_RGBA8;
+
 typedef struct unk_110d0_s{
     s32 unk0;
     char unk4[0x2C];
