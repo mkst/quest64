@@ -4,6 +4,38 @@ typedef struct {
     f32 unk0;
     f32 unk4;
 }unk13f20s;
+
+typedef struct {
+    char unk0[0x14];
+    u16 unk14;
+}unk84f1cs;
+
+extern s32 D_2000080;
+extern s32 D_20080C0;
+extern s32 D_20080D0;
+extern void* D_8004CC98[];
+extern f64 D_80071340;
+extern f64 D_80071348;
+extern s32 D_8007B2E4;
+extern u16 D_8007BB2E;
+extern unk84f1cs* D_80084F1C;
+extern s32 D_80086B88;
+extern f32 D_80086DCC;
+extern f32 D_80086DD0;
+extern f32 D_80086DD4;
+extern f32 D_80086DD8;
+extern f32 D_80086DE0;
+extern f32 D_80086E48[4];
+extern f32 D_80086E88[4];
+extern f32 D_80086EC8;
+extern f32 D_80086ECC;
+extern f32 D_80086ED0;
+extern f32 D_80086ED4;
+extern s32 D_80086ED8;
+extern u16 D_80086F00;
+extern u16 D_8008C592;
+extern s32 D_8008C638;
+extern u16 D_80092876;
 extern unk13f20s D_8004CCB0[];
 extern s32 D_80086C2C;
 extern f32 D_80086C30;
@@ -119,6 +151,7 @@ void func_80012740(u16 arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80012BE0.s")
 
+
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013008.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013698.s")
@@ -143,7 +176,12 @@ void func_80013D30(s32 arg0) {
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013DE0.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013F20.s")
-
+//void func_80013F20(s32 arg0) {
+//
+//    D_80086C2C = 0xF;
+//    D_80086C30 = D_8004CCB0[arg0].unk0;
+//    D_80086C34 = D_8004CCB0[arg0].unk4;
+//}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/12740/func_80013F5C.s")
 

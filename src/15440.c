@@ -23,12 +23,16 @@ typedef struct {
     f32 unk14;
 }unk14e80a0s;
 
-
+extern s32 D_80086F10;
+extern s16 D_80087170;
+extern s16 D_80087188;
+extern s16 D_800871A0;
+extern s16 D_800871B8;
 extern u16 D_8004CD74[];
-extern unk15b50s D_80086F18;
-extern u16 D_80086F1C;
+extern unk15b50s D_80086F18[];
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80014840.s")
+
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80014890.s")
 
@@ -78,12 +82,12 @@ void func_80014ED4(unk14e80a0s* arg0, MonsterBattleData* arg1) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/15440/func_800156D0.s")
 
-//#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80015B50.s") //! TODO May need more work. D_80086F18 is the beginning of an array of structs.
+//#pragma GLOBAL_ASM("asm/nonmatchings/15440/func_80015B50.s")
 s32 func_80015B50(void) {
     unk15b50s* var_v0;
     s32 var_v1;
     var_v1 = 10;
-    var_v0 = &D_80086F18;
+    var_v0 = D_80086F18;
     while (var_v1 != 0 && var_v0->unk4 == 0) {
         var_v1--;
         var_v0++;

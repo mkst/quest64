@@ -101,7 +101,6 @@ extern unk2513cs2* D_800538E8;
 //end of func_8002513C defines. 
 
 extern u16 D_80084EE0;
-extern unk222b4s* D_80084F1C;
 
 //Inventory
 extern s32 gInventoryScrollAmt; 
@@ -185,6 +184,5 @@ extern u8 D_800869D8[];
 extern OSMesgQueue D_80092880;
 extern OSContPad D_80092AA8;
 extern u16 D_80092874;
-extern s16 D_80092876;
 extern u16 D_80092878;
 #endif
