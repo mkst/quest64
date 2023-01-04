@@ -374,6 +374,26 @@ typedef struct unk_D_80086DC0_s
 
 
 typedef struct {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+    f32 unk10;
+    u16 unk14;
+    char unk16[0xE];    
+}unkfde0s;
+
+typedef struct {
+    s32 unk0;
+    unkfde0s* unk4;
+    s32 unk8;
+    char unkC[0x6];
+    u16 unk12;
+    u16 unk14;
+}unk84f1cs;
+
+
+typedef struct {
     u8 unk0[0x18];
 }AIScript;
 

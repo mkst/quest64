@@ -14,3 +14,7 @@ void func_800232F4(f32 arg0, unk232f4s* arg1);
 void func_80006720(BrianData2* arg0);
 void func_8001D924(BrianData2* arg0, unk1d924s* arg1, f32 arg2);
 void func_80023570(MtxF *arg0, f32 arg1, f32 arg2, f32 arg3);
+
+s32 func_8000FF54(f32);                             /* extern */
+s32 func_8000FFE8(unkfde0s*);                       /* extern */
+void func_80010080(unkfde0s*);                         /* extern */

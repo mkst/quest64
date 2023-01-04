@@ -185,4 +185,8 @@ extern OSMesgQueue D_80092880;
 extern OSContPad D_80092AA8;
 extern u16 D_80092874;
 extern u16 D_80092878;
+
+
+extern unk84f1cs* D_80084F1C;
+
 #endif

@@ -5,10 +5,6 @@ typedef struct {
     f32 unk4;
 }unk13f20s;
 
-typedef struct {
-    char unk0[0x14];
-    u16 unk14;
-}unk84f1cs;
 
 extern s32 D_2000080;
 extern s32 D_20080C0;
@@ -18,7 +14,6 @@ extern f64 D_80071340;
 extern f64 D_80071348;
 extern s32 D_8007B2E4;
 extern u16 D_8007BB2E;
-extern unk84f1cs* D_80084F1C;
 extern s32 D_80086B88;
 extern f32 D_80086DCC;
 extern f32 D_80086DD0;
