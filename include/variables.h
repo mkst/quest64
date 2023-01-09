@@ -91,13 +91,14 @@ extern u16 currentDay;
 
 
 //These types may be incorrect. Defined in func_8002513C
-extern s32 D_800538F0;
+extern ALBankFile* D_800538E8;
+extern ALSeqFile* D_800538F0;
 extern ALHeap D_8008F240;
 extern ALCSPlayer D_8008F994;
 extern ALSeqpConfig D_8008FB14;
-extern ALSeqPlayer D_8008FB30;
+extern ALCSPlayer D_8008FB30;
 extern unk2513cs D_8008F978;
-extern unk2513cs2* D_800538E8;
+//extern unk2513cs2* D_800538E8;
 //end of func_8002513C defines. 
 
 extern u16 D_80084EE0;
@@ -176,6 +177,7 @@ extern f32 D_80071428;
 extern f32 D_8007142C;
 extern unkD80086DC0s D_80086DC0;
 extern unkD80086EE0s D_80086EE0;
+extern u16 D_80092876;
 
 extern u8 D_8004D740[];
 extern u8 D_80086AE8[];

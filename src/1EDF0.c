@@ -107,7 +107,7 @@ extern Gfx D_803A8EA0[]; //Compass Display List
 extern Gfx D_803A8C80[];
 
 void func_8001EBDC(unk1ebdcs* arg0);
-void func_8001EA84(MtxF_t *arg0);
+void func_8001EA84(Mtx *arg0);
 void func_80020D4C(u16 arg0, s32 arg1, s32 arg2, s32 arg3);
 s32 func_8002413C(f32 arg0, f32 arg1, f32 arg2, s32* arg3, s32* arg4);
 void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7);
@@ -161,7 +161,7 @@ void func_8001E7FC(BrianData2 *arg0)
 }
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EA84.s")
-void func_8001EA84(MtxF_t *arg0) {
+void func_8001EA84(Mtx *arg0) {
     MtxF sp38;
 
     D_8008C648 = 0x104;
@@ -171,7 +171,7 @@ void func_8001EA84(MtxF_t *arg0) {
     sp38.mf[3][1] = (f32) (D_8008C64C + 0x11);
     sp38.mf[3][2] = 0.0f;
     
-    guMtxF2L((f32 (*)[4]) &sp38, arg0[D_8007B2F8] + 12);
+    guMtxF2L(sp38.mf, arg0 + 3 + D_8007B2F8);
 
     gSPMatrix(gMasterGfxPos++, &D_2000000[D_8007B2F8] + 3, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW);
 
@@ -190,11 +190,11 @@ void func_8001EBDC(unk1ebdcs* arg0) {
     void* temp;
 
     temp = &D_803A6F40;
-    func_800210FC(temp, 0, 0, 0xC, 0xC, 0x20, 0x10, 0x400, 0x400);
-    func_800210FC(temp, 0x16, 0, 0xC, 0xC, 0x2C, 0x10, 0x400, 0x400);
-    func_800210FC(temp, 0x2C, 0, 0xC, 0xC, 0x38, 0x10, 0x400, 0x400);
-    func_800210FC(temp, 0x42, 0, 0xC, 0xC, 0x44, 0x10, 0x400, 0x400);
-    func_80020E2C(temp, 0x20, 0x1D, 0x80, 0xA);
+    func_800210FC((s32)temp, 0, 0, 0xC, 0xC, 0x20, 0x10, 0x400, 0x400);
+    func_800210FC((s32)temp, 0x16, 0, 0xC, 0xC, 0x2C, 0x10, 0x400, 0x400);
+    func_800210FC((s32)temp, 0x2C, 0, 0xC, 0xC, 0x38, 0x10, 0x400, 0x400);
+    func_800210FC((s32)temp, 0x42, 0, 0xC, 0xC, 0x44, 0x10, 0x400, 0x400);
+    func_80020E2C((unk20e2cs*)temp, 0x20, 0x1D, 0x80, 0xA);
     
     var_s0 = 6;
     for (i = 0; i < 4; i++) {
@@ -564,6 +564,6 @@ void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
 }
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800210FC.s")
 void func_800210FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
-    func_80020E2C(arg0, arg5, arg6, arg3, arg4);
+    func_80020E2C((unk20e2cs* ) arg0, arg5, arg6, arg3, arg4);
     func_80020F8C(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 }

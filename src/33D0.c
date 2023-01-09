@@ -36,7 +36,7 @@ typedef struct {
 }unk6604s;
 
 void func_800056D0(BrianData2* arg0, s32 arg1, unk232f4s* arg2);
-void func_80006604(unk6604s* arg0, unk1d924s2* arg1, s32 arg2);
+void func_80006604(unk6604s* arg0, BrianData2* arg1, s32 arg2);
 
 #pragma GLOBAL_ASM("asm/nonmatchings/33D0/func_800027D0.s")
 
@@ -120,10 +120,10 @@ void func_80005740(void) {
 #pragma GLOBAL_ASM("asm/nonmatchings/33D0/func_80006340.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/33D0/func_80006604.s")
-void func_80006604(unk6604s* arg0, unk1d924s2* arg1, s32 arg2) {
-    func_8001D8B0(arg1, 0x1C, 1, 0x1D, 1, 1);
+void func_80006604(unk6604s* arg0, BrianData2* arg1, s32 arg2) {
+    func_8001D8B0((unk1e0acs* ) arg1, 0x1C, 1, 0x1D, 1, (u16) 1);
     func_80006720(arg1);
-    func_8001D924(arg1, (arg1->unk52 * 0xC) + arg2, arg1->unk24);
+    func_8001D924(arg1, (arg1->animID * 0xC) + arg2, arg1->scale);
     arg0->unk0 = 0xB;
     arg0->unk4 = 0x5A;
     arg1->unk60 |= 1;

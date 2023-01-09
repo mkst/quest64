@@ -1,21 +1,6 @@
 #include "common.h"
 
-typedef struct {
-    char unk0[0x52];
-    s16 unk52;
-    u16 unk54;
-    u16 unk56;
-    s16 unk58;
-    s16 unk5A;
-    u16 unk5C;
-    s16 unk5E;
-    u16 unk60;
-}unk1e0acs;
 
-typedef struct {
-    s16 unk0;
-    s16 unk2;
-}unk1e0acs2;
 
 
 
