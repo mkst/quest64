@@ -9,6 +9,7 @@ extern Mtx D_2000000[]; //Gfx matrix
 extern Mtx D_2000040[];
 extern s32 D_8007B2F8; //Gfx matrix index? 
 
+extern OSContPad D_80092874;
 
 extern unkdb38s D_80084E60; //Door animation data
 extern s32 D_8007D2D0;
@@ -185,7 +186,6 @@ extern u8 D_800869D8[];
 
 extern OSMesgQueue D_80092880;
 extern OSContPad D_80092AA8;
-extern u16 D_80092874;
 extern u16 D_80092878;
 
 

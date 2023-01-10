@@ -1,3 +1,13 @@
+.section .late_rodata
+glabel jtbl_80070EF0
+/* 71AF0 80070EF0 80000E54 */ .word .L80000E54
+/* 71AF4 80070EF4 80000E64 */ .word .L80000E64
+/* 71AF8 80070EF8 80000E74 */ .word .L80000E74
+/* 71AFC 80070EFC 80000E84 */ .word .L80000E84
+/* 71B00 80070F00 80000E94 */ .word .L80000E94
+
+
+.section .text
 glabel func_80000C50
 /* 1850 80000C50 27BDFFD0 */  addiu      $sp, $sp, -0x30
 /* 1854 80000C54 AFBF002C */  sw         $ra, 0x2C($sp)

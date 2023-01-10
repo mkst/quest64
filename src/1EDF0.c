@@ -1,9 +1,15 @@
 #include "common.h"
 #include <gbi.h>
+#include <os.h>
 
 #define ON_GROUND 0
 #define FLYING 1
 #define MAMMON 2
+#define U_CBUTTONS	CONT_E
+#define L_CBUTTONS	CONT_C
+#define R_CBUTTONS	CONT_F
+#define D_CBUTTONS	CONT_D
+
 
 typedef struct {
     s16 unk0;
@@ -78,6 +84,24 @@ typedef struct {
     char unk0[0x24];
     u8 unk24[1]; // some size
 }unk1ebdcs;
+
+typedef struct {
+    char unk0[0x24];
+    u8 unk24;
+    u8 unk25;
+    u8 unk26;
+    u8 unk27;
+}unk1f3dcTEST2; //Something to do with Brian's struct. Starts in the middle? 
+
+typedef struct {
+    char unk0[0x10];
+    unk1f3dcTEST2* unk10;
+}unk1f3dcTEST;
+
+extern u8 D_8007BAA4;
+extern u8 D_8007BAA5;
+extern u8 D_8007BAA6;
+extern u8 D_8007BAA7;
 
 extern s32 D_8008C650;
 extern s32 D_8008C654;
@@ -205,7 +229,63 @@ void func_8001EBDC(unk1ebdcs* arg0) {
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001ED5C.s")
 
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F3DC.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F3DC.s")
+void func_8001F3DC(unk1f3dcTEST* arg0) {
+    s32 var_t9;
+    unk1f3dcTEST2* temp_v0_14;
+    unk20e2cs* temp;
+    
+    
+    D_8008C648 = 0;
+    D_8008C64C = 0;
+
+    gDPPipeSync(gMasterGfxPos++);
+    gDPSetTextureImage(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, D_8039D990);
+    gDPTileSync(gMasterGfxPos++);
+    gDPSetTile(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR |
+        G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+    gDPLoadSync(gMasterGfxPos++);
+    gDPLoadTLUTCmd(gMasterGfxPos++, G_TX_LOADTILE, 255);
+    gDPPipeSync(gMasterGfxPos++);
+
+    temp = &D_803A6F60;
+    func_800210FC((s32) temp, 0x81, 0x48, 0x40, 0x14, 0, 0, 0x400, 0x400);
+    func_800210FC((s32) temp, 0x81, 0x5C, 0x40, 0x14, 0, 0x14, 0x400, 0x400);
+    func_800210FC((s32) temp, 0x81, 0x70, 0x40, 0x14, 0, 0x28, 0x400, 0x400);
+    func_800210FC((s32) temp, 0x81, 0x84, 0x40, 0x14, 0, 0x3C, 0x400, 0x400);
+    func_80020E2C(&D_803A6F40, 0x20, 0x1D, 0x80, 0xA);
+
+    gDPSetTextureImage(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, D_80399AB0);
+    gDPTileSync(gMasterGfxPos++);
+    gDPSetTile(gMasterGfxPos++, G_IM_FMT_RGBA, G_IM_SIZ_4b, 0, 0x0100, G_TX_LOADTILE, 0, G_TX_NOMIRROR | 
+        G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOLOD);
+    gDPLoadSync(gMasterGfxPos++);
+    gDPLoadTLUTCmd(gMasterGfxPos++, G_TX_LOADTILE, 255);
+    gDPPipeSync(gMasterGfxPos++);
+    
+    func_80020D4C(5U, 0x9D, 0x6C, (s32) D_8007BAA4); //fire
+    func_80020D4C(5U, 0x8B, 0x7C, (s32) D_8007BAA5); //earth
+    func_80020D4C(5U, 0x9D, 0x8B, (s32) D_8007BAA6); //water
+    func_80020D4C(5U, 0xAF, 0x7C, (s32) D_8007BAA7); //wind
+    
+    if ((D_80092876 & U_CBUTTONS) && (arg0->unk10->unk24 < 0x32)) { 
+        arg0->unk10->unk24++;
+        D_8007B2E4 &= ~8; 
+    } else if ((D_80092876 & D_CBUTTONS) && (arg0->unk10->unk26 < 0x32)) {  
+        arg0->unk10->unk26++;
+        D_8007B2E4 &= ~8;
+    } else if ((D_80092876 & R_CBUTTONS) && (arg0->unk10->unk27 < 0x32)) { 
+        arg0->unk10->unk27++;
+        D_8007B2E4 &= ~8;
+    } else if ((D_80092876 & L_CBUTTONS) && (arg0->unk10->unk25 < 0x32)) {  
+        arg0->unk10->unk25++;
+        D_8007B2E4 &= ~8;
+    }
+
+    if ((D_8007B2E4 & 8) == 0) {
+        func_800268D4(0, 4, 0xFF);
+    }
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F818.s")
 
@@ -252,7 +332,7 @@ void func_8001FA60(u16 monsterNum) {
     } else {
         MonsterBaseData = MonsterBattleData->unk64;
         if (MonsterBaseData->monsterType == MAMMON) {
-            var_f14 = MonsterBattleData->y + (D_800716C0 * MonsterBattleData->scale);
+            var_f14 = MonsterBattleData->y + (350.0 * MonsterBattleData->scale);
         } else {
             var_f14 = MonsterBattleData->y + (MonsterBaseData->hitboxWidth * MonsterBattleData->scale);
         }
@@ -370,7 +450,10 @@ void func_80020888(void) {
         var_v1--;
     }
 }
-#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800208B8.s")
+#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_800208B8.s") 
+//https://decomp.me/scratch/e4B4a
+/*This function seems to use the EnemyBattleData struct, but also references the 
+BrianData2 struct at the same time. This may mean that both structs are identical*/
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020988.s")
 void func_80020988(void)

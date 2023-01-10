@@ -87,6 +87,33 @@ s32 func_80031ACC(s32 arg0, s32 arg1)
   return var_v1;
 }
 
-#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031BB0.s")
+//#pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031BB0.s")
+s32 func_80031BB0(s32 arg0) {
+    s32 var_v1;
+
+    switch (arg0) {
+    case 1:
+        var_v1 = -1;
+        break;
+    case 4:
+    case 11:
+        var_v1 = -2;
+        break;
+    case 3:
+    case 10:
+        var_v1 = -3;
+        break;
+    case 2:
+        var_v1 = -4;
+        break;
+    case 9:
+        var_v1 = -5;
+        break;
+    default:
+        var_v1 = -6;
+        break;
+    }
+    return var_v1;
+}
 
 #pragma GLOBAL_ASM("asm/nonmatchings/31F00/func_80031C0C.s")
