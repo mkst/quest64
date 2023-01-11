@@ -5,7 +5,7 @@ glabel func_80024690
 /* 2529C 8002469C AFA50044 */  sw         $a1, 0x44($sp)
 /* 252A0 800246A0 AFA60048 */  sw         $a2, 0x48($sp)
 /* 252A4 800246A4 8FA40044 */  lw         $a0, 0x44($sp)
-/* 252A8 800246A8 0C00D918 */  jal        func_80036460
+/* 252A8 800246A8 0C00D918 */  jal        osInvalDCache
 /* 252AC 800246AC 8FA50048 */   lw        $a1, 0x48($sp)
 /* 252B0 800246B0 8FAE0044 */  lw         $t6, 0x44($sp)
 /* 252B4 800246B4 8FAF0048 */  lw         $t7, 0x48($sp)
@@ -17,12 +17,12 @@ glabel func_80024690
 /* 252CC 800246CC 00003025 */  or         $a2, $zero, $zero
 /* 252D0 800246D0 8FA70040 */  lw         $a3, 0x40($sp)
 /* 252D4 800246D4 AFAE0010 */  sw         $t6, 0x10($sp)
-/* 252D8 800246D8 0C00D944 */  jal        func_80036510
+/* 252D8 800246D8 0C00D944 */  jal        osPiStartDma
 /* 252DC 800246DC AFAF0014 */   sw        $t7, 0x14($sp)
 /* 252E0 800246E0 3C048009 */  lui        $a0, %hi(D_8008F288)
 /* 252E4 800246E4 2484F288 */  addiu      $a0, $a0, %lo(D_8008F288)
 /* 252E8 800246E8 00002825 */  or         $a1, $zero, $zero
-/* 252EC 800246EC 0C00D008 */  jal        func_80034020
+/* 252EC 800246EC 0C00D008 */  jal        osRecvMesg
 /* 252F0 800246F0 24060001 */   addiu     $a2, $zero, 0x1
 /* 252F4 800246F4 8FBF0024 */  lw         $ra, 0x24($sp)
 /* 252F8 800246F8 27BD0040 */  addiu      $sp, $sp, 0x40

@@ -1,6 +1,4 @@
 #include "common.h"
-#include <gbi.h>
-#include <os.h>
 
 #define ON_GROUND 0
 #define FLYING 1
@@ -138,7 +136,6 @@ void func_80020F8C(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
 void func_800210FC(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8);
 void func_80020E2C(unk20e2cs* arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E1F0.s")
 void func_8001E1F0(void)
 {
@@ -151,7 +148,6 @@ void func_8001E1F0(void)
   D_8008C65C = 0xF0; //HUD Width
   D_8008C630 = 0;
 }
-
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E25C.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001E7FC.s")
@@ -183,7 +179,6 @@ void func_8001E7FC(BrianData2 *arg0)
   func_80020F8C(0x2F, 0, 8, 0xA, 0x70, 0x1D, 0x400, 0x400);
   func_80020F8C(0x2F, 0x1B, 8, 0xA, 0x70, 0x1D, 0x400, 0x400);
 }
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EA84.s")
 void func_8001EA84(Mtx *arg0) {
     MtxF sp38;
@@ -206,7 +201,6 @@ void func_8001EA84(Mtx *arg0) {
     
     func_800210FC((s32) &D_803A6F40, 0xD, 0xA, 0xB, 0xE, 0x93, 0, 0x400, 0x400);
 }
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001EBDC.s")
 void func_8001EBDC(unk1ebdcs* arg0) {
     s32 var_s0;
@@ -226,7 +220,6 @@ void func_8001EBDC(unk1ebdcs* arg0) {
         var_s0 += 0x16;
     }
 }
-
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001ED5C.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F3DC.s")
@@ -286,7 +279,6 @@ void func_8001F3DC(unk1f3dcTEST* arg0) {
         func_800268D4(0, 4, 0xFF);
     }
 }
-
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F818.s")
 
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F900.s")
@@ -299,7 +291,6 @@ void func_8001F900(void) {
         func_80020F8C(sp34, sp30 - 0x1E, 0x18, 0x1E, 0, 0, 0x400, 0x400);
     }
 }
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001F9B0.s")
 //displays exclamation mark above brian's head
 
@@ -313,7 +304,6 @@ void func_8001F9B0(void) {
         func_80020F8C(sp34, sp30 - 0x1E, 0x10, 0x1E, 0, 0, 0x400, 0x400);
     }
 }
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001FA60.s")
 void func_8001FA60(u16 monsterNum) {
     s32 sp44;
@@ -332,7 +322,7 @@ void func_8001FA60(u16 monsterNum) {
     } else {
         MonsterBaseData = MonsterBattleData->unk64;
         if (MonsterBaseData->monsterType == MAMMON) {
-            var_f14 = MonsterBattleData->y + (350.0 * MonsterBattleData->scale);
+            var_f14 = MonsterBattleData->y + (D_800716C0 * MonsterBattleData->scale);
         } else {
             var_f14 = MonsterBattleData->y + (MonsterBaseData->hitboxWidth * MonsterBattleData->scale);
         }
@@ -342,7 +332,6 @@ void func_8001FA60(u16 monsterNum) {
         func_80020F8C(sp44 - 4, sp40 - 0x2A, 0x18, 0x2A, 0, 0, 0x400, 0x400);
     }
 }
-
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001FB94.s")
 
 #pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_8001FCF8.s")
@@ -374,8 +363,6 @@ void func_800202E4(unk202e4s *arg0)
         }
     }
 }
-
-
 void func_800203A8(void) {
 }
 
@@ -435,7 +422,6 @@ void func_800203D0(void)
     }
   }
 }
-
 //#pragma GLOBAL_ASM("asm/nonmatchings/1EDF0/func_80020888.s")
 void func_80020888(void) {
     unk20888s* var_v0;
